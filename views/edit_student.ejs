@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f4f6f9;
+            padding:40px;
+            font-family:Arial;
+        }
+
+        .card{
+            max-width:700px;
+            margin:auto;
+            border:none;
+            border-radius:10px;
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:25px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="card shadow p-4">
+
+<h2>Edit Student</h2>
+
+<form action="/admin/students/update/<%= student.id %>" method="POST">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label>First Name</label>
+<input
+type="text"
+name="first_name"
+class="form-control"
+value="<%= student.first_name %>"
+required>
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Last Name</label>
+<input
+type="text"
+name="last_name"
+class="form-control"
+value="<%= student.last_name %>">
+</div>
+
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input
+type="email"
+name="email"
+class="form-control"
+value="<%= student.email %>"
+required>
+</div>
+
+<div class="mb-3">
+<label>Phone</label>
+<input
+type="text"
+name="phone"
+class="form-control"
+value="<%= student.phone || '' %>">
+</div>
+
+<div class="mb-3">
+<label>Address</label>
+<textarea
+name="address"
+class="form-control"
+rows="3"><%= student.address || '' %></textarea>
+</div>
+
+<!-- NEW PASSWORD FIELD -->
+<div class="mb-3">
+    <label>New Password</label>
+
+    <input
+        type="password"
+        name="password"
+        class="form-control"
+        placeholder="Leave blank to keep current password">
+
+    <small class="text-muted">
+        Leave this field empty if you do not want to change the student's password.
+    </small>
+</div>
+
+<div class="mb-3">
+
+<label>Room Number</label>
+
+<select
+name="room_number"
+class="form-select">
+
+<option value="">Select Room</option>
+
+<% if(rooms){ %>
+
+<% rooms.forEach(room=>{ %>
+
+<option
+value="<%= room.room_number %>"
+<%= room.room_number==student.room_number ? "selected" : "" %>>
+
+Room <%= room.room_number %>
+
+</option>
+
+<% }) %>
+
+<% } %>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Status</label>
+
+<select
+name="status"
+class="form-select">
+
+<option
+value="Approved"
+<%= student.status=="Approved" ? "selected":"" %>>
+
+Approved
+
+</option>
+
+<option
+value="Pending"
+<%= student.status=="Pending" ? "selected":"" %>>
+
+Pending
+
+</option>
+
+</select>
+
+</div>
+
+<div class="text-center">
+
+<button
+type="submit"
+class="btn btn-success">
+
+Update Student
+
+</button>
+
+<a
+href="/admin/students"
+class="btn btn-secondary">
+
+Back
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

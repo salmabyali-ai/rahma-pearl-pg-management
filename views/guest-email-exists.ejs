@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Email Already Registered | Rahma Pearl PG
+    </title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(255, 209, 102, 0.16),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #062f34,
+                    #087f73
+                );
+
+            color: #ffffff;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-custom {
+            padding: 16px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(0, 0, 0, 0.18);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd166,
+                    #f4a261
+                );
+
+            color: #164441;
+        }
+
+        .dashboard-link {
+            padding: 10px 18px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.35);
+
+            border-radius: 10px;
+
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .dashboard-link:hover {
+            background: #ffffff;
+            color: #087f73;
+        }
+
+        .main-section {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            padding: 50px 7%;
+        }
+
+        .main-card {
+            width: 100%;
+            max-width: 1150px;
+
+            margin: auto;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background: #ffffff;
+            color: #173333;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.3);
+
+            animation: cardEntry 0.7s ease;
+        }
+
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-content {
+            height: 100%;
+            padding: 48px 42px;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #ffffff,
+                    #fff9ee
+                );
+        }
+
+        .error-icon {
+            width: 105px;
+            height: 105px;
+
+            margin: 0 auto 22px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffca66,
+                    #f29d49
+                );
+
+            color: #704500;
+            font-size: 47px;
+
+            box-shadow:
+                0 14px 35px rgba(242, 157, 73, 0.3);
+
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.06);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .error-content h1 {
+            margin-bottom: 10px;
+
+            color: #a45f00;
+            font-size: 34px;
+            font-weight: 800;
+        }
+
+        .intro-text {
+            color: #586b6b;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .student-name {
+            color: #087f73;
+            font-weight: 800;
+        }
+
+        .error-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin: 12px 0 20px;
+            padding: 9px 18px;
+
+            border-radius: 100px;
+
+            background: #fff0d3;
+            color: #8a5600;
+
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .details-box {
+            margin: 18px 0;
+            padding: 18px;
+
+            text-align: left;
+
+            background: #f5faf9;
+
+            border:
+                1px solid #dcebea;
+
+            border-radius: 15px;
+        }
+
+        .details-box p {
+            margin: 9px 0;
+            color: #405858;
+            word-break: break-word;
+        }
+
+        .details-box i {
+            width: 28px;
+            color: #0b8a7d;
+        }
+
+        .problem-box {
+            margin-bottom: 20px;
+            padding: 18px;
+
+            text-align: left;
+
+            background: #fff5e6;
+
+            border:
+                1px solid #f2cf92;
+
+            border-radius: 14px;
+
+            color: #704b00;
+            line-height: 1.65;
+        }
+
+        .problem-box strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .suggestion-title {
+            margin-bottom: 13px;
+
+            text-align: left;
+
+            color: #174e4a;
+            font-weight: 800;
+        }
+
+        .suggestion-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            margin-bottom: 10px;
+            padding: 12px 14px;
+
+            text-align: left;
+
+            background: #ffffff;
+
+            border:
+                1px solid #e2eeee;
+
+            border-radius: 12px;
+        }
+
+        .suggestion-icon {
+            min-width: 33px;
+            height: 33px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #0e9f8d;
+            color: #ffffff;
+        }
+
+        .suggestion-item p {
+            margin: 4px 0 0;
+
+            color: #526969;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .action-buttons {
+            margin-top: 23px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-back,
+        .btn-dashboard {
+            padding: 13px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .btn-back {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0e9f8d,
+                    #087f73
+                );
+
+            color: #ffffff;
+        }
+
+        .btn-back:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 24px rgba(8, 127, 115, 0.28);
+        }
+
+        .btn-dashboard {
+            border: 1px solid #0e9f8d;
+
+            color: #087f73;
+            background: transparent;
+        }
+
+        .btn-dashboard:hover {
+            background: #e7f8f5;
+            color: #075f57;
+            transform: translateY(-2px);
+        }
+
+        .rules-section {
+            height: 100%;
+            padding: 45px 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0b776c,
+                    #064d49
+                );
+
+            color: #ffffff;
+        }
+
+        .small-title {
+            display: inline-block;
+
+            margin-bottom: 11px;
+            padding: 7px 13px;
+
+            border-radius: 100px;
+
+            background:
+                rgba(255, 209, 102, 0.14);
+
+            border:
+                1px solid rgba(255, 209, 102, 0.34);
+
+            color: #ffd166;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .rules-section h2 {
+            margin-bottom: 12px;
+
+            font-size: 29px;
+            font-weight: 800;
+        }
+
+        .rules-intro {
+            margin-bottom: 23px;
+
+            color:
+                rgba(255, 255, 255, 0.82);
+
+            line-height: 1.7;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+
+            margin-bottom: 11px;
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.09);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .rule-icon {
+            min-width: 42px;
+            height: 42px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 11px;
+
+            background: #ffd166;
+            color: #134944;
+        }
+
+        .rule-item h5 {
+            margin: 0 0 4px;
+
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .rule-item p {
+            margin: 0;
+
+            color:
+                rgba(255, 255, 255, 0.76);
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .attraction-box {
+            margin-top: 18px;
+            padding: 17px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 209, 102, 0.12);
+
+            border:
+                1px solid rgba(255, 209, 102, 0.3);
+
+            color: #fff1bf;
+        }
+
+        .attraction-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffd166;
+        }
+
+        .footer {
+            padding: 18px;
+            text-align: center;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+        }
+
+        @media (max-width: 991px) {
+            .main-section {
+                padding: 35px 15px;
+            }
+
+            .error-content,
+            .rules-section {
+                padding: 38px 24px;
+            }
+
+            .error-content h1 {
+                font-size: 29px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-custom {
+                padding: 14px 15px;
+            }
+
+            .brand {
+                font-size: 19px;
+            }
+
+            .brand-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .dashboard-link {
+                display: none;
+            }
+
+            .error-icon {
+                width: 85px;
+                height: 85px;
+                font-size: 39px;
+            }
+
+            .error-content h1 {
+                font-size: 25px;
+            }
+
+            .action-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <nav class="navbar-custom">
+
+        <a href="/" class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <span>Rahma Pearl PG</span>
+
+        </a>
+
+        <a
+            href="/admin/dashboard"
+            class="dashboard-link"
+        >
+            <i class="fa-solid fa-gauge-high me-2"></i>
+            Admin Dashboard
+        </a>
+
+    </nav>
+
+    <main class="main-section">
+
+        <div class="main-card">
+
+            <div class="row g-0">
+
+                <div class="col-lg-6">
+
+                    <section class="error-content">
+
+                        <div class="error-icon">
+
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+
+                        </div>
+
+                        <h1>Email Already Registered</h1>
+
+                        <p class="intro-text">
+
+                            Hello
+
+                            <span class="student-name">
+                                <%= studentName || "Student" %>
+                            </span>,
+
+                            this email address is already connected
+                            to an existing account.
+
+                        </p>
+
+                        <div class="error-badge">
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                            Duplicate Email Detected
+
+                        </div>
+
+                        <div class="details-box">
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <strong>Email:</strong>
+
+                                <%= email || "Not provided" %>
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-user-tag"></i>
+
+                                <strong>Account Type:</strong>
+
+                                <%= registrationType || "Mess Student" %>
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                                <strong>Checked On:</strong>
+
+                                <span id="currentDate"></span>
+                            </p>
+
+                        </div>
+
+                        <div class="problem-box">
+
+                            <strong>
+
+                                <i class="fa-solid fa-circle-info me-2"></i>
+
+                                Why could the student not be added?
+
+                            </strong>
+
+                            Every student must have a unique email
+                            address. This protects student accounts
+                            and ensures that login messages, payment
+                            updates and important notifications reach
+                            the correct person.
+
+                        </div>
+
+                        <h5 class="suggestion-title">
+                            What should you do?
+                        </h5>
+
+                        <div class="suggestion-item">
+
+                            <div class="suggestion-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+
+                            <p>
+                                Enter another valid and active Gmail
+                                address that is not already registered.
+                            </p>
+
+                        </div>
+
+                        <div class="suggestion-item">
+
+                            <div class="suggestion-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+
+                            <p>
+                                Check the existing guest-student list
+                                before creating a new account.
+                            </p>
+
+                        </div>
+
+                        <div class="suggestion-item">
+
+                            <div class="suggestion-icon">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+
+                            <p>
+                                When the same student already exists,
+                                update that account instead of creating
+                                another account.
+                            </p>
+
+                        </div>
+
+                        <div class="action-buttons">
+
+                            <a
+                                href="<%= backUrl || '/admin/guest-students/add' %>"
+                                class="btn-back"
+                            >
+                                <i class="fa-solid fa-arrow-left me-2"></i>
+
+                                Change Email
+                            </a>
+
+                            <a
+                                href="/admin/guest-students"
+                                class="btn-dashboard"
+                            >
+                                <i class="fa-solid fa-users me-2"></i>
+
+                                View Guest Students
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <section class="rules-section">
+
+                        <span class="small-title">
+                            RAHMA PEARL PG GUIDELINES
+                        </span>
+
+                        <h2>
+                            Student Rules and Important Conditions
+                        </h2>
+
+                        <p class="rules-intro">
+
+                            Valid details help Rahma Pearl PG provide
+                            secure access, timely communication and
+                            better service to every student.
+
+                        </p>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Provide Correct Personal Details</h5>
+
+                                <p>
+                                    Enter the correct name, phone number,
+                                    address and email during registration.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Use an Active Gmail Address</h5>
+
+                                <p>
+                                    Approval, meal, payment and account
+                                    notifications may be sent by email.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Keep Your Phone Number Active</h5>
+
+                                <p>
+                                    Management may contact students for
+                                    urgent updates or important information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Follow Mess Timings</h5>
+
+                                <p>
+                                    Breakfast, lunch and dinner should be
+                                    attended within the scheduled timings.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-broom"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Maintain Cleanliness</h5>
+
+                                <p>
+                                    Keep dining, room and common areas
+                                    clean and use facilities responsibly.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-volume-low"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Respect Other Students</h5>
+
+                                <p>
+                                    Maintain discipline, avoid excessive
+                                    noise and help keep the PG peaceful.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="rule-item">
+
+                            <div class="rule-icon">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Pay Fees on Time</h5>
+
+                                <p>
+                                    Mess and accommodation payments should
+                                    be completed before the due date.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="attraction-box">
+
+                            <strong>
+                                Safe living. Healthy meals. Better support.
+                            </strong>
+
+                            Rahma Pearl PG offers a comfortable,
+                            clean and student-friendly environment
+                            where students can stay peacefully and
+                            focus on their future.
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        &copy;
+
+        <span id="currentYear"></span>
+
+        Rahma Pearl PG. All rights reserved.
+
+    </footer>
+
+</div>
+
+<script>
+    const currentDate = new Date();
+
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        currentDate.toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+
+    document.getElementById(
+        "currentYear"
+    ).textContent =
+        currentDate.getFullYear();
+</script>
+
+</body>
+</html>

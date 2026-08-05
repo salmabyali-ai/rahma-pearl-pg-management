@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Income Expense Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h2>PG Income vs Expenses</h2>
+
+<canvas id="myChart"></canvas>
+
+<script>
+
+const income = <%= income %>;
+const expense = <%= expense %>;
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: ['Income','Expense'],
+
+datasets: [{
+
+label: 'PG Finance',
+
+data: [income,expense]
+
+}]
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

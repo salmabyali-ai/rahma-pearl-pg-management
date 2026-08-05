@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit Food Menu</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style="background:#f5f6fa">
+
+<div class="container mt-5">
+
+<h3>Edit Food Menu</h3>
+
+<form action="/admin/food-menu/update/<%= menu.id %>" method="POST">
+
+<div class="mb-3">
+<label>Day</label>
+<input type="text" name="day" value="<%= menu.day %>" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Breakfast</label>
+<input type="text" name="breakfast" value="<%= menu.breakfast %>" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Lunch</label>
+<input type="text" name="lunch" value="<%= menu.lunch %>" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Dinner</label>
+<input type="text" name="dinner" value="<%= menu.dinner %>" class="form-control">
+</div>
+
+<button class="btn btn-success">
+Update Menu
+</button>
+
+<a href="/admin/food-menu" class="btn btn-secondary">
+Cancel
+</a>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

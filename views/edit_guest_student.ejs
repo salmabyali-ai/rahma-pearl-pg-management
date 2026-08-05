@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Guest Mess Student</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container" style="padding:40px">
+
+<h3>Edit Guest Mess Student</h3>
+
+<form action="/admin/guest-students/update/<%= guest.id %>" method="POST" class="card p-3">
+
+<input name="name" value="<%= guest.name %>" class="form-control mb-2" required>
+
+<input name="phone" value="<%= guest.phone %>" class="form-control mb-2" required>
+
+<input type="email" name="email" value="<%= guest.email || '' %>" class="form-control mb-2" placeholder="Email" required>
+
+<input type="password" name="password" class="form-control mb-2" placeholder="New Password">
+
+<input name="meal_type" value="<%= guest.meal_type %>" class="form-control mb-2" required>
+
+<input name="amount" value="<%= guest.amount %>" class="form-control mb-2" required>
+
+<input type="date" name="from_date" value="<%= guest.from_date ? new Date(guest.from_date).toISOString().substring(0,10) : '' %>" class="form-control mb-2" required>
+
+<input type="date" name="to_date" value="<%= guest.to_date ? new Date(guest.to_date).toISOString().substring(0,10) : '' %>" class="form-control mb-2" required>
+
+<button class="btn btn-success">Update</button>
+
+</form>
+
+<a href="/admin/guest-students" class="btn btn-secondary mt-3">Back</a>
+
+</body>
+</html>

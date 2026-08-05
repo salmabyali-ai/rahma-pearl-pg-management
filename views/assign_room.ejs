@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Assign Room</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f6f9;
+            padding:40px;
+            font-family:Arial;
+        }
+
+        .card{
+            max-width:700px;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 8px 20px rgba(0,0,0,.15);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2 class="mb-4 text-center">
+
+        Assign Room
+
+    </h2>
+
+    <hr>
+
+    <p>
+
+        <b>Student Name :</b>
+
+        <%= student.first_name %>
+
+        <%= student.last_name %>
+
+    </p>
+
+    <p>
+
+        <b>Email :</b>
+
+        <%= student.email %>
+
+    </p>
+
+    <p>
+
+        <b>Current Room :</b>
+
+        <%= student.room_number || "Not Assigned" %>
+
+    </p>
+
+    <hr>
+
+    <form
+        action="/admin/students/assign-room/<%= student.id %>"
+        method="POST">
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                Select Room
+
+            </label>
+
+            <select
+                name="room_number"
+                class="form-select"
+                required>
+
+                <option value="">
+                    -- Select Room --
+                </option>
+
+                <% rooms.forEach(function(room){ %>
+
+                    <option
+                        value="<%= room.room_number %>"
+                        <%= student.room_number==room.room_number ? "selected" : "" %>>
+
+                        Room <%= room.room_number %>
+
+                        |
+
+                        Capacity :
+                        <%= room.capacity %>
+
+                        |
+
+                        Occupied :
+                        <%= room.occupied %>
+
+                        |
+
+                        Vacant :
+                        <%= room.capacity-room.occupied %>
+
+                    </option>
+
+                <% }) %>
+
+            </select>
+
+        </div>
+
+        <div class="d-grid gap-2">
+
+            <button
+                class="btn btn-success">
+
+                Assign Room
+
+            </button>
+
+            <a href="/admin/students" class="btn btn-secondary">
+                Back
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

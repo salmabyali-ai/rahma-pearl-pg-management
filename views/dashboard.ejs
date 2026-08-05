@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - PG Management</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+    <div style="flex: 1; background: #e3f2fd; padding: 20px; border-radius: 8px;">
+        <h4>Collection Efficiency</h4>
+        <h2><%= efficiency %>%</h2>
+        <div style="width: 100%; background: #ccc; height: 10px; border-radius: 5px;">
+        </div>
+    </div>
+    <div style="flex: 1; background: #fff3cd; padding: 20px; border-radius: 8px;">
+        <h4>Pending Issues</h4>
+        <h2><%= pendingComplaints %></h2>
+    </div>
+    <div style="flex: 1; background: #d4edda; padding: 20px; border-radius: 8px;">
+        <h4>Resolved Issues</h4>
+        <h2><%= resolvedComplaints %></h2>
+    </div>
+</body>
+</html>

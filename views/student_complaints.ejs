@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Complaints</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="padding:40px">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>My Complaints</h3>
+        <a href="/student/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+
+    <form action="/student/complaint" method="POST" class="card p-3 mb-4">
+        <h5>Add New Complaint</h5>
+
+        <textarea
+            name="complaint"
+            class="form-control mb-3"
+            rows="4"
+            placeholder="Enter your complaint"
+            required></textarea>
+
+        <button type="submit" class="btn btn-primary">
+            Submit Complaint
+        </button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Room</th>
+                <th>Complaint</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% if (complaints && complaints.length > 0) { %>
+
+                <% complaints.forEach(c => { %>
+                    <tr>
+                        <td><%= c.room_number || "-" %></td>
+
+                        <td><%= c.complaint %></td>
+
+                        <td>
+                            <% if(c.status === "Pending"){ %>
+                                <span class="badge bg-warning">Pending</span>
+                            <% } else if(c.status === "In Progress"){ %>
+                                <span class="badge bg-primary">In Progress</span>
+                            <% } else if(c.status === "Resolved"){ %>
+                                <span class="badge bg-success">Resolved</span>
+                            <% } else { %>
+                                <span class="badge bg-secondary"><%= c.status %></span>
+                            <% } %>
+                        </td>
+
+                        <td>
+                            <%= c.created_at ? new Date(c.created_at).toLocaleDateString('en-IN') : "-" %>
+                        </td>
+                    </tr>
+                <% }) %>
+
+            <% } else { %>
+                <tr>
+                    <td colspan="4" class="text-center">
+                        No complaints found
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="padding:20px; font-family:Arial;">
+
+<h2>Add Student</h2>
+
+<form method="POST" action="/add-student">
+
+<label>First Name:</label><br>
+<input type="text" name="first_name" required><br><br>
+
+<label>Last Name:</label><br>
+<input type="text" name="last_name" required><br><br>
+
+<label>Email:</label><br>
+<input type="email" name="email" required><br><br>
+
+<label>Password:</label><br>
+<input type="password" name="password" required><br><br>
+
+<label>Phone:</label><br>
+<input type="text" name="phone" required><br><br>
+
+<label>Room Number:</label><br>
+<input type="text" name="room_number" required><br><br>
+
+<label>Rent Amount:</label><br>
+<input type="number" name="rent" required><br><br>
+
+<label>Due Day (1-30):</label><br>
+<input type="number" name="due_day" min="1" max="30" required><br><br>
+
+<button type="submit">Add Student</button>
+
+</form>
+
+<br>
+<a href="/admin/dashboard">Back</a>
+
+</body>
+</html>

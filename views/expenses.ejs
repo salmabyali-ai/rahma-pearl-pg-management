@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expenses</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-4">
+
+<h2>Expense Management</h2>
+
+<form action="/admin/add-expense" method="POST">
+
+<input name="description" placeholder="Description" class="form-control mb-2">
+
+<input name="amount" placeholder="Amount">
+
+<button class="btn btn-primary">Add Expense</button>
+
+</form>
+
+<hr>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Description</th>
+<th>Amount</th>
+</tr>
+
+<% expenses.forEach(e => { %>
+
+<tr>
+<td><%= e.description %></td>
+<td>₹ <%= e.amount %></td>
+</tr>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

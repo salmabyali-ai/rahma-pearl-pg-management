@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mess Attendance | Admin</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <style>
+        body {
+            background: #f4f6f9;
+            min-height: 100vh;
+            padding: 35px 15px;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .main-card {
+            max-width: 1250px;
+            margin: auto;
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .page-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #0f766e, #115e59);
+            color: white;
+        }
+
+        .summary-bar {
+            background: #ffffff;
+            padding: 18px 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0f766e;
+            border-radius: 10px;
+            padding: 12px 16px;
+            height: 100%;
+        }
+
+        .summary-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f766e;
+        }
+
+        .student-name {
+            font-weight: 700;
+            color: #0f766e;
+        }
+
+        .student-details {
+            font-size: 13px;
+            color: #6c757d;
+        }
+
+        .meal-yes {
+            background: #d1e7dd;
+            color: #0f5132;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .meal-no {
+            background: #f8d7da;
+            color: #842029;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .table thead th {
+            background: #212529;
+            color: white;
+            white-space: nowrap;
+            padding: 14px 10px;
+            font-size: 14px;
+        }
+
+        .table td {
+            vertical-align: middle;
+            padding: 13px 10px;
+        }
+
+        .table tbody tr:hover {
+            background: #f2fbf9;
+        }
+
+        .empty-box {
+            text-align: center;
+            padding: 70px 20px;
+            color: #6c757d;
+        }
+
+        .date-text {
+            white-space: nowrap;
+        }
+
+        .stay-period {
+            min-width: 120px;
+            font-size: 14px;
+        }
+
+        .record-id {
+            display: inline-block;
+            min-width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e6f4f1;
+            color: #0f766e;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            .page-header {
+                padding: 20px;
+            }
+
+            .summary-bar {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<%
+    const attendanceRecords =
+        typeof records !== "undefined" && Array.isArray(records)
+            ? records
+            : [];
+
+    const totalRecords = attendanceRecords.length;
+
+    const totalBreakfast = attendanceRecords.filter(record =>
+        Number(record.breakfast) === 1
+    ).length;
+
+    const totalLunch = attendanceRecords.filter(record =>
+        Number(record.lunch) === 1
+    ).length;
+
+    const totalDinner = attendanceRecords.filter(record =>
+        Number(record.dinner) === 1
+    ).length;
+%>
+
+<div class="card main-card">
+
+    <div class="page-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+        <div>
+            <h2 class="mb-1">
+                <i class="fa-solid fa-utensils me-2"></i>
+                Mess Attendance
+            </h2>
+
+            <p class="mb-0">
+                View which student submitted breakfast, lunch, and dinner attendance.
+            </p>
+        </div>
+
+        <a href="/admin/dashboard" class="btn btn-warning">
+            <i class="fa-solid fa-arrow-left me-1"></i>
+            Back to Dashboard
+        </a>
+
+    </div>
+
+    <div class="summary-bar">
+
+        <div class="row g-3">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="summary-box">
+                    <div class="text-muted">Attendance Records</div>
+                    <div class="summary-number">
+                        <%= totalRecords %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="summary-box">
+                    <div class="text-muted">Breakfast Eaten</div>
+                    <div class="summary-number">
+                        <%= totalBreakfast %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="summary-box">
+                    <div class="text-muted">Lunch Eaten</div>
+                    <div class="summary-number">
+                        <%= totalLunch %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="summary-box">
+                    <div class="text-muted">Dinner Eaten</div>
+                    <div class="summary-number">
+                        <%= totalDinner %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card-body p-0">
+
+        <% if (attendanceRecords.length > 0) { %>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover mb-0">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Attendance Date</th>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                            <th>Stay Period</th>
+                            <th>Submitted At</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <% attendanceRecords.forEach((record, index) => { %>
+
+                            <tr>
+
+                                <td>
+                                    <span class="record-id">
+                                        <%= index + 1 %>
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <div class="student-name">
+                                        <i class="fa-solid fa-user me-1"></i>
+
+                                        <%= 
+                                            record.student_name ||
+                                            record.name ||
+                                            record.full_name ||
+                                            "Unknown Student"
+                                        %>
+                                    </div>
+
+                                    <div class="student-details">
+                                        Student ID:
+                                        <%= 
+                                            record.guest_id ||
+                                            record.guest_student_id ||
+                                            record.mess_id ||
+                                            record.student_id ||
+                                            record.attendance_student_reference ||
+                                            "N/A"
+                                        %>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <i class="fa-solid fa-phone text-success me-1"></i>
+
+                                    <%= 
+                                        record.student_phone ||
+                                        record.phone ||
+                                        "Not available"
+                                    %>
+                                </td>
+
+                                <td>
+                                    <i class="fa-solid fa-envelope text-primary me-1"></i>
+
+                                    <%= 
+                                        record.student_email ||
+                                        record.email ||
+                                        "Not available"
+                                    %>
+                                </td>
+
+                                <td class="date-text">
+
+                                    <% if (record.attendance_date) { %>
+
+                                        <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+
+                                        <%= new Date(
+                                            record.attendance_date
+                                        ).toLocaleDateString("en-IN", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric"
+                                        }) %>
+
+                                    <% } else if (record.date) { %>
+
+                                        <i class="fa-solid fa-calendar-day text-primary me-1"></i>
+
+                                        <%= new Date(
+                                            record.date
+                                        ).toLocaleDateString("en-IN", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric"
+                                        }) %>
+
+                                    <% } else { %>
+
+                                        Not available
+
+                                    <% } %>
+
+                                </td>
+
+                                <td>
+
+                                    <% if (Number(record.breakfast) === 1) { %>
+
+                                        <span class="meal-yes">
+                                            <i class="fa-solid fa-check me-1"></i>
+                                            Eaten
+                                        </span>
+
+                                    <% } else { %>
+
+                                        <span class="meal-no">
+                                            <i class="fa-solid fa-xmark me-1"></i>
+                                            Not Eaten
+                                        </span>
+
+                                    <% } %>
+
+                                </td>
+
+                                <td>
+
+                                    <% if (Number(record.lunch) === 1) { %>
+
+                                        <span class="meal-yes">
+                                            <i class="fa-solid fa-check me-1"></i>
+                                            Eaten
+                                        </span>
+
+                                    <% } else { %>
+
+                                        <span class="meal-no">
+                                            <i class="fa-solid fa-xmark me-1"></i>
+                                            Not Eaten
+                                        </span>
+
+                                    <% } %>
+
+                                </td>
+
+                                <td>
+
+                                    <% if (Number(record.dinner) === 1) { %>
+
+                                        <span class="meal-yes">
+                                            <i class="fa-solid fa-check me-1"></i>
+                                            Eaten
+                                        </span>
+
+                                    <% } else { %>
+
+                                        <span class="meal-no">
+                                            <i class="fa-solid fa-xmark me-1"></i>
+                                            Not Eaten
+                                        </span>
+
+                                    <% } %>
+
+                                </td>
+
+                                <td class="stay-period">
+
+                                    <% if (record.from_date && record.to_date) { %>
+
+                                        <div>
+                                            <i class="fa-solid fa-calendar-check text-success me-1"></i>
+
+                                            <%= new Date(
+                                                record.from_date
+                                            ).toLocaleDateString("en-IN", {
+                                                day: "2-digit",
+                                                month: "short",
+                                                year: "numeric"
+                                            }) %>
+                                        </div>
+
+                                        <div class="text-muted my-1">
+                                            to
+                                        </div>
+
+                                        <div>
+                                            <i class="fa-solid fa-calendar-xmark text-danger me-1"></i>
+
+                                            <%= new Date(
+                                                record.to_date
+                                            ).toLocaleDateString("en-IN", {
+                                                day: "2-digit",
+                                                month: "short",
+                                                year: "numeric"
+                                            }) %>
+                                        </div>
+
+                                    <% } else if (record.from_date) { %>
+
+                                        <%= new Date(
+                                            record.from_date
+                                        ).toLocaleDateString("en-IN") %>
+
+                                        <br>
+
+                                        <small class="text-muted">
+                                            End date not available
+                                        </small>
+
+                                    <% } else { %>
+
+                                        Not available
+
+                                    <% } %>
+
+                                </td>
+
+                                <td class="date-text">
+
+                                    <% if (record.created_at) { %>
+
+                                        <i class="fa-solid fa-clock text-secondary me-1"></i>
+
+                                        <%= new Date(
+                                            record.created_at
+                                        ).toLocaleString("en-IN", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric",
+                                            hour: "2-digit",
+                                            minute: "2-digit"
+                                        }) %>
+
+                                    <% } else { %>
+
+                                        Not available
+
+                                    <% } %>
+
+                                </td>
+
+                            </tr>
+
+                        <% }) %>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        <% } else { %>
+
+            <div class="empty-box">
+
+                <i class="fa-solid fa-calendar-xmark fa-4x mb-3"></i>
+
+                <h4>No Attendance Found</h4>
+
+                <p class="mb-3">
+                    No mess student has submitted attendance yet.
+                </p>
+
+                <a href="/admin/dashboard" class="btn btn-success">
+                    <i class="fa-solid fa-house me-1"></i>
+                    Go to Dashboard
+                </a>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+</div>
+
+</body>
+</html>

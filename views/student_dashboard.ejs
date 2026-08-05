@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container" style="background:#f5f6fa;padding:40px">
+
+<div class="card p-4 mb-4">
+
+<div class="d-flex justify-content-between align-items-center">
+<h2>Student Dashboard</h2>
+
+<a href="/logout" class="btn btn-danger">
+Logout
+</a>
+</div>
+
+<hr>
+
+<p><b>Name:</b> <%= student ? student.first_name : "N/A" %></p>
+<p><b>Room:</b> <%= student ? student.room_number : "N/A" %></p>
+<p><b>Pending Fee:</b> ₹ <%= student ? student.pending_fee || 0 : 0 %></p>
+
+</div>
+
+<div class="card p-4 mb-4">
+<h4>Quick Actions</h4>
+
+<div class="row">
+<div class="col-md-6 mb-2">
+<a href="/qr-payment" class="btn btn-success w-100">Pay Rent</a>
+</div>
+
+<div class="col-md-6 mb-2">
+<a href="/student/rent-history" class="btn btn-primary w-100">Rent History</a>
+</div>
+
+<div class="col-md-6 mb-2">
+<a href="/student/complaints" class="btn btn-danger w-100">Complaint</a>
+</div>
+
+<div class="col-md-6 mb-2">
+<a href="/student/menu" class="btn btn-warning w-100">Food Menu</a>
+</div>
+</div>
+</div>
+
+
+<div class="card p-4 mb-4">
+<h4>Add Visitor</h4>
+
+<form action="/student/visitor/add" method="POST">
+<input type="text" name="visitor_name" class="form-control mb-3" placeholder="Visitor Name" required>
+<input type="text" name="phone" class="form-control mb-3" placeholder="Visitor Phone" required>
+<input type="datetime-local" name="entry_time" class="form-control mb-3" required>
+<input type="datetime-local" name="exit_time" class="form-control mb-3">
+
+<button class="btn btn-dark">Add Visitor</button>
+</form>
+</div>
+
+<div class="card p-4 mb-4">
+<h4>Pay Monthly Rent</h4>
+
+<form action="/student/pay" method="POST" enctype="multipart/form-data">
+<input name="amount" value="5500" class="form-control mb-3" placeholder="Amount">
+<input type="file" name="screenshot" class="form-control mb-3" required>
+
+<button class="btn btn-success">Upload Payment</button>
+</form>
+</div>
+
+<div class="card p-4">
+<h4>Submit Complaint</h4>
+
+<form action="/student/complaint" method="POST">
+<textarea name="complaint" class="form-control mb-3" placeholder="Enter complaint" required></textarea>
+<button type="submit" class="btn btn-danger">Submit Complaint</button>
+</form>
+</div>
+
+</body>
+</html>

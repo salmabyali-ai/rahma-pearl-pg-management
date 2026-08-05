@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rahma PG Console</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; padding: 20px; color: #1e293b; }
+        .section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .stat-card { color: white; padding: 20px; border-radius: 10px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th { background: #334155; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+        .btn-solve { background: #10b981; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+        .btn-del { background: #ef4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1>🏢 Rahma PG Management Console</h1>
+        <div>
+            <a href="/admin/report" style="padding: 10px; background: #0f172a; color: white; text-decoration: none; border-radius: 5px;">Generate Report</a>
+            <a href="/logout" style="margin-left:10px; color: red;">Logout</a>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card" style="background: #3b82f6;"><h3>Residents</h3><p><%= stats.totalStudents %></p></div>
+        <div class="stat-card" style="background: #8b5cf6;"><h3>Available Beds</h3><p><%= stats.vacantBeds %></p></div>
+        <div class="stat-card" style="background: #064e3b;"><h3>Net Profit</h3><p>₹<%= stats.netProfit %></p></div>
+    </div>
+
+    <div class="section" style="border-left: 5px solid #ef4444;">
+        <h2 style="color: #ef4444;">📩 Complaint Box (Student Issues)</h2>
+        <table>
+            <tr><th>Student Name</th><th>Description</th><th>Action</th></tr>
+            <% complaints.forEach(c => { %>
+                <tr>
+                    <td><%= c.student_name %></td>
+                    <td><%= c.description %></td>
+                    <td>
+                        <form action="/admin/complaints/solve/<%= c.id %>" method="POST">
+                            <button class="btn-solve">Mark Solved & Clear</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+        <% if(complaints.length === 0) { %><p>No pending complaints.</p><% } %>
+    </div>
+
+    <div class="section" style="border-left: 5px solid #3b82f6;">
+        <h2 style="color: #3b82f6;">📝 Student Letter Box</h2>
+        <table>
+            <tr><th>Student Name</th><th>Letter Content</th><th>Action</th></tr>
+            <% letters.forEach(l => { %>
+                <tr>
+                    <td><%= l.student_name %></td>
+                    <td><%= l.description %></td>
+                    <td>
+                        <form action="/admin/letters/delete/<%= l.id %>" method="POST">
+                            <button class="btn-del">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+        <% if(letters.length === 0) { %><p>Letter box is empty.</p><% } %>
+    </div>
+
+    <div class="section">
+        <h2>🎓 Residents List</h2>
+        <table>
+            <tr><th>Name</th><th>Room</th><th>Payment</th><th>Action</th></tr>
+            <% students.forEach(s => { %>
+                <tr>
+                    <td><%= s.first_name %> <%= s.last_name %></td>
+                    <td><%= s.room_number %></td>
+                    <td><b><%= s.status %></b></td>
+                    <td>
+                        <form action="/admin/students/delete/<%= s.id %>" method="POST">
+                            <button class="btn-del">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+
+</body>
+</html>

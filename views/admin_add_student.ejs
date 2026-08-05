@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background:#f4f6f9;padding:40px;">
+
+<div class="container">
+
+<div class="card shadow p-4">
+
+<h2 class="mb-4">Add New Student</h2>
+
+<form action="/admin/students/add" method="POST">
+
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <label>First Name</label>
+            <input
+                type="text"
+                name="first_name"
+                class="form-control"
+                required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Last Name</label>
+            <input
+                type="text"
+                name="last_name"
+                class="form-control"
+                required>
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input
+            type="email"
+            name="email"
+            class="form-control"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input
+            type="password"
+            name="password"
+            class="form-control"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Phone Number</label>
+        <input
+            type="text"
+            name="phone"
+            class="form-control"
+            required>
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <textarea
+            name="address"
+            class="form-control"
+            rows="3"
+            required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Assign Room</label>
+
+        <select
+            name="room_number"
+            class="form-select"
+            required>
+
+            <option value="">Select Room</option>
+
+            <% if (rooms && rooms.length > 0) { %>
+
+                <% rooms.forEach(room => { %>
+
+                    <option value="<%= room.room_number %>">
+                        Room <%= room.room_number %>
+                    </option>
+
+                <% }) %>
+
+            <% } %>
+
+        </select>
+
+    </div>
+
+    <button class="btn btn-primary">
+        Add Student
+    </button>
+
+    <a href="/admin/students" class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

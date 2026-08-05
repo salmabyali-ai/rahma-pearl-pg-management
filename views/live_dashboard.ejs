@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Live PG Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+background:#f4f6fb;
+font-family:Arial;
+}
+
+.card{
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+<h2 class="mb-4">Rahma Pearl PG Live Dashboard</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card p-3 text-center">
+<h5>Total Students</h5>
+<h2><%= students %></h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 text-center">
+<h5>Total Rooms</h5>
+<h2><%= rooms %></h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 text-center">
+<h5>Total Income</h5>
+<h2>₹<%= income.toLocaleString() %></h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3 text-center">
+<h5>Total Expense</h5>
+<h2>₹<%= expense %></h2>
+</div>
+</div>
+
+</div>
+
+<br>
+
+<div class="card p-4">
+
+<canvas id="financeChart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+
+const income = <%= income %>;
+const expense = <%= expense %>;
+
+const ctx = document.getElementById('financeChart');
+
+new Chart(ctx,{
+
+type:'bar',
+
+data:{
+
+labels:['Income','Expense'],
+
+datasets:[{
+
+label:'PG Finance',
+
+data:[income,expense]
+
+}]
+
+},
+
+options:{
+animation:{
+duration:2000
+}
+}
+
+})
+datasets:[{
+    label:'PG Finance',
+    data:[income,expense],
+    backgroundColor:["green","red"]
+}]
+// ✅ AUTO REFRESH EVERY 10 SECONDS
+setInterval(() => {
+    location.reload();
+}, 10000);
+
+</script>
+
+</body>
+
+</html>

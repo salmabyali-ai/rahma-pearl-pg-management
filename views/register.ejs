@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Registration | Rahma Pearl Girls PG</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --primary-dark: #4f5fc7;
+            --light-purple: #f2f0ff;
+            --text-dark: #2d3436;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text-dark);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(72, 84, 170, 0.9),
+                    rgba(105, 62, 150, 0.92)
+                ),
+                url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267d?auto=format&fit=crop&w=1800&q=85")
+                center/cover fixed;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.13);
+        }
+
+        .navbar-brand {
+            color: var(--primary) !important;
+            font-weight: 800;
+        }
+
+        .navbar-link {
+            padding: 8px 20px;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .navbar-link:hover {
+            color: white;
+            background: var(--primary);
+        }
+
+        .page-wrapper {
+            padding: 55px 15px;
+        }
+
+        .registration-card {
+            max-width: 1150px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.28);
+        }
+
+        .feature-panel {
+            height: 100%;
+            padding: 42px 35px;
+            color: white;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(102, 126, 234, 0.98),
+                    rgba(118, 75, 162, 0.98)
+                );
+        }
+
+        .feature-panel h1 {
+            margin-bottom: 13px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .feature-panel .subtitle {
+            margin-bottom: 26px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            margin-bottom: 13px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.11);
+            transition: 0.25s;
+        }
+
+        .feature-item:hover {
+            transform: translateX(6px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: var(--primary);
+            background: white;
+            font-size: 1.05rem;
+        }
+
+        .feature-item h6 {
+            margin: 0 0 4px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            margin: 0;
+            font-size: 0.87rem;
+            opacity: 0.88;
+        }
+
+        .process-box {
+            margin-top: 25px;
+            padding: 17px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.13);
+        }
+
+        .process-box p {
+            margin-bottom: 7px;
+            font-size: 0.9rem;
+        }
+
+        .form-panel {
+            padding: 40px;
+        }
+
+        .form-heading {
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .form-heading h2 {
+            margin-bottom: 7px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .form-heading p {
+            margin: 0;
+            color: #6c757d;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 25px 0 15px;
+            color: var(--primary);
+            font-size: 0.97rem;
+            font-weight: 800;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ddd9f4;
+        }
+
+        .form-label {
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 48px;
+            padding: 10px 13px;
+            border: 1px solid #dedbe8;
+            border-radius: 11px;
+            background: #fdfcff;
+        }
+
+        textarea.form-control {
+            min-height: 90px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+        }
+
+        .role-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+        }
+
+        .role-radio {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .role-card {
+            width: 100%;
+            padding: 18px 13px;
+            border: 2px solid #e1deef;
+            border-radius: 15px;
+            text-align: center;
+            background: white;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .role-card:hover {
+            border-color: #b9b0f0;
+            transform: translateY(-2px);
+        }
+
+        .role-card i {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 1.7rem;
+        }
+
+        .role-card strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .role-card small {
+            color: #777;
+        }
+
+        .role-radio:checked + .role-card {
+            border-color: var(--primary);
+            background: var(--light-purple);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.17);
+        }
+
+        .role-information {
+            display: none;
+            margin-top: 13px;
+            padding: 13px 15px;
+            border-radius: 12px;
+            font-size: 0.89rem;
+        }
+
+        .student-information {
+            color: #30458a;
+            border: 1px solid #cbd4ff;
+            background: #edf1ff;
+        }
+
+        .mess-information {
+            color: #66521d;
+            border: 1px solid #efd98b;
+            background: #fff8dc;
+        }
+
+        .dynamic-fields {
+            display: none;
+            margin-top: 17px;
+            padding: 17px;
+            border: 1px solid #dedbe8;
+            border-radius: 15px;
+            background: #faf9ff;
+        }
+
+        .dynamic-heading {
+            margin-bottom: 14px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .meal-price-card {
+            padding: 12px;
+            border: 1px dashed #cfc9ec;
+            border-radius: 12px;
+            color: #5d538f;
+            background: white;
+            font-size: 0.88rem;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 47px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            z-index: 5;
+            padding: 5px;
+            border: none;
+            color: #666;
+            background: transparent;
+            transform: translateY(-50%);
+        }
+
+        .strength-container {
+            height: 5px;
+            margin-top: 8px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #e9ecef;
+        }
+
+        .strength-bar {
+            width: 0;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .upload-box {
+            padding: 16px;
+            border: 1px dashed #aaa2dd;
+            border-radius: 13px;
+            background: #faf9ff;
+        }
+
+        .upload-box small {
+            display: block;
+            margin-top: 6px;
+            color: #6c757d;
+        }
+
+        .terms-preview {
+            padding: 16px;
+            border: 1px solid #dedbe8;
+            border-radius: 14px;
+            background: #faf9ff;
+        }
+
+        .terms-preview ul {
+            margin-bottom: 11px;
+            padding-left: 20px;
+        }
+
+        .terms-preview li {
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.88rem;
+        }
+
+        .terms-link {
+            padding: 0;
+            border: none;
+            color: var(--primary);
+            background: transparent;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .register-btn {
+            min-height: 53px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: 800;
+            background: linear-gradient(
+                to right,
+                var(--primary),
+                var(--secondary)
+            );
+            box-shadow: 0 11px 27px rgba(102, 126, 234, 0.3);
+            transition: 0.25s;
+        }
+
+        .register-btn:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(102, 126, 234, 0.4);
+        }
+
+        .register-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.75;
+            transform: none;
+        }
+
+        .login-link {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            border: none;
+            border-radius: 13px;
+        }
+
+        .modal-content {
+            overflow: hidden;
+            border: none;
+            border-radius: 18px;
+        }
+
+        .modal-header {
+            color: white;
+            background: linear-gradient(
+                to right,
+                var(--primary),
+                var(--secondary)
+            );
+        }
+
+        .terms-list li {
+            margin-bottom: 11px;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 991px) {
+            .feature-panel,
+            .form-panel {
+                padding: 32px 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-wrapper {
+                padding: 25px 10px;
+            }
+
+            .registration-card {
+                border-radius: 18px;
+            }
+
+            .form-panel {
+                padding: 28px 18px;
+            }
+
+            .role-options {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-panel h1 {
+                font-size: 1.65rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a href="/" class="navbar-brand">
+            <i class="fa-solid fa-house-chimney-user me-2"></i>
+            Rahma Pearl Girls PG
+        </a>
+
+        <a href="/login" class="navbar-link">
+            <i class="fa-solid fa-right-to-bracket me-1"></i>
+            Login
+        </a>
+
+    </div>
+</nav>
+
+<main class="page-wrapper">
+
+    <div class="registration-card">
+
+        <div class="row g-0">
+
+            <!-- Left information panel -->
+            <div class="col-lg-5">
+
+                <section class="feature-panel">
+
+                    <span class="badge bg-light text-primary rounded-pill px-3 py-2 mb-3">
+                        <i class="fa-solid fa-star me-1"></i>
+                        Safe, Comfortable and Convenient
+                    </span>
+
+                    <h1>Welcome to Rahma Pearl Girls PG</h1>
+
+                    <p class="subtitle">
+                        Apply for PG accommodation or mess facilities using one
+                        simple registration form.
+                    </p>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h6>Safe Environment</h6>
+                            <p>
+                                Secure and student-friendly accommodation with
+                                responsible management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+
+                        <div>
+                            <h6>Comfortable Rooms</h6>
+                            <p>
+                                Clean rooms with practical sharing options and
+                                essential facilities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+
+                        <div>
+                            <h6>Healthy Meals</h6>
+                            <p>
+                                Breakfast, lunch and dinner according to the
+                                selected mess plan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+
+                        <div>
+                            <h6>Essential Facilities</h6>
+                            <p>
+                                Wi-Fi, water, electricity and properly maintained
+                                common areas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <div>
+                            <h6>Online Dashboard</h6>
+                            <p>
+                                View attendance, payments, complaints and meal
+                                details online.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-box">
+
+                        <h6 class="fw-bold mb-3">
+                            <i class="fa-solid fa-circle-info me-2"></i>
+                            Registration Process
+                        </h6>
+
+                        <p>
+                            <i class="fa-solid fa-check me-2"></i>
+                            Complete the registration form
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-check me-2"></i>
+                            Submit accurate information
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-check me-2"></i>
+                            Wait for administrator approval
+                        </p>
+
+                        <p class="mb-0">
+                            <i class="fa-solid fa-check me-2"></i>
+                            Login after your account is approved
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- Registration form -->
+            <div class="col-lg-7">
+
+                <section class="form-panel">
+
+                    <div class="form-heading">
+
+                        <h2>
+                            <i class="fa-solid fa-user-plus me-2"></i>
+                            Create Account
+                        </h2>
+
+                        <p>
+                            Select PG Student or Mess Student and complete your
+                            details.
+                        </p>
+
+                    </div>
+
+                    <% if (typeof error !== "undefined" && error) { %>
+
+                        <div
+                            class="alert alert-danger alert-dismissible fade show"
+                            role="alert"
+                        >
+                            <i class="fa-solid fa-circle-exclamation me-2"></i>
+
+                            <strong>Registration failed:</strong>
+                            <%= error %>
+
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                            ></button>
+                        </div>
+
+                    <% } %>
+
+                    <% if (typeof success !== "undefined" && success) { %>
+
+                        <div
+                            class="alert alert-success alert-dismissible fade show"
+                            role="alert"
+                        >
+                            <i class="fa-solid fa-circle-check me-2"></i>
+
+                            <%= success %>
+
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="alert"
+                            ></button>
+                        </div>
+
+                    <% } %>
+
+                    <form
+                        action="/register"
+                        method="POST"
+                        enctype="multipart/form-data"
+                        id="registrationForm"
+                    >
+
+                        <!-- Role selection -->
+                        <div class="section-title">
+                            <i class="fa-solid fa-user-tag"></i>
+                            Select Registration Type
+                        </div>
+
+                        <div class="role-options">
+
+                            <div>
+
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    id="studentRole"
+                                    value="Student"
+                                    class="role-radio"
+                                    <%= typeof formData !== "undefined" &&
+                                        formData.role &&
+                                        formData.role.toLowerCase() === "student"
+                                        ? "checked"
+                                        : "" %>
+                                    required
+                                >
+
+                                <label for="studentRole" class="role-card">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                    <strong>PG Student</strong>
+                                    <small>Room and food facilities</small>
+                                </label>
+
+                            </div>
+
+                            <div>
+
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    id="messRole"
+                                    value="Mess"
+                                    class="role-radio"
+                                    <%= typeof formData !== "undefined" &&
+                                        formData.role &&
+                                        formData.role.toLowerCase() === "mess"
+                                        ? "checked"
+                                        : "" %>
+                                    required
+                                >
+
+                                <label for="messRole" class="role-card">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                    <strong>Mess Student</strong>
+                                    <small>Food facility only</small>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="role-information student-information"
+                            id="studentInformation"
+                        >
+                            <i class="fa-solid fa-circle-info me-1"></i>
+
+                            PG Student registration includes accommodation and
+                            meal facilities after administrator approval.
+                        </div>
+
+                        <div
+                            class="role-information mess-information"
+                            id="messInformation"
+                        >
+                            <i class="fa-solid fa-circle-info me-1"></i>
+
+                            Mess Student registration provides food services
+                            without room accommodation.
+                        </div>
+
+                        <!-- Personal information -->
+                        <div class="section-title">
+                            <i class="fa-solid fa-address-card"></i>
+                            Personal Information
+                        </div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    First Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="first_name"
+                                    class="form-control"
+                                    placeholder="Enter first name"
+                                    value="<%= typeof formData !== 'undefined'
+                                        ? formData.first_name || ''
+                                        : '' %>"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Last Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    class="form-control"
+                                    placeholder="Enter last name"
+                                    value="<%= typeof formData !== 'undefined'
+                                        ? formData.last_name || ''
+                                        : '' %>"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Email Address
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="example@gmail.com"
+                                    value="<%= typeof formData !== 'undefined'
+                                        ? formData.email || ''
+                                        : '' %>"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Phone Number
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="10-digit phone number"
+                                    pattern="[0-9]{10}"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    value="<%= typeof formData !== 'undefined'
+                                        ? formData.phone || ''
+                                        : '' %>"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+                                    Full Address
+                                    <span class="required">*</span>
+                                </label>
+
+                                <textarea
+                                    name="address"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Enter house number, area, city, state and PIN code"
+                                    required
+                                ><%= typeof formData !== "undefined"
+                                    ? formData.address || ""
+                                    : "" %></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Mess-only fields -->
+                        <div id="messFields" class="dynamic-fields">
+
+                            <div class="dynamic-heading">
+                                <i class="fa-solid fa-utensils me-2"></i>
+                                Mess Plan Details
+                            </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-12">
+
+                                    <label class="form-label">
+                                        Meal Type
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <select
+                                        name="meal_type"
+                                        id="mealType"
+                                        class="form-select"
+                                    >
+                                             <option value="Full Day"
+    <%= typeof formData !== "undefined" &&
+        formData.meal_type === "Full Day"
+        ? "selected"
+        : "" %>>
+    Full Day — ₹3,000
+</option>
+
+<option value="Breakfast"
+    <%= typeof formData !== "undefined" &&
+        formData.meal_type === "Breakfast"
+        ? "selected"
+        : "" %>>
+    Breakfast — ₹1,000
+</option>
+
+<option value="Lunch"
+    <%= typeof formData !== "undefined" &&
+        formData.meal_type === "Lunch"
+        ? "selected"
+        : "" %>>
+    Lunch — ₹1,200
+</option>
+
+<option value="Dinner"
+    <%= typeof formData !== "undefined" &&
+        formData.meal_type === "Dinner"
+        ? "selected"
+        : "" %>>
+    Dinner — ₹1,200
+</option>
+
+<option value="Lunch and Dinner"
+    <%= typeof formData !== "undefined" &&
+        formData.meal_type === "Lunch and Dinner"
+        ? "selected"
+        : "" %>>
+    Lunch & Dinner — ₹2,200
+</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        From Date
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        name="from_date"
+                                        id="fromDate"
+                                        class="form-control"
+                                        value="<%= typeof formData !== 'undefined'
+                                            ? formData.from_date || ''
+                                            : '' %>"
+                                    >
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <label class="form-label">
+                                        To Date
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        name="to_date"
+                                        id="toDate"
+                                        class="form-control"
+                                        value="<%= typeof formData !== 'undefined'
+                                            ? formData.to_date || ''
+                                            : '' %>"
+                                    >
+
+                                </div>
+
+                                <div class="col-12">
+
+                                    <div class="meal-price-card">
+                                        <i class="fa-solid fa-circle-info me-1"></i>
+
+                                        Selected meal package:
+                                        <strong id="selectedMealPrice">
+                                           Full Day — ₹3,000
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Password -->
+                        <div class="section-title">
+                            <i class="fa-solid fa-lock"></i>
+                            Account Security
+                        </div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Password
+                                    <span class="required">*</span>
+                                </label>
+
+                                <div class="password-wrapper">
+
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        class="form-control"
+                                        placeholder="Minimum 6 characters"
+                                        minlength="6"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        onclick="togglePassword('password', this)"
+                                    >
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                                <div class="strength-container">
+                                    <div
+                                        class="strength-bar"
+                                        id="strengthBar"
+                                    ></div>
+                                </div>
+
+                                <small id="strengthText" class="text-muted">
+                                    Use letters, numbers and symbols.
+                                </small>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Confirm Password
+                                    <span class="required">*</span>
+                                </label>
+
+                                <div class="password-wrapper">
+
+                                    <input
+                                        type="password"
+                                        name="confirm_password"
+                                        id="confirmPassword"
+                                        class="form-control"
+                                        placeholder="Confirm your password"
+                                        minlength="6"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        onclick="togglePassword('confirmPassword', this)"
+                                    >
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                                <small id="passwordMessage"></small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="section-title">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            Terms and Conditions
+                        </div>
+
+                        <div class="terms-preview mb-3">
+
+                            <ul>
+                                <li>
+                                    Provide correct and genuine information.
+                                </li>
+
+                                <li>
+                                    Registration requires administrator approval.
+                                </li>
+
+                                <li>
+                                    Students must follow PG and mess timings.
+                                </li>
+
+                                <li>
+                                    Payments must be completed before the due date.
+                                </li>
+                            </ul>
+
+                            <button
+                                type="button"
+                                class="terms-link"
+                                data-bs-toggle="modal"
+                                data-bs-target="#termsModal"
+                            >
+                                Read all terms and conditions
+                            </button>
+
+                        </div>
+
+                        <div class="form-check mb-4">
+
+                            <input
+                                type="checkbox"
+                                name="accept_terms"
+                                id="acceptTerms"
+                                value="yes"
+                                class="form-check-input"
+                                required
+                            >
+
+                            <label
+                                for="acceptTerms"
+                                class="form-check-label"
+                            >
+                                I have read and agree to the
+                                <strong>
+                                    terms, conditions and PG rules
+                                </strong>.
+                            </label>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn register-btn w-100"
+                            id="submitButton"
+                        >
+                            <i class="fa-solid fa-paper-plane me-2"></i>
+                            Submit Registration
+                        </button>
+
+                    </form>
+
+                    <div class="text-center mt-4">
+
+                        <span class="text-muted">
+                            Already registered?
+                        </span>
+
+                        <a href="/login" class="login-link ms-1">
+                            <i class="fa-solid fa-right-to-bracket me-1"></i>
+                            Login here
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Terms modal -->
+<div
+    class="modal fade"
+    id="termsModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    <i class="fa-solid fa-file-contract me-2"></i>
+                    Rahma Pearl Girls PG Terms and Conditions
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div class="modal-body p-4">
+
+                <ol class="terms-list">
+
+                    <li>
+                        All registration information, contact information and
+                        uploaded documents must be accurate and genuine.
+                    </li>
+
+                    <li>
+                        Submitting the registration form does not guarantee
+                        admission. Registration is confirmed only after
+                        administrator approval.
+                    </li>
+
+                    <li>
+                        PG students must pay rent, deposit and other applicable
+                        charges before the specified due date.
+                    </li>
+
+                    <li>
+                        Mess students must pay food charges according to their
+                        selected meal plan and registration duration.
+                    </li>
+
+                    <li>
+                        Residents must follow PG entry and exit timings,
+                        attendance rules and safety instructions.
+                    </li>
+
+                    <li>
+                        Breakfast, lunch and dinner are provided only according
+                        to the announced mess schedule.
+                    </li>
+
+                    <li>
+                        Students must maintain cleanliness in rooms, dining
+                        areas and shared spaces.
+                    </li>
+
+                    <li>
+                        Damage to PG property may be charged to the responsible
+                        resident.
+                    </li>
+
+                    <li>
+                        Fighting, harassment, loud disturbances and behaviour
+                        affecting other residents are prohibited.
+                    </li>
+
+                    <li>
+                        Smoking, alcohol, illegal substances and prohibited
+                        activities are strictly forbidden inside the PG.
+                    </li>
+
+                    <li>
+                        Visitors are permitted only according to approved
+                        timings and management rules.
+                    </li>
+
+                    <li>
+                        Students must inform management before taking extended
+                        leave or permanently leaving the PG.
+                    </li>
+
+                    <li>
+                        Refunds, deposits and notice periods will be managed
+                        according to the PG admission agreement.
+                    </li>
+
+                    <li>
+                        Management may suspend or cancel registration when false
+                        information is provided or rules are repeatedly violated.
+                    </li>
+
+                    <li>
+                        Management may update rules when necessary for safety,
+                        cleanliness and effective administration.
+                    </li>
+
+                </ol>
+
+                <div class="alert alert-warning mb-0">
+
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i>
+
+                    Please read all rules carefully before accepting the terms.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="acceptTermsFromModal()"
+                    data-bs-dismiss="modal"
+                >
+                    <i class="fa-solid fa-check me-1"></i>
+                    Accept Terms
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const registrationForm =
+        document.getElementById("registrationForm");
+
+    const studentRole =
+        document.getElementById("studentRole");
+
+    const messRole =
+        document.getElementById("messRole");
+
+    const studentInformation =
+        document.getElementById("studentInformation");
+
+    const messInformation =
+        document.getElementById("messInformation");
+
+    const studentFields =
+        document.getElementById("studentFields");
+
+    const messFields =
+        document.getElementById("messFields");
+
+    const mealType =
+        document.getElementById("mealType");
+
+    const fromDate =
+        document.getElementById("fromDate");
+
+    const toDate =
+        document.getElementById("toDate");
+
+    const paymentProof =
+        document.getElementById("paymentProof");
+
+    const selectedFileName =
+        document.getElementById("selectedFileName");
+
+    const password =
+        document.getElementById("password");
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+    const passwordMessage =
+        document.getElementById("passwordMessage");
+
+    const strengthBar =
+        document.getElementById("strengthBar");
+
+    const strengthText =
+        document.getElementById("strengthText");
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+    function togglePassword(inputId, button) {
+        const input = document.getElementById(inputId);
+        const icon = button.querySelector("i");
+
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.replace(
+                "fa-eye",
+                "fa-eye-slash"
+            );
+        } else {
+            input.type = "password";
+            icon.classList.replace(
+                "fa-eye-slash",
+                "fa-eye"
+            );
+        }
+    }
+
+    function updateRoleFields() {
+        const isStudent = studentRole.checked;
+        const isMess = messRole.checked;
+
+        studentInformation.style.display =
+            isStudent ? "block" : "none";
+
+        messInformation.style.display =
+            isMess ? "block" : "none";
+
+        studentFields.style.display =
+            isStudent ? "block" : "none";
+
+        messFields.style.display =
+            isMess ? "block" : "none";
+
+        mealType.required = isMess;
+        fromDate.required = isMess;
+        toDate.required = isMess;
+
+        if (!isMess) {
+            mealType.required = false;
+            fromDate.required = false;
+            toDate.required = false;
+        }
+    }
+
+    function updateMealPrice() {
+         const priceMap = {
+    "Full Day": "Full Day — ₹3,000",
+    "Breakfast": "Breakfast — ₹1,000",
+    "Lunch": "Lunch — ₹1,200",
+    "Dinner": "Dinner — ₹1,200",
+    "Lunch and Dinner":
+        "Lunch & Dinner — ₹2,200"
+    };
+
+    document.getElementById(
+    "selectedMealPrice"
+     ).textContent =
+      priceMap[mealType.value] ||
+      "Full Day — ₹3,000";
+    }
+
+    function validatePasswords() {
+        if (!confirmPassword.value) {
+            passwordMessage.textContent = "";
+            return false;
+        }
+
+        if (password.value === confirmPassword.value) {
+            passwordMessage.textContent =
+                "Passwords match";
+
+            passwordMessage.className =
+                "text-success";
+
+            return true;
+        }
+
+        passwordMessage.textContent =
+            "Passwords do not match";
+
+        passwordMessage.className =
+            "text-danger";
+
+        return false;
+    }
+
+    function updatePasswordStrength() {
+        const value = password.value;
+        let score = 0;
+
+        if (value.length >= 6) score++;
+        if (value.length >= 10) score++;
+        if (/[A-Z]/.test(value)) score++;
+        if (/[0-9]/.test(value)) score++;
+        if (/[^A-Za-z0-9]/.test(value)) score++;
+
+        const widths = [
+            "0%",
+            "20%",
+            "40%",
+            "60%",
+            "80%",
+            "100%"
+        ];
+
+        const colors = [
+            "#dc3545",
+            "#dc3545",
+            "#fd7e14",
+            "#ffc107",
+            "#20c997",
+            "#198754"
+        ];
+
+        strengthBar.style.width = widths[score];
+        strengthBar.style.backgroundColor =
+            colors[score];
+
+        if (!value) {
+            strengthText.textContent =
+                "Use letters, numbers and symbols.";
+
+            strengthText.className =
+                "text-muted";
+        } else if (score <= 2) {
+            strengthText.textContent =
+                "Weak password";
+
+            strengthText.className =
+                "text-danger";
+        } else if (score <= 3) {
+            strengthText.textContent =
+                "Medium password";
+
+            strengthText.className =
+                "text-warning";
+        } else {
+            strengthText.textContent =
+                "Strong password";
+
+            strengthText.className =
+                "text-success";
+        }
+
+        validatePasswords();
+    }
+
+    function acceptTermsFromModal() {
+        document.getElementById(
+            "acceptTerms"
+        ).checked = true;
+    }
+
+    studentRole.addEventListener(
+        "change",
+        updateRoleFields
+    );
+
+    messRole.addEventListener(
+        "change",
+        updateRoleFields
+    );
+
+    mealType.addEventListener(
+        "change",
+        updateMealPrice
+    );
+
+    password.addEventListener(
+        "input",
+        updatePasswordStrength
+    );
+
+    confirmPassword.addEventListener(
+        "input",
+        validatePasswords
+    );
+
+    paymentProof.addEventListener(
+        "change",
+        function () {
+            if (paymentProof.files.length > 0) {
+                selectedFileName.textContent =
+                    "Selected: " +
+                    paymentProof.files[0].name;
+            } else {
+                selectedFileName.textContent = "";
+            }
+        }
+    );
+
+    fromDate.addEventListener(
+        "change",
+        function () {
+            toDate.min = fromDate.value;
+
+            if (
+                toDate.value &&
+                toDate.value < fromDate.value
+            ) {
+                toDate.value = "";
+            }
+        }
+    );
+
+    registrationForm.addEventListener(
+        "submit",
+        function (event) {
+            if (
+                !studentRole.checked &&
+                !messRole.checked
+            ) {
+                event.preventDefault();
+
+                alert(
+                    "Please select PG Student or Mess Student."
+                );
+
+                return;
+            }
+
+            if (
+                password.value !==
+                confirmPassword.value
+            ) {
+                event.preventDefault();
+
+                passwordMessage.textContent =
+                    "Password and confirm password must be the same.";
+
+                passwordMessage.className =
+                    "text-danger";
+
+                confirmPassword.focus();
+
+                return;
+            }
+
+            if (messRole.checked) {
+                if (
+                    !mealType.value ||
+                    !fromDate.value ||
+                    !toDate.value
+                ) {
+                    event.preventDefault();
+
+                    alert(
+                        "Please complete all Mess plan details."
+                    );
+
+                    return;
+                }
+
+                if (toDate.value < fromDate.value) {
+                    event.preventDefault();
+
+                    alert(
+                        "To Date cannot be earlier than From Date."
+                    );
+
+                    return;
+                }
+            }
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML = `
+                <span
+                    class="spinner-border spinner-border-sm me-2"
+                    role="status"
+                ></span>
+                Submitting Registration...
+            `;
+        }
+    );
+
+    updateRoleFields();
+    updateMealPrice();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Login - Rahma Pearl PG</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+height:100vh;
+background:linear-gradient(135deg,#6c5ce7,#a29bfe);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:Segoe UI;
+}
+
+.login-card{
+
+width:420px;
+padding:35px;
+
+background:rgba(255,255,255,0.18);
+
+border-radius:20px;
+
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+color:white;
+
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+text-align:center;
+margin-bottom:5px;
+}
+
+.pg-title{
+text-align:center;
+font-size:13px;
+margin-bottom:20px;
+opacity:0.9;
+}
+
+.owner-box{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.owner-img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid white;
+}
+
+.form-control{
+background:rgba(255,255,255,0.25);
+border:none;
+color:white;
+}
+
+.form-control::placeholder{
+color:#eee;
+}
+
+.form-label{
+font-size:13px;
+}
+
+.btn-login{
+background:#00cec9;
+border:none;
+font-weight:600;
+}
+
+.btn-login:hover{
+background:#00b5ad;
+}
+
+.extra-buttons{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+}
+
+.btn-small{
+font-size:13px;
+padding:6px 12px;
+}
+
+.links{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+}
+
+.links a{
+color:white;
+text-decoration:none;
+}
+
+.links a:hover{
+text-decoration:underline;
+}
+.form-control:focus{
+    background:rgba(255,255,255,0.35);
+    color:white;
+    box-shadow:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<div class="logo">
+💎 Rahma Pearl PG
+</div>
+
+<div class="pg-title">
+Safe • Peaceful • Premium Living
+</div>
+
+<!-- Owners Photos -->
+
+<div class="owner-box">
+
+<img src="/images/salma.jpg.jpeg" class="owner-img" alt="Salma">
+<img src="/images/suleman.jpg.jpeg" class="owner-img" alt="Suleman">
+ </div>
+
+<h5 class="text-center mb-3">
+<i class="fa-solid fa-user-graduate"></i> Student Login
+</h5>
+
+<form action="/login/student" method="POST">
+
+<div class="mb-3">
+<label class="form-label">Email Address</label>
+<input type="email" name="email" class="form-control" placeholder="Enter registered email" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Password</label>
+<input type="password" name="password" class="form-control" placeholder="••••••••" required>
+</div>
+
+<button type="submit" class="btn btn-login w-100 py-2 mb-2">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+Login Dashboard
+
+</button>
+
+</form>
+
+<!-- Extra Options -->
+
+<div class="extra-buttons">
+
+<a href="/qr-payment" class="btn btn-light btn-small">
+
+<i class="fa-solid fa-qrcode"></i>
+QR Pay
+
+</a>
+
+<a href="/emi" class="btn btn-warning btn-small">
+
+<i class="fa-solid fa-credit-card"></i>
+EMI
+
+</a>
+
+</div>
+
+<div class="links">
+
+<p>
+New resident?
+<a href="/register">Register here</a>
+</p>
+
+<p>
+<a href="/login">
+<i class="fa-solid fa-arrow-left"></i>
+Change Login Type
+</a>
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Features - Rahma Pearl</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<style>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+</style>
+<body>
+    <nav class="menu-bar">
+        <a href="/">Home</a>   
+    </nav>
+
+    <div class="container">
+        <h2 style="text-align: center;">Our Premium Features</h2>
+        <div class="grid">
+            <div class="card feature-item">
+                <h3>🛡️ Safety & Security</h3>
+                <p>24/7 CCTV surveillance, Secure Entry, and Night Safety Monitoring.</p>
+            </div>
+            <div class="card feature-item">
+                <h3>🍽️ Food & Water</h3>
+                <p>Nutritious home-style meals and 24/7 RO Purified drinking water.</p>
+            </div>
+            <div class="card feature-item">
+                <h3>✨ Modern Amenities</h3>
+                <p>High-speed WiFi, Laundry facilities, and 24/7 Water/Power backup.</p>
+            </div>
+            <div class="card feature-item">
+                <h3>📖 Study Environment</h3>
+                <p>Silent study atmosphere with individual tables and proper ventilation.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

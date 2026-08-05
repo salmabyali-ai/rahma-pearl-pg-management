@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rooms</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-4">
+
+<h2>Room Management</h2>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Room</th>
+<th>Capacity</th>
+<th>Occupied</th>
+<th>Price</th>
+</tr>
+
+<% rooms.forEach(r => { %>
+
+<tr>
+<td><%= r.room_number %></td>
+<td><%= r.capacity %></td>
+<td><%= r.occupied %></td>
+<td>₹ <%= r.price %></td>
+</tr>
+
+<td>
+  <% if(r.occupied >= r.capacity) { %>
+    <span class="badge bg-danger">Full</span>
+  <% } else { %>
+    <span class="badge bg-success">Available</span>
+  <% } %>
+</td>
+
+<td>
+  <a href="/admin/rooms/edit/<%= r.room_number %>" class="btn btn-sm btn-primary">Edit</a>
+  <a href="/admin/rooms/delete/<%= r.room_number %>" class="btn btn-sm btn-danger">Delete</a>
+</td>
+
+<% }) %>
+
+</table>
+
+</body>
+</html>

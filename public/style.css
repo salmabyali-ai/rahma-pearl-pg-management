@@ -1,0 +1,96 @@
+/* Rahma Pearl Global Styles */
+
+:root {
+    --primary-purple: #6c5ce7;
+    --secondary-purple: #a29bfe;
+    --dark-bg: #2d3436;
+    --light-bg: #f8f9fa;
+    --success-green: #2ecc71;
+    --danger-red: #ff7675;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: #2d3436;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--primary-purple);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-purple) !important;
+}
+
+/* Card & Container Styling */
+.custom-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--primary-purple) !important;
+    border-color: var(--primary-purple) !important;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #5b4bc4 !important;
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+/* Table Styling */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.table thead {
+    background-color: var(--primary-purple);
+    color: white;
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dfe6e9;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    border-color: var(--primary-purple);
+}
+
+/* Status Badges */
+.badge-pending { background-color: var(--danger-red); }
+.badge-cleared { background-color: var(--success-green); }
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Management</title>
+    <style>
+        .form-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
+        input { padding: 8px; margin: 5px; border: 1px solid #cbd5e1; border-radius: 4px; }
+        .btn-add { background: #10b981; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 12px; }
+        th { background-color: #334155; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Staff Management</h2>
+    
+    <div class="form-box">
+        <h3>Add New Staff</h3>
+        <form action="/admin/staff/add" method="POST">
+            <input type="text" name="name" placeholder="Staff Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="role" placeholder="Role (e.g. Warden, Cook)" required>
+            <button type="submit" class="btn-add">Add Staff Member</button>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% staffMembers.forEach(staff => { %>
+                <tr>
+                    <td><%= staff.name %></td>
+                    <td><%= staff.phone %></td>
+                    <td><%= staff.role %></td>
+                    <td>
+                        <form action="/admin/staff/delete/<%= staff.id %>" method="POST">
+                            <button style="background:#ef4444; color:white; border:none; padding:5px 10px;">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br>
+    <a href="/admin/dashboard">Back to Dashboard</a>
+</body>
+</html>

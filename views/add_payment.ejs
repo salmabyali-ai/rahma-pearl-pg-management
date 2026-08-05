@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Payment</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="padding:20px; font-family:Arial;">
+
+<h2>Add Payment</h2>
+
+<form method="POST" action="/pay-rent" enctype="multipart/form-data">
+
+<label>Student Email:</label><br>
+<input type="email" name="email" placeholder="Enter student email" required><br><br>
+
+<label>Amount:</label><br>
+<input type="number" name="amount" placeholder="Amount" required><br><br>
+
+<label>Payment Method:</label><br>
+<select name="method">
+    <option value="Cash">Cash</option>
+    <option value="UPI">UPI</option>
+    <option value="Bank">Bank Transfer</option>
+</select><br><br>
+
+<label>Status:</label><br>
+<select name="status">
+    <option value="Paid">Paid</option>
+    <option value="Pending">Pending</option>
+</select><br><br>
+
+<label>Upload Screenshot (optional):</label><br>
+<input type="file" name="screenshot"><br><br>
+
+<button type="submit">Add Payment</button>
+
+</form>
+
+<br>
+<a href="/admin/dashboard">Back</a>
+
+</body>
+</html>

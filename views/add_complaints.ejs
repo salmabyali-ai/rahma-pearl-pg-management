@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post a Complaint</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body style="padding: 20px; font-family: Arial;">
+
+<h2>Submit Your Problem</h2>
+
+<form action="/complaint" method="POST">
+
+<label>Select Student:</label>
+
+<select name="email" required>
+    <option value="">-- Choose a Student --</option>
+
+    <% students.forEach(student => { %>
+
+        <option value="<%= student.email %>">
+            <%= student.first_name %> <%= student.last_name %>
+        </option>
+
+    <% }) %>
+
+</select>
+
+<br><br>
+
+<label>Your Complaint:</label>
+
+<textarea name="description" required placeholder="Describe the problem..."></textarea>
+
+<br><br>
+
+<button type="submit">Submit Complaint</button>
+
+</form>
+
+</body>
+</html>

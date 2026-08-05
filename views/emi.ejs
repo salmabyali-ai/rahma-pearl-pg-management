@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EMI Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="card">
+
+  <h2>EMI Calculator</h2>
+
+  <form method="POST" action="/emi">
+    <input type="number" name="amount" placeholder="Loan Amount" required>
+    <input type="number" name="rate" placeholder="Interest Rate (%)" required>
+    <input type="number" name="months" placeholder="Months" required>
+
+    <button type="submit">Calculate EMI</button>
+  </form>
+
+  <% if (typeof emi !== "undefined" && emi !== null) { %>
+    <div class="result">
+      Monthly EMI: ₹ <%= emi %>
+    </div>
+  <% } %>
+
+</div>
+
+</body>
+</html>

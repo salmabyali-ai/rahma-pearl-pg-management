@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahma Pearl Admin Console</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
+        .navbar { background: #2c3e50; color: white; }
+        .card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .btn-primary { background-color: #3498db; border: none; }
+        .badge-paid { background-color: #2ecc71; }
+        .badge-pending { background-color: #e74c3c; }
+        .table-container { background: white; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-hotel"></i> Rahma Pearl Admin</a>
+        <div class="d-flex">
+            <button onclick="generatePDF()" class="btn btn-outline-light me-2"><i class="fas fa-file-pdf"></i> Download Report</button>
+            <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card mb-4 bg-primary text-white p-3">
+        <h4><i class="fas fa-bullhorn"></i> Broadcast to All Students</h4>
+        <form action="/admin/send-notification" method="POST" class="row g-2">
+            <div class="col-md-3">
+                <input type="text" name="title" class="form-control" placeholder="Subject" required>
+            </div>
+            <div class="col-md-7">
+                <input type="text" name="message" class="form-control" placeholder="Announcement Details..." required>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-warning w-100 text-dark">Send Now</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3><i class="fas fa-user-graduate"></i> Student Records</h3>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStudentModal">
+                <i class="fas fa-plus"></i> Add New Student
+            </button>
+        </div>
+        <table class="table align-middle" id="studentTable">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Room</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach(st => { %>
+                <tr>
+                    <td><%= st.first_name %> <%= st.last_name %></td>
+                    <td><%= st.email %></td>
+                    <td><strong><%= st.room_number %></strong></td>
+                    <td>
+                        <span class="badge <%= st.status === 'Paid' ? 'badge-paid' : 'badge-pending' %>">
+                            <%= st.payment_status %>
+                        </span>
+                    </td>
+                    <td>
+                        <div class="d-flex gap-1">
+                            <form action="/admin/delete-student/<%= st.id %>" method="POST" onsubmit="return confirm('Delete Student?')">
+                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                            </form>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal<%= st.id %>">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3><i class="fas fa-user-shield"></i> Staff & Tasks</h3>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addStaffModal">
+                <i class="fas fa-plus"></i> Add Staff
+            </button>
+        </div>
+        <table class="table align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Current Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% staff.forEach(s => { %>
+                <tr>
+                    <td><%= s.name %></td>
+                    <td><span class="badge bg-secondary"><%= s.role %></span></td>
+                    <td>
+                        <form action="/admin/update-task/<%= s.id %>" method="POST" class="d-flex gap-1">
+                            <input type="text" name="task" value=" " class="form-control form-control-sm">
+                            <button class="btn btn-sm btn-dark">Set</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/admin/delete-staff/<%= s.id %>" method="POST">
+                            <button class="btn btn-sm text-danger"><i class="fas fa-user-minus"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="addStudentModal" tabindex="-1">
+    <div class="modal-dialog">
+        <form action="/admin/add-student" method="POST" class="modal-content">
+            <div class="modal-header"><h5>Add New Student</h5></div>
+            <div class="modal-body">
+                <div class="row mb-2">
+                    <div class="col"><input type="text" name="first_name" class="form-control" placeholder="First Name" required></div>
+                    <div class="col"><input type="text" name="last_name" class="form-control" placeholder="Last Name" required></div>
+                </div>
+                <input type="email" name="email" class="form-control mb-2" placeholder="Email Address" required>
+                <input type="password" name="password" class="form-control mb-2" placeholder="Set Password" required>
+                <input type="text" name="room_number" class="form-control mb-2" placeholder="Assigned Room (e.g. RM-101)">
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn btn-primary w-100">Register Student</button></div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="addStaffModal" tabindex="-1">
+    <div class="modal-dialog">
+        <form action="/admin/add-staff" method="POST" class="modal-content">
+            <div class="modal-header"><h5>Add New Staff Member</h5></div>
+            <div class="modal-body">
+                <input type="text" name="name" class="form-control mb-2" placeholder="Full Name" required>
+                <input type="text" name="role" class="form-control mb-2" placeholder="Role (e.g. Security, Cleaning)" required>
+                <input type="text" name="phone" class="form-control mb-2" placeholder="Contact Phone" required>
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn btn-success w-100">Add to Staff</button></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFontSize(18);
+        doc.text("Rahma Pearl PG Financial Report", 14, 20);
+        doc.setFontSize(10);
+        doc.text("Generated on: " + new Date().toLocaleDateString(), 14, 28);
+        
+        doc.autoTable({ 
+            html: '#studentTable', 
+            startY: 35,
+            theme: 'grid',
+            headStyles: { fillColor: [44, 62, 80] }
+        });
+        
+        doc.save("PG_Monthly_Report.pdf");
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

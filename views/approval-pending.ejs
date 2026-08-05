@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Approval Pending | Rahma Pearl PG
+    </title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(255, 209, 102, 0.18),
+                    transparent 34%
+                ),
+                linear-gradient(
+                    135deg,
+                    #062f34,
+                    #087f73
+                );
+
+            color: #ffffff;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-custom {
+            min-height: 78px;
+
+            padding: 14px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(0, 0, 0, 0.18);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd166,
+                    #f4a261
+                );
+
+            color: #173f3d;
+
+            box-shadow:
+                0 8px 24px rgba(255, 209, 102, 0.28);
+        }
+
+        .home-link {
+            padding: 10px 19px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.38);
+
+            border-radius: 11px;
+
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .home-link:hover {
+            background: #ffffff;
+            color: #087f73;
+        }
+
+        .main-section {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            padding: 50px 7%;
+        }
+
+        .approval-card {
+            width: 100%;
+            max-width: 1160px;
+
+            margin: auto;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background: #ffffff;
+            color: #173333;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.3);
+
+            animation:
+                cardEntry 0.7s ease;
+        }
+
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .approval-content {
+            height: 100%;
+
+            padding: 48px 42px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #ffffff,
+                    #edf9f7
+                );
+        }
+
+        .pending-icon {
+            width: 105px;
+            height: 105px;
+
+            margin: 0 auto 23px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd166,
+                    #f4a261
+                );
+
+            color: #5d4300;
+            font-size: 48px;
+
+            box-shadow:
+                0 14px 35px rgba(244, 162, 97, 0.33);
+
+            animation:
+                pulseIcon 2s infinite;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.07);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .approval-content h1 {
+            margin-bottom: 11px;
+
+            color: #0b6159;
+            font-size: 34px;
+            font-weight: 800;
+        }
+
+        .welcome-text {
+            margin-bottom: 18px;
+
+            color: #536969;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .student-name {
+            color: #087f73;
+            font-weight: 800;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 20px;
+
+            padding: 9px 18px;
+
+            border-radius: 100px;
+
+            background: #fff2cb;
+            color: #7a5800;
+
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .student-details {
+            margin: 18px 0;
+
+            padding: 17px;
+
+            text-align: left;
+
+            background: #f1f9f7;
+
+            border:
+                1px solid #d5ece8;
+
+            border-radius: 16px;
+        }
+
+        .student-details p {
+            margin: 9px 0;
+
+            color: #435b5b;
+
+            word-break: break-word;
+        }
+
+        .student-details i {
+            width: 28px;
+            color: #0b8a7d;
+        }
+
+        .approval-message {
+            margin-bottom: 23px;
+
+            padding: 17px;
+
+            text-align: left;
+
+            background: #fff8df;
+
+            border:
+                1px solid #f5df91;
+
+            border-radius: 14px;
+
+            color: #705200;
+
+            line-height: 1.65;
+        }
+
+        .approval-message strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .steps-box {
+            margin-bottom: 24px;
+
+            text-align: left;
+        }
+
+        .steps-box h5 {
+            margin-bottom: 13px;
+
+            color: #174e4a;
+            font-weight: 800;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            margin-bottom: 10px;
+
+            padding: 12px 14px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            border:
+                1px solid #e2efed;
+        }
+
+        .step-number {
+            min-width: 31px;
+            height: 31px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #0e9f8d;
+            color: #ffffff;
+
+            font-weight: 800;
+        }
+
+        .step-item p {
+            margin: 3px 0 0;
+
+            color: #536969;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn-login,
+        .btn-home {
+            padding: 13px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .btn-login {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0e9f8d,
+                    #087f73
+                );
+
+            color: #ffffff;
+        }
+
+        .btn-login:hover {
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 24px rgba(8, 127, 115, 0.27);
+        }
+
+        .btn-home {
+            border: 1px solid #0e9f8d;
+
+            background: transparent;
+            color: #087f73;
+        }
+
+        .btn-home:hover {
+            background: #e6f8f5;
+            color: #075f57;
+
+            transform: translateY(-2px);
+        }
+
+        .features-section {
+            height: 100%;
+
+            padding: 45px 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0b776c,
+                    #064d49
+                );
+
+            color: #ffffff;
+        }
+
+        .small-title {
+            display: inline-block;
+
+            margin-bottom: 12px;
+            padding: 7px 13px;
+
+            border-radius: 100px;
+
+            background:
+                rgba(255, 209, 102, 0.14);
+
+            border:
+                1px solid rgba(255, 209, 102, 0.34);
+
+            color: #ffd166;
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .features-section h2 {
+            margin-bottom: 12px;
+
+            font-size: 29px;
+            font-weight: 800;
+        }
+
+        .features-intro {
+            margin-bottom: 24px;
+
+            color:
+                rgba(255, 255, 255, 0.82);
+
+            line-height: 1.7;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            margin-bottom: 12px;
+            padding: 14px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 255, 255, 0.09);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+
+            background:
+                rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-icon {
+            min-width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #ffd166;
+            color: #134944;
+
+            font-size: 18px;
+        }
+
+        .feature-item h5 {
+            margin: 0 0 4px;
+
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            margin: 0;
+
+            color:
+                rgba(255, 255, 255, 0.76);
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .quote-box {
+            margin-top: 18px;
+            padding: 16px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 209, 102, 0.12);
+
+            border:
+                1px solid rgba(255, 209, 102, 0.3);
+
+            color: #fff1bf;
+        }
+
+        .quote-box strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #ffd166;
+        }
+
+        .footer {
+            padding: 18px;
+
+            text-align: center;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+        }
+
+        @media (max-width: 991px) {
+            .main-section {
+                padding: 35px 15px;
+            }
+
+            .approval-content,
+            .features-section {
+                padding: 38px 24px;
+            }
+
+            .approval-content h1 {
+                font-size: 29px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-custom {
+                padding: 14px 15px;
+            }
+
+            .brand-logo {
+                font-size: 19px;
+            }
+
+            .brand-icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .home-link {
+                display: none;
+            }
+
+            .approval-content h1 {
+                font-size: 25px;
+            }
+
+            .pending-icon {
+                width: 85px;
+                height: 85px;
+
+                font-size: 39px;
+            }
+
+            .action-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <nav class="navbar-custom">
+
+        <a href="/" class="brand-logo">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <span>Rahma Pearl PG</span>
+
+        </a>
+
+        <a href="/" class="home-link">
+
+            <i class="fa-solid fa-house me-2"></i>
+
+            Home
+
+        </a>
+
+    </nav>
+
+    <main class="main-section">
+
+        <div class="approval-card">
+
+            <div class="row g-0">
+
+                <div class="col-lg-6">
+
+                    <section class="approval-content">
+
+                        <div class="pending-icon">
+
+                            <i class="fa-solid fa-hourglass-half"></i>
+
+                        </div>
+
+                        <h1>Approval in Progress</h1>
+
+                        <p class="welcome-text">
+
+                            Hello,
+
+                            <span class="student-name">
+                                <%= studentName || "Student" %>
+                            </span>!
+
+                            <br>
+
+                            Your registration at
+
+                            <strong>Rahma Pearl PG</strong>
+
+                            was received successfully.
+
+                        </p>
+
+                        <div class="status-badge">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Status:
+
+                            <%= approvalStatus || "Pending" %>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <strong>Name:</strong>
+
+                                <%= studentName || "Student" %>
+
+                            </p>
+
+                            <p>
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <strong>Email:</strong>
+
+                                <%= email || "Not provided" %>
+
+                            </p>
+
+                            <p>
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                                <strong>Registration Type:</strong>
+
+                                <%= registrationType || "PG Student" %>
+
+                            </p>
+
+                            <p>
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                                <strong>Checked on:</strong>
+
+                                <span id="currentDate"></span>
+
+                            </p>
+
+                        </div>
+
+                        <div class="approval-message">
+
+                            <strong>
+
+                                <i class="fa-solid fa-circle-info me-2"></i>
+
+                                Your account is waiting for admin approval.
+
+                            </strong>
+
+                            Our administrator is reviewing your details.
+                            After approval, you can use the same email
+                            and password to access your personal dashboard.
+
+                        </div>
+
+                        <div class="steps-box">
+
+                            <h5>What happens next?</h5>
+
+                            <div class="step-item">
+
+                                <div class="step-number">1</div>
+
+                                <p>
+                                    The administrator verifies your
+                                    registration details.
+                                </p>
+
+                            </div>
+
+                            <div class="step-item">
+
+                                <div class="step-number">2</div>
+
+                                <p>
+                                    Your account status changes from
+                                    Pending to Approved.
+                                </p>
+
+                            </div>
+
+                            <div class="step-item">
+
+                                <div class="step-number">3</div>
+
+                                <p>
+                                    Log in again and access your
+                                    Rahma Pearl PG dashboard.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="action-buttons">
+
+                            <a href="/login" class="btn-login">
+
+                                <i class="fa-solid fa-rotate-right me-2"></i>
+
+                                Try Login Again
+
+                            </a>
+
+                            <a href="/" class="btn-home">
+
+                                <i class="fa-solid fa-house me-2"></i>
+
+                                Back to Home
+
+                            </a>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <section class="features-section">
+
+                        <span class="small-title">
+
+                            STUDENT-FRIENDLY LIVING
+
+                        </span>
+
+                        <h2>
+                            A Better Place to Stay, Study and Grow
+                        </h2>
+
+                        <p class="features-intro">
+
+                            Rahma Pearl PG provides a secure,
+                            comfortable and supportive environment
+                            designed around student needs.
+
+                        </p>
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Safe and Secure Environment</h5>
+
+                                <p>
+                                    Student safety and responsible
+                                    management are always our priority.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Healthy Home-Style Meals</h5>
+
+                                <p>
+                                    Fresh and hygienic food prepared
+                                    to make students feel at home.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Wi-Fi and Study-Friendly Rooms</h5>
+
+                                <p>
+                                    Essential facilities that support
+                                    focused study, rest and daily life.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-broom"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Clean and Well-Maintained Stay</h5>
+
+                                <p>
+                                    Regular cleaning and maintenance
+                                    provide a healthy living space.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <div>
+
+                                <h5>Quick Management Support</h5>
+
+                                <p>
+                                    Easy support for food, room,
+                                    payment and maintenance concerns.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="quote-box">
+
+                            <strong>
+                                Feel at home while building your future.
+                            </strong>
+
+                            Comfortable living and peaceful studying
+                            begin at Rahma Pearl PG.
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        &copy;
+
+        <span id="currentYear"></span>
+
+        Rahma Pearl PG. All rights reserved.
+
+    </footer>
+
+</div>
+
+<script>
+    const now = new Date();
+
+    document.getElementById(
+        "currentDate"
+    ).textContent =
+        now.toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+
+    document.getElementById(
+        "currentYear"
+    ).textContent =
+        now.getFullYear();
+</script>
+
+</body>
+</html>
