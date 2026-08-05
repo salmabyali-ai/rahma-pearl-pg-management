@@ -68,41 +68,26 @@ app.use(
 // ======================================================
 // DATABASE CONNECTION
 // ======================================================
+const mysql = require("mysql2/promise");
 
 let db;
 
 async function connectDatabase() {
-
     try {
 
-        db = await mysql.createConnection({
-
-            host: process.env.DB_HOST || "localhost",
-
-            user: process.env.DB_USER || "root",
-
-            password: process.env.DB_PASSWORD || "",
-
-            database: process.env.DB_NAME || "pg_management"
-
-        });
+        db = await mysql.createConnection(process.env.DB_URL);
 
         console.log("=================================");
         console.log("MySQL Connected Successfully");
         console.log("=================================");
 
-    }
+    } catch (err) {
 
-    catch (err) {
-
-        console.log("Database Connection Failed");
-
-        console.log(err);
-
-        process.exit();
+        console.error("Database Connection Failed");
+        console.error(err);
+        process.exit(1);
 
     }
-
 }
 
 connectDatabase();
@@ -9492,10 +9477,7 @@ app.post("/admin/electricity/delete/:id", async (req, res) => {
     }
 
 });
-/* ==========================================================
-   PART 3C
-   AI ASSISTANT + WHATSAPP NOTIFICATIONS + CRON JOBS
-========================================================== */
+
 
 // =====================================
 // AI ASSISTANT PAGE
