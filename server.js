@@ -9613,21 +9613,6 @@ app.post("/api/ai", async (req, res) => {
 
 });
 
-// =====================================
-// WHATSAPP BROADCAST PAGE
-// =====================================
-
-app.get("/admin/whatsapp", async (req, res) => {
-
-    if (!req.session.admin) {
-        return res.redirect("/login/admin");
-    }
-
-    res.render("whatsapp_broadcast", {
-        message: null
-    });
-
-});
 
 
 
@@ -9956,32 +9941,6 @@ app.use((err, req, res, next) => {
     `);
 });
 
-
-const { Client, LocalAuth } = require("whatsapp-web.js");
-const qrcode = require("qrcode-terminal");
-
-const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: {
-        headless: true,
-        args: ["--no-sandbox"]
-    }
-});
-
-client.on("qr", (qr) => {
-    console.log("📱 Scan this QR with WhatsApp");
-    qrcode.generate(qr, { small: true });
-});
-
-client.on("ready", () => {
-    console.log("✅ WhatsApp Ready");
-});
-
-client.on("auth_failure", () => {
-    console.log("❌ WhatsApp Authentication Failed");
-});
-
-client.initialize();
 
 app.get("/admin/guest-students", (req, res) => {
 
