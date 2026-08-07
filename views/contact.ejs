@@ -1,258 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | Rahma Pearl Girls PG</title>
+<title>Contact Us | Rahma Pearl Girls PG</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
 
-        body{
-            background:linear-gradient(135deg,#6c5ce7,#8e44ad);
-            font-family:Arial,Helvetica,sans-serif;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding:30px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        .contact-card{
-            background:#fff;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 15px 40px rgba(0,0,0,.2);
-        }
+body{
 
-        .info-side{
-            background:linear-gradient(135deg,#6c5ce7,#8e44ad);
-            color:#fff;
-            padding:45px;
-            height:100%;
-        }
+background:linear-gradient(135deg,#4e54c8,#8f94fb);
 
-        .form-side{
-            padding:45px;
-        }
+min-height:100vh;
 
-        .info-item{
-            display:flex;
-            margin-bottom:25px;
-        }
+display:flex;
 
-        .info-item i{
-            font-size:22px;
-            margin-right:15px;
-            margin-top:5px;
-        }
+justify-content:center;
 
-        .form-control{
-            border-radius:10px;
-            padding:12px;
-        }
+align-items:center;
 
-        .btn-submit{
-            background:#6c5ce7;
-            color:#fff;
-            border:none;
-            padding:12px;
-            border-radius:10px;
-            font-weight:bold;
-        }
+padding:40px;
 
-        .btn-submit:hover{
-            background:#5a4cd6;
-            color:white;
-        }
+}
 
-        .social-icons{
-            display:flex;
-            gap:15px;
-            margin-top:20px;
-        }
+.container{
+max-width:1100px;
+}
 
-        .social-icons a{
-            width:50px;
-            height:50px;
-            border-radius:50%;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:rgba(255,255,255,.15);
-            color:white;
-            text-decoration:none;
-            transition:.3s;
-            font-size:20px;
-        }
+.contact-card{
 
-        .social-icons a:hover{
-            background:white;
-            color:#6c5ce7;
-            transform:translateY(-5px);
-        }
+background:white;
 
-        .alert{
-            border-radius:10px;
-        }
-    </style>
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+animation:fadeUp .8s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.info-side{
+
+position:relative;
+
+padding:40px;
+
+color:white;
+
+background:
+linear-gradient(rgba(34,34,70,.75),rgba(108,92,231,.80)),
+url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.info-side::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.15);
+
+}
+
+.info-side>*{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.pg-image{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+margin:25px 0;
+
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.info-item{
+
+display:flex;
+
+align-items:flex-start;
+
+margin-bottom:25px;
+
+}
+
+.info-item i{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.2);
+
+font-size:20px;
+
+margin-right:15px;
+
+}
+
+.info-item div{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:30px;
+
+}
+
+.social-icons a{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.15);
+
+color:white;
+
+font-size:22px;
+
+transition:.4s;
+
+text-decoration:none;
+
+}
+
+.social-icons a:hover{
+
+background:white;
+
+color:#6c5ce7;
+
+transform:translateY(-8px);
+
+}
+
+.form-side{
+
+padding:50px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+background:#fff;
+
+}
+
+.form-side h2{
+
+font-weight:700;
+
+color:#6c5ce7;
+
+margin-bottom:20px;
+
+}
+
+.contact-box{
+
+background:#f8f9fa;
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+transition:.3s;
+
+}
+
+.contact-box:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.contact-box i{
+
+font-size:30px;
+
+color:#6c5ce7;
+
+margin-bottom:10px;
+
+}
+
+.btn-home{
+
+background:#6c5ce7;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+display:inline-block;
+
+margin-top:20px;
+
+transition:.3s;
+
+}
+
+.btn-home:hover{
+
+background:#5649d6;
+
+color:white;
+
+transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+.info-side{
+
+padding:30px;
+
+}
+
+.form-side{
+
+padding:30px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <div class="contact-card">
+<div class="contact-card">
 
-        <div class="row g-0">
+<div class="row g-0">
 
-            <!-- LEFT SIDE -->
+<!-- LEFT SIDE -->
 
-            <div class="col-md-5 info-side">
+<div class="col-lg-5 info-side">
 
-                <h2 class="mb-4">Contact Information</h2>
+<h2>Contact Information</h2>
 
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <strong>Address</strong><br>
-                        Rahma Pearl Girls PG<br>
-                        Rajaji Nagar 2nd Cross,<br>
-                        Sattur, Dharwad,<br>
-                        Karnataka
-                    </div>
-                </div>
+<p>Feel free to contact us anytime. We are always happy to help you.</p>
 
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        +91 9945786031
-                    </div>
-                </div>
+<img
+src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=80"
+class="pg-image"
+alt="Rahma Pearl Girls PG">
 
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        rahmapearlpg@gmail.com
-                    </div>
-                </div>
+<div class="info-item">
 
-                <h5 class="mt-4">Follow Us</h5>
+<i class="fas fa-map-marker-alt"></i>
 
-                <div class="social-icons">
+<div>
 
-                    <a href="https://www.facebook.com/RahmaPearlpg"
-                       target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+<strong>Address</strong><br>
 
-                    <a href="https://www.instagram.com/rahmapearpg"
-                       target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+Rahma Pearl Girls PG<br>
 
-                </div>
+Rajaji Nagar 2nd Cross,<br>
 
-            </div>
+Sattur, Dharwad,<br>
 
-            <!-- RIGHT SIDE -->
+Karnataka - 580009
 
-            <div class="col-md-7 form-side">
+</div>
 
-                <h2 class="mb-4">Send Us a Message</h2>
+</div>
 
-                <% if(typeof success !== 'undefined'){ %>
-                    <div class="alert alert-success">
-                        <%= success %>
-                    </div>
-                <% } %>
+<div class="info-item">
 
-                <% if(typeof error !== 'undefined'){ %>
-                    <div class="alert alert-danger">
-                        <%= error %>
-                    </div>
-                <% } %>
+<i class="fas fa-phone"></i>
 
-                <form action="/contact" method="POST">
+<div>
 
-                    <div class="mb-3">
+<strong>Phone</strong><br>
 
-                        <label class="form-label">Full Name</label>
++91 9945786031
 
-                        <input
-                            type="text"
-                            name="name"
-                            class="form-control"
-                            required>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="mb-3">
+<div class="info-item">
 
-                        <label class="form-label">Email</label>
+<i class="fas fa-envelope"></i>
 
-                        <input
-                            type="email"
-                            name="email"
-                            class="form-control"
-                            required>
+<div>
 
-                    </div>
+<strong>Email</strong><br>
 
-                    <div class="mb-3">
+rahmapearlpg@gmail.com
 
-                        <label class="form-label">Phone</label>
+</div>
 
-                        <input
-                            type="text"
-                            name="phone"
-                            class="form-control">
+</div>
 
-                    </div>
+<h5 class="mt-4">Follow Us</h5>
 
-                    <div class="mb-3">
+<div class="social-icons">
 
-                        <label class="form-label">Message</label>
+<a href="https://www.facebook.com/RahmaPearlpg" target="_blank">
 
-                        <textarea
-                            name="message"
-                            rows="5"
-                            class="form-control"
-                            required></textarea>
+<i class="fab fa-facebook-f"></i>
 
-                    </div>
+</a>
 
-                    <button
-                        type="submit"
-                        class="btn btn-submit w-100">
+<a href="https://www.instagram.com/rahmapearpg" target="_blank">
 
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
+<i class="fab fa-instagram"></i>
 
-                    </button>
+</a>
 
-                </form>
+</div>
 
-                <div class="text-center mt-4">
-                    <a href="/" class="text-decoration-none">
-                        ← Back to Home
-                    </a>
-                </div>
+</div>
 
-            </div>
+<!-- RIGHT SIDE -->
 
-        </div>
+<div class="col-lg-7 form-side">
 
-    </div>
+<h2>Rahma Pearl Girls PG</h2>
+
+<p class="text-muted mb-4">
+
+A safe, comfortable and peaceful home for girls with modern facilities.
+
+</p>
+
+<div class="contact-box">
+
+<i class="fas fa-wifi"></i>
+
+<h5>Free High-Speed WiFi</h5>
+
+<p>24×7 unlimited internet access.</p>
+
+</div>
+
+<div class="contact-box">
+
+<i class="fas fa-bed"></i>
+
+<h5>Comfortable Rooms</h5>
+
+<p>Clean, spacious and secure rooms.</p>
+
+</div>
+
+<div class="contact-box">
+
+<i class="fas fa-shield-alt"></i>
+
+<h5>24×7 Security</h5>
+
+<p>Safe environment with CCTV surveillance.</p>
+
+</div>
+
+<div class="contact-box">
+
+<i class="fas fa-utensils"></i>
+
+<h5>Healthy Food</h5>
+
+<p>Fresh and hygienic breakfast, lunch and dinner.</p>
+
+</div>
+
+<a href="/" class="btn-home">
+
+<i class="fas fa-arrow-left"></i> Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 

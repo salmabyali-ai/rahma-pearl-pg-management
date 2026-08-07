@@ -69,28 +69,33 @@ app.use(
 // DATABASE CONNECTION
 // ======================================================
 
+
+// ======================================================
+// DATABASE CONNECTION
+// ======================================================
 let db;
 
 async function connectDatabase() {
     try {
+        db = await mysql.createConnection({
+            host: process.env.DB_HOST,
+            port: parseInt(process.env.DB_PORT, 10),
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
+            ssl: {
+                rejectUnauthorized: false
+            }
+        });
 
-        db = await mysql.createConnection(process.env.DB_URL);
-
-        console.log("=================================");
         console.log("MySQL Connected Successfully");
-        console.log("=================================");
-
     } catch (err) {
-
-        console.error("Database Connection Failed");
         console.error(err);
         process.exit(1);
-
     }
 }
 
 connectDatabase();
-
 // ======================================================
 // MULTER STORAGE
 // ======================================================
@@ -278,6 +283,12 @@ async function sendAdminAlert(subject, message) {
         console.log(err);
 
     }
+
+}
+
+function generateOTP(){
+
+    return Math.floor(100000 + Math.random()*900000).toString();
 
 }
 
@@ -1043,164 +1054,209 @@ app.get("/forgotpassword", (req, res) => {
 
 });
 
+app.get("/verify-otp",(req,res)=>{
+
+    res.render("verify-otp",{
+
+        email:req.query.email,
+
+        message:null
+
+    });
+
+});
+
+app.get("/reset-password",(req,res)=>{
+
+    res.render("reset-password",{
+
+        email:req.query.email,
+
+        message:null
+
+    });
+
+});
+
 // ----------------------------
 // SEND OTP
 // ----------------------------
 
-app.post("/forgotpassword", async (req, res) => {
+app.post("/forgotpassword", (req, res) => {
 
-    try {
+    const email = req.body.email;
 
-        const { email } = req.body;
+    db.query(
+        "SELECT * FROM students WHERE email = ?",
+        [email],
+        (err, result) => {
 
-        const [student] = await db.query(
-            "SELECT * FROM students WHERE email=?",
-            [email]
-        );
+            if (err) {
+                return res.send("Database Error");
+            }
 
-        if (student.length === 0) {
-            return res.send("Email not found");
+            if (result.length === 0) {
+                return res.render("forgotpassword", {
+                    message: "Email not found."
+                });
+            }
+
+            const otp = generateOTP();
+
+            const expiry = Date.now() + (5 * 60 * 1000); // 5 minutes
+
+            db.query(
+                "UPDATE students SET otp=?, otp_expiry=? WHERE email=?",
+                [otp, expiry, email],
+                (err) => {
+
+                    if (err) {
+                        return res.send("Database Error");
+                    }
+
+                    const mailOptions = {
+
+                        from: process.env.EMAIL_USER,
+
+                        to: email,
+
+                        subject: "Rahma Pearl Girls PG Password Reset OTP",
+
+                        html: `
+                        <h2>Password Reset</h2>
+
+                        <p>Your OTP is:</p>
+
+                        <h1>${otp}</h1>
+
+                        <p>This OTP expires in 5 minutes.</p>
+                        `
+
+                    };
+
+                    transporter.sendMail(mailOptions, (err) => {
+
+                        if (err) {
+
+                            console.log(err);
+
+                            return res.send("Unable to send OTP.");
+
+                        }
+
+                        res.redirect("/verify-otp?email=" + email);
+
+                    });
+
+                }
+            );
+
         }
-
-        const otp = Math.floor(
-            100000 + Math.random() * 900000
-        ).toString();
-
-        const expiry = new Date();
-        expiry.setMinutes(expiry.getMinutes() + 10);
-
-        await db.query(
-            "INSERT INTO password_resets(email,otp,expires_at) VALUES(?,?,?)",
-            [email, otp, expiry]
-        );
-
-        await transporter.sendMail({
-
-            from: `"Rahma Pearl PG" <${process.env.EMAIL_USER}>`,
-
-            to: email,
-
-            subject: "Password Reset OTP",
-
-            html: `
-                <h2>Rahma Pearl PG</h2>
-
-                <h3>Your OTP is</h3>
-
-                <h1>${otp}</h1>
-
-                <p>This OTP is valid for 10 minutes.</p>
-            `
-
-        });
-
-        res.render("verify-otp", {
-            email
-        });
-
-    } catch (err) {
-
-        console.log(err);
-
-        res.send(err.message);
-
-    }
+    );
 
 });
 
 // ----------------------------
 // VERIFY OTP
 // ----------------------------
+app.post("/verify-otp", (req, res) => {
 
-app.post("/verify-otp", async (req, res) => {
+    const email = req.body.email;
 
-    try {
+    const otp = req.body.otp;
 
-        const { email, otp } = req.body;
+    db.query(
 
-        const [rows] = await db.query(
+        "SELECT * FROM students WHERE email=?",
 
-            `SELECT *
-             FROM password_resets
-             WHERE email=?
-             AND otp=?
-             AND expires_at>NOW()
-             ORDER BY id DESC
-             LIMIT 1`,
+        [email],
 
-            [email, otp]
+        (err, result) => {
 
-        );
+            if (err) {
 
-        if (rows.length === 0) {
-            return res.send("Invalid OTP");
+                return res.send("Database Error");
+
+            }
+
+            if (result.length == 0) {
+
+                return res.send("User not found");
+
+            }
+
+            const user = result[0];
+
+            if (user.otp != otp) {
+
+                return res.render("verify-otp", {
+
+                    email,
+
+                    message: "Invalid OTP"
+
+                });
+
+            }
+
+            if (Date.now() > user.otp_expiry) {
+
+                return res.render("verify-otp", {
+
+                    email,
+
+                    message: "OTP Expired"
+
+                });
+
+            }
+
+            res.redirect("/reset-password?email=" + email);
+
         }
 
-        res.render("reset-password", {
-            email
-        });
-
-    } catch (err) {
-
-        console.log(err);
-
-        res.send(err.message);
-
-    }
+    );
 
 });
 // ----------------------------
 // RESET PASSWORD
 // ----------------------------
 
+
 app.post("/reset-password", async (req, res) => {
 
     try {
 
-        const {
-
-            email,
-            password,
-            confirmPassword
-
-        } = req.body;
+        const { email, password, confirmPassword } = req.body;
 
         if (password !== confirmPassword) {
-            return res.send("Passwords do not match");
+            return res.render("reset-password", {
+                email,
+                message: "Passwords do not match."
+            });
         }
 
-        const hashedPassword =
-            await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         await db.query(
-
-            "UPDATE students SET password=? WHERE email=?",
-
+            `UPDATE students
+             SET password = ?, otp = NULL, otp_expiry = NULL
+             WHERE email = ?`,
             [hashedPassword, email]
-
-        );
-
-        await db.query(
-
-            "DELETE FROM password_resets WHERE email=?",
-
-            [email]
-
         );
 
         res.send(`
-            <h2>Password Updated Successfully</h2>
-
-            <a href="/login">
-                Go To Login
-            </a>
+            <script>
+                alert("Password changed successfully.");
+                window.location.href="/login";
+            </script>
         `);
 
     } catch (err) {
 
-        console.log(err);
+        console.error(err);
 
-        res.send(err.message);
+        res.send("Server Error");
 
     }
 

@@ -1,57 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Forgot Password</title>
+<title>Verify OTP</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 
 body{
-background:linear-gradient(135deg,#6C63FF,#8E44AD);
+
+background:#6C63FF;
+
 height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 }
 
 .card{
+
 width:400px;
+
 padding:30px;
+
 border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.3);
+
 }
 
 </style>
 
 </head>
+
 <body>
 
-<div class="card">
+<div class="card bg-white">
 
 <h2 class="text-center mb-4">
-Forgot Password
+
+Verify OTP
+
 </h2>
 
-<form action="/forgotpassword" method="POST">
+<form action="/verify-otp" method="POST">
 
 <input
-type="email"
+type="hidden"
 name="email"
+value="<%= email %>">
+
+<input
+type="text"
+name="otp"
+maxlength="6"
+placeholder="Enter OTP"
 class="form-control mb-3"
-placeholder="Enter Email"
 required>
 
-<button class="btn btn-primary w-100">
-Send OTP
+<button class="btn btn-success w-100">
+
+Verify OTP
+
 </button>
 
 </form>
 
-<% if(typeof message!="undefined"){ %>
+<% if(message){ %>
 
 <div class="alert alert-danger mt-3">
 
