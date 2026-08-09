@@ -385,40 +385,73 @@ app.post(
     "/register",
     upload.single("payment_proof"),
     async (req, res) => {
+
         const formData = {
-            username: req.body.username || "",
+
             first_name: req.body.first_name || "",
+
             last_name: req.body.last_name || "",
+
             email: req.body.email || "",
+
             phone: req.body.phone || "",
+
             address: req.body.address || "",
+
             role: req.body.role || "",
-            meal_type: req.body.meal_type || "",
+
+            meal_type: req.body.meal_type || "Full Day",
+
             from_date: req.body.from_date || "",
+
             to_date: req.body.to_date || ""
+
         };
 
-        try {
-            const {
-                first_name,
-                last_name,
-                email,
-                password,
-                confirm_password,
-                phone,
-                address,
-                role,
-                meal_type,
-                from_date,
-                to_date,
-                accept_terms
-            } = req.body;
 
-            /*
-            =========================================
-            REQUIRED FIELD VALIDATION
-            =========================================
-            */
+        try {
+
+            const first_name =
+                String(req.body.first_name || "").trim();
+
+            const last_name =
+                String(req.body.last_name || "").trim();
+
+            const email =
+                String(req.body.email || "").trim().toLowerCase();
+
+            const password =
+                String(req.body.password || "");
+
+            const confirm_password =
+                String(req.body.confirm_password || "");
+
+            const phone =
+                String(req.body.phone || "")
+                    .replace(/\D/g, "");
+
+            const address =
+                String(req.body.address || "").trim();
+
+            const role =
+                String(req.body.role || "").trim().toLowerCase();
+
+            const meal_type =
+                String(req.body.meal_type || "Full Day").trim();
+
+            const from_date =
+                String(req.body.from_date || "").trim();
+
+            const to_date =
+                String(req.body.to_date || "").trim();
+
+            const accept_terms =
+                String(req.body.accept_terms || "");
+
+
+            // ============================================
+            // BASIC VALIDATION
+            // ============================================
 
             if (
                 !first_name ||
@@ -430,226 +463,394 @@ app.post(
                 !address ||
                 !role
             ) {
-                return res.status(400).render("register", {
-                    error: "Please enter all required details.",
-                    success: null,
-                    formData
-                });
+
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "Please enter all required details.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
 
-            const normalizedRole = role.trim().toLowerCase();
 
-            if (!["student", "mess"].includes(normalizedRole)) {
-                return res.status(400).render("register", {
-                    error: "Please select Student or Mess registration.",
-                    success: null,
-                    formData
-                });
+            if (
+                role !== "student" &&
+                role !== "mess"
+            ) {
+
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "Please select PG Student or Mess Student.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
+
 
             if (password.length < 6) {
-                return res.status(400).render("register", {
-                    error: "Password must contain at least 6 characters.",
-                    success: null,
-                    formData
-                });
+
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "Password must contain at least 6 characters.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
+
 
             if (password !== confirm_password) {
-                return res.status(400).render("register", {
-                    error: "Password and confirm password do not match.",
-                    success: null,
-                    formData
-                });
+
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "Password and confirm password do not match.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
+
 
             if (accept_terms !== "yes") {
-                return res.status(400).render("register", {
-                    error: "You must accept the terms and conditions.",
-                    success: null,
-                    formData
-                });
+
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "You must accept the terms and conditions.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
 
-            const cleanEmail = email.trim().toLowerCase();
-            const cleanPhone = phone.replace(/\D/g, "").trim();
 
-            const fullName = `${first_name.trim()} ${last_name.trim()}`;
+            if (!/^[0-9]{10}$/.test(phone)) {
 
-            if (!isValidEmail(cleanEmail)) {
-                return res.status(400).render("register", {
-                    error: "Please enter a valid email address.",
-                    success: null,
-                    formData
-                });
+                return res.status(400).render(
+                    "register",
+                    {
+                        error:
+                            "Please enter a valid 10-digit phone number.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
 
-            if (!/^[0-9]{10}$/.test(cleanPhone)) {
-                return res.status(400).render("register", {
-                    error: "Please enter a valid 10-digit phone number.",
-                    success: null,
-                    formData
-                });
-            }
 
-            /*
-            =========================================
-            CHECK EMAIL IN BOTH TABLES
-            =========================================
-            */
+            const fullName =
+                `${first_name} ${last_name}`;
 
-            const [existingStudent] = await db.query(
-                `SELECT id
-                 FROM students
-                 WHERE email = ?
-                 LIMIT 1`,
-                [cleanEmail]
-            );
 
-            const [existingMess] = await db.query(
-                `SELECT id
-                 FROM guest_students
-                 WHERE email = ?
-                 LIMIT 1`,
-                [cleanEmail]
-            );
+            // ============================================
+            // CHECK EMAIL
+            // ============================================
+
+            const [existingStudent] =
+                await db.query(
+                    `
+                    SELECT id
+                    FROM students
+                    WHERE LOWER(TRIM(email)) = ?
+                    LIMIT 1
+                    `,
+                    [email]
+                );
+
+
+            const [existingMess] =
+                await db.query(
+                    `
+                    SELECT id
+                    FROM guest_students
+                    WHERE LOWER(TRIM(email)) = ?
+                    LIMIT 1
+                    `,
+                    [email]
+                );
+
 
             if (
                 existingStudent.length > 0 ||
                 existingMess.length > 0
             ) {
-                return res.status(409).render("register", {
-                    error:
-                        "This email is already registered. Please login or use another email.",
-                    success: null,
-                    formData
-                });
+
+                return res.status(409).render(
+                    "register",
+                    {
+                        error:
+                            "This email is already registered. Please login or use another email.",
+
+                        success: null,
+
+                        formData
+                    }
+                );
+
             }
 
-            const hashedPassword = await bcrypt.hash(password, 10);
 
-            /*
-            =========================================
-            MESS REGISTRATION
-            =========================================
-            */
+            // ============================================
+            // PASSWORD
+            // ============================================
 
-            if (normalizedRole === "mess") {
-                if (!from_date || !to_date) {
-                    return res.status(400).render("register", {
-                        error:
-                            "Please select the mess starting date and ending date.",
-                        success: null,
-                        formData
-                    });
-                }
+            const hashedPassword =
+                await bcrypt.hash(password, 10);
 
-                const startDate = new Date(from_date);
-                const endDate = new Date(to_date);
+
+            // ============================================
+            // MESS STUDENT
+            // ============================================
+
+            if (role === "mess") {
+
+
+                // DATE REQUIRED
 
                 if (
-                    Number.isNaN(startDate.getTime()) ||
-                    Number.isNaN(endDate.getTime())
+                    !from_date ||
+                    !to_date
                 ) {
-                    return res.status(400).render("register", {
-                        error: "Please select valid mess dates.",
-                        success: null,
-                        formData
-                    });
+
+                    return res.status(400).render(
+                        "register",
+                        {
+                            error:
+                                "Please select the mess starting date and ending date.",
+
+                            success: null,
+
+                            formData
+                        }
+                    );
+
                 }
 
-                if (endDate < startDate) {
-                    return res.status(400).render("register", {
-                        error:
-                            "Mess ending date cannot be earlier than the starting date.",
-                        success: null,
-                        formData
-                    });
+
+                // DATE FORMAT
+
+                if (
+                    !/^\d{4}-\d{2}-\d{2}$/.test(from_date) ||
+                    !/^\d{4}-\d{2}-\d{2}$/.test(to_date)
+                ) {
+
+                    return res.status(400).render(
+                        "register",
+                        {
+                            error:
+                                "Please select valid mess dates.",
+
+                            success: null,
+
+                            formData
+                        }
+                    );
+
                 }
 
-                const selectedMealType =
-                    meal_type && meal_type.trim()
-                        ? meal_type.trim()
-                        : "Full Day";
+
+                // DATE ORDER
+
+                if (to_date < from_date) {
+
+                    return res.status(400).render(
+                        "register",
+                        {
+                            error:
+                                "Mess ending date cannot be earlier than the starting date.",
+
+                            success: null,
+
+                            formData
+                        }
+                    );
+
+                }
+
+
+                // ========================================
+                // MEAL PRICE
+                // ========================================
 
                 let messAmount = 5500;
 
-                if (selectedMealType === "Breakfast") {
+
+                if (meal_type === "Breakfast") {
+
                     messAmount = 1800;
-                } else if (selectedMealType === "Lunch") {
+
+                }
+                else if (meal_type === "Lunch") {
+
                     messAmount = 2200;
-                } else if (selectedMealType === "Dinner") {
+
+                }
+                else if (meal_type === "Dinner") {
+
                     messAmount = 2200;
-                } else if (selectedMealType === "Lunch and Dinner") {
+
+                }
+                else if (
+                    meal_type === "Lunch and Dinner"
+                ) {
+
                     messAmount = 4200;
-                } else if (selectedMealType === "Full Day") {
+
+                }
+                else {
+
                     messAmount = 5500;
+
                 }
 
-                await db.query(
-                    `INSERT INTO guest_students
-                    (
-                        name,
-                        phone,
-                        email,
-                        password,
-                        meal_type,
-                        amount,
-                        from_date,
-                        to_date,
-                        status,
-                        approval_status
-                    )
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-                    [
-                        fullName,
-                        cleanPhone,
-                        cleanEmail,
-                        hashedPassword,
-                        selectedMealType,
-                        messAmount,
-                        from_date,
-                        to_date,
-                        "Active",
-                        "Pending"
-                    ]
+
+                // ========================================
+                // INSERT MESS STUDENT
+                // ========================================
+
+                const [result] =
+                    await db.query(
+                        `
+                        INSERT INTO guest_students
+                        (
+                            name,
+                            email,
+                            password,
+                            phone,
+                            meal_type,
+                            amount,
+                            from_date,
+                            to_date,
+                            status,
+                            approval_status
+                        )
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        `,
+                        [
+                            fullName,
+
+                            email,
+
+                            hashedPassword,
+
+                            phone,
+
+                            meal_type,
+
+                            messAmount,
+
+                            from_date,
+
+                            to_date,
+
+                            "Active",
+
+                            "Pending"
+                        ]
+                    );
+
+
+                console.log(
+                    "MESS STUDENT CREATED:",
+                    result.insertId
                 );
 
+
+                // ========================================
+                // EMAIL
+                // ========================================
+
                 try {
+
                     await sendRegistrationEmail({
+
                         name: fullName,
-                        email: cleanEmail,
-                        registrationType: "Mess Student"
+
+                        email: email,
+
+                        registrationType:
+                            "Mess Student"
+
                     });
-                } catch (emailError) {
+
+                }
+                catch (emailError) {
+
                     console.error(
                         "Mess registration email failed:",
                         emailError.message
                     );
+
                 }
 
-                return res.render("registration-success", {
-                    studentName: fullName,
-                    email: cleanEmail,
-                    registrationType: "Mess Student",
-                    approvalStatus: "Pending",
-                    successMessage:
-                        "Your mess registration has been submitted successfully. Please wait for admin approval."
-                });
+
+                return res.render(
+                    "registration-success",
+                    {
+
+                        studentName:
+                            fullName,
+
+                        email:
+                            email,
+
+                        registrationType:
+                            "Mess Student",
+
+                        approvalStatus:
+                            "Pending",
+
+                        successMessage:
+                            "Your mess registration has been submitted successfully. Please wait for admin approval."
+
+                    }
+                );
+
             }
 
-            /*
-            =========================================
-            PG STUDENT REGISTRATION
-            =========================================
-            */
 
-            const paymentProof = req.file
-                ? req.file.filename
-                : null;
+            // ============================================
+            // PG STUDENT
+            // ============================================
+
+            const paymentProof =
+                req.file
+                    ? req.file.filename
+                    : null;
+
 
             await db.query(
-                `INSERT INTO students
+                `
+                INSERT INTO students
                 (
                     first_name,
                     last_name,
@@ -660,68 +861,125 @@ app.post(
                     payment_proof,
                     status
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                `,
                 [
-                    first_name.trim(),
-                    last_name.trim(),
-                    cleanEmail,
+
+                    first_name,
+
+                    last_name,
+
+                    email,
+
                     hashedPassword,
-                    cleanPhone,
-                    address.trim(),
+
+                    phone,
+
+                    address,
+
                     paymentProof,
+
                     "Pending"
+
                 ]
             );
 
+
             try {
+
                 await sendRegistrationEmail({
+
                     name: fullName,
-                    email: cleanEmail,
-                    registrationType: "PG Student"
+
+                    email: email,
+
+                    registrationType:
+                        "PG Student"
+
                 });
-            } catch (emailError) {
+
+            }
+            catch (emailError) {
+
                 console.error(
                     "Student registration email failed:",
                     emailError.message
                 );
+
             }
 
-            return res.render("registration-success", {
-                studentName: fullName,
-                email: cleanEmail,
-                registrationType: "PG Student",
-                approvalStatus: "Pending",
-                successMessage:
-                    "Your PG registration has been submitted successfully. Please wait for admin approval."
-            });
 
-        } catch (error) {
-            console.error("Registration error:", error);
+            return res.render(
+                "registration-success",
+                {
 
-            if (error.code === "ER_DUP_ENTRY") {
-                return res.status(409).render("register", {
-                    error:
-                        "This email is already registered. Please login or use another email.",
-                    success: null,
-                    formData
-                });
-            }
+                    studentName:
+                        fullName,
 
-            if (error instanceof multer.MulterError) {
-                return res.status(400).render("register", {
-                    error: "File upload failed: " + error.message,
-                    success: null,
-                    formData
-                });
-            }
+                    email:
+                        email,
 
-            return res.status(500).render("register", {
-                error:
-                    "Registration failed. Please check your details and try again.",
-                success: null,
-                formData
-            });
+                    registrationType:
+                        "PG Student",
+
+                    approvalStatus:
+                        "Pending",
+
+                    successMessage:
+                        "Your PG registration has been submitted successfully. Please wait for admin approval."
+
+                }
+            );
+
+
         }
+        catch (error) {
+
+            console.error(
+                "REGISTRATION ERROR:",
+                error
+            );
+
+
+            if (
+                error.code ===
+                "ER_DUP_ENTRY"
+            ) {
+
+                return res.status(409).render(
+                    "register",
+                    {
+
+                        error:
+                            "This email is already registered. Please use another email.",
+
+                        success: null,
+
+                        formData
+
+                    }
+                );
+
+            }
+
+
+            return res.status(500).render(
+                "register",
+                {
+
+                    error:
+                        "Registration failed: " +
+                        error.message,
+
+                    success: null,
+
+                    formData
+
+                }
+            );
+
+        }
+
     }
 );
 // ----------------------------
@@ -10168,6 +10426,7 @@ app.get("/mess/dashboard", isMess, async (req, res) => {
     try {
         const messId = req.session.mess.id;
 
+        // Get mess student details
         const [messRows] = await db.query(
             `SELECT *
              FROM guest_students
@@ -10182,11 +10441,13 @@ app.get("/mess/dashboard", isMess, async (req, res) => {
             });
         }
 
+        // Get attendance records
+        // IMPORTANT: mess_attendance uses guest_student_id, NOT mess_id
         const [attendanceRows] = await db.query(
             `SELECT *
              FROM mess_attendance
-             WHERE mess_id = ?
-             ORDER BY attendance_date DESC`,
+             WHERE guest_student_id = ?
+             ORDER BY attendance_date DESC, id DESC`,
             [messId]
         );
 
