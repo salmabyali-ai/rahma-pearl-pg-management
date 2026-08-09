@@ -73,29 +73,44 @@ app.use(
 // ======================================================
 // DATABASE CONNECTION
 // ======================================================
+// ======================================================
+// DATABASE CONNECTION
+// ======================================================
 let db;
 
 async function connectDatabase() {
     try {
+        console.log("Connecting to MySQL...");
+        console.log("DB_HOST:", process.env.DB_HOST);
+        console.log("DB_PORT:", process.env.DB_PORT);
+        console.log("DB_USER:", process.env.DB_USER);
+        console.log("DB_NAME:", process.env.DB_NAME);
+
         db = await mysql.createConnection({
             host: process.env.DB_HOST,
-            port: parseInt(process.env.DB_PORT, 10),
+            port: Number(process.env.DB_PORT),
             user: process.env.DB_USER,
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
+
             ssl: {
                 rejectUnauthorized: false
             }
         });
 
-        console.log("MySQL Connected Successfully");
+        console.log("✅ MySQL Connected Successfully");
+
     } catch (err) {
-        console.error(err);
+        console.error("❌ Database Connection Failed");
+        console.error("Error code:", err.code);
+        console.error("Error message:", err.message);
+
         process.exit(1);
     }
 }
 
 connectDatabase();
+
 // ======================================================
 // MULTER STORAGE
 // ======================================================
@@ -298,40 +313,13 @@ function generateOTP(){
 app.get("/", async (req, res) => {
     try {
 
-        // Get latest approved reviews
-        const [reviews] = await db.query(`
-            SELECT *
-            FROM reviews
-            WHERE status = 'Approved'
-            ORDER BY created_at DESC
-            LIMIT 6
-        `);
-
-        // Get review statistics
-        const [stats] = await db.query(`
-            SELECT
-                COUNT(*) AS totalReviews,
-                ROUND(AVG(rating),1) AS averageRating,
-                SUM(CASE WHEN rating = 5 THEN 1 ELSE 0 END) AS star5,
-                SUM(CASE WHEN rating = 4 THEN 1 ELSE 0 END) AS star4,
-                SUM(CASE WHEN rating = 3 THEN 1 ELSE 0 END) AS star3,
-                SUM(CASE WHEN rating = 2 THEN 1 ELSE 0 END) AS star2,
-                SUM(CASE WHEN rating = 1 THEN 1 ELSE 0 END) AS star1
-            FROM reviews
-            WHERE status = 'Approved'
-        `);
-
-        res.render("index", {
-            reviews,
-            stats: stats[0]
-        });
+        res.render("index");
 
     } catch (err) {
         console.error(err);
         res.status(500).send("Server Error");
     }
 });
-
 app.get("/about", (req, res) => {
 
     res.render("about");
@@ -10801,12 +10789,15 @@ async function sendApprovalEmail({
 // =====================================
 // START SERVER
 // =====================================
+// =====================================
+// START SERVER
+// =====================================
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log("======================================");
     console.log(`Rahma Pearl PG running on port ${PORT}`);
-    console.log(`Open: http://localhost:${PORT}`);
+    console.log(`Server listening on port ${PORT}`);
     console.log("======================================");
 });
