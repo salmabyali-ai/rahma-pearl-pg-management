@@ -65,10 +65,16 @@ app.use(
     })
 );
 
-// ======================================================
-// DATABASE CONNECTION
-// ======================================================
 
+// ============================================
+// RAHMA PEARL PG WEBSITE FAVICON
+// ============================================
+
+app.get("/favicon.ico", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "public", "images", "pg-logo.png")
+    );
+});
 
 // ======================================================
 // DATABASE CONNECTION
@@ -619,24 +625,24 @@ app.post(
                 // MEAL PRICE
                 // ---------------------------------------------
 
-                let messAmount = 5500;
+                let messAmount = 3000;
 
                 if (meal_type === "Breakfast") {
-                    messAmount = 1800;
+                    messAmount = 1000;
                 }
                 else if (meal_type === "Lunch") {
-                    messAmount = 2200;
+                    messAmount = 1000;
                 }
                 else if (meal_type === "Dinner") {
-                    messAmount = 2200;
+                    messAmount = 1000;
                 }
                 else if (
                     meal_type === "Lunch and Dinner"
                 ) {
-                    messAmount = 4200;
+                    messAmount = 2000;
                 }
                 else {
-                    messAmount = 5500;
+                    messAmount = 3000;
                 }
 
                 // ---------------------------------------------
