@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Register | Rahma Pearl Girls PG</title>
+    <title>Registration | Rahma Pearl Girls PG</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -23,24 +23,23 @@
 
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #6257b5, #806bd0);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #5b54a4, #7565c7);
             min-height: 100vh;
         }
 
         .topbar {
-            height: 75px;
             background: #fff;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 7%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         .brand {
-            color: #6678e8;
-            font-size: 23px;
+            color: #6575e8;
+            font-size: 24px;
             font-weight: 800;
         }
 
@@ -49,92 +48,76 @@
         }
 
         .login-btn {
-            text-decoration: none;
-            border: 1.5px solid #6378ed;
-            color: #6378ed;
-            padding: 10px 22px;
+            border: 2px solid #6376ec;
+            color: #6376ec;
+            background: white;
             border-radius: 30px;
+            padding: 10px 25px;
             font-weight: 700;
+            text-decoration: none;
         }
 
         .login-btn:hover {
-            background: #6378ed;
+            background: #6376ec;
             color: white;
         }
 
-        .page-wrapper {
-            padding: 55px 6%;
-        }
-
-        .register-card {
+        .main-container {
+            width: 88%;
             max-width: 1150px;
-            margin: auto;
+            margin: 55px auto;
             background: white;
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.18);
             display: grid;
             grid-template-columns: 42% 58%;
+            box-shadow: 0 20px 60px rgba(0,0,0,.20);
         }
 
-        /* LEFT SIDE */
-
-        .left-panel {
-            background: linear-gradient(160deg, #6678e8, #7366c6);
+        .left-section {
+            background: linear-gradient(160deg, #6878e7, #7061c5);
             color: white;
             padding: 45px 35px;
         }
 
-        .small-badge {
-            display: inline-block;
-            background: white;
-            color: #456ce5;
-            padding: 8px 18px;
-            border-radius: 25px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .left-panel h1 {
-            font-size: 32px;
+        .left-section h1 {
+            font-size: 34px;
             font-weight: 800;
-            line-height: 1.15;
             margin-bottom: 20px;
         }
 
-        .left-panel > p {
+        .left-section > p {
             font-size: 16px;
             line-height: 1.7;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .feature {
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(255,255,255,.12);
+            border-radius: 17px;
+            padding: 18px;
+            margin-bottom: 15px;
             display: flex;
-            align-items: flex-start;
             gap: 15px;
-            padding: 15px;
-            border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.10);
-            border-radius: 16px;
-            margin-bottom: 13px;
         }
 
         .feature-icon {
-            min-width: 44px;
-            height: 44px;
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
             border-radius: 12px;
             background: white;
-            color: #6678e8;
+            color: #6375e6;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 18px;
+            justify-content: center;
+            font-size: 20px;
         }
 
         .feature h4 {
             margin: 0 0 5px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 800;
         }
 
@@ -144,33 +127,14 @@
             line-height: 1.5;
         }
 
-        .process-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 17px;
-            background: rgba(55,40,130,0.35);
-        }
-
-        .process-box h4 {
-            font-size: 16px;
-            margin-bottom: 14px;
-        }
-
-        .process-box p {
-            font-size: 14px;
-            margin: 9px 0;
-        }
-
-        /* RIGHT SIDE */
-
-        .right-panel {
+        .right-section {
             padding: 45px 40px;
         }
 
         .title {
             text-align: center;
-            color: #6378e8;
-            font-size: 31px;
+            color: #6575e8;
+            font-size: 32px;
             font-weight: 800;
             margin-bottom: 5px;
         }
@@ -178,271 +142,201 @@
         .subtitle {
             text-align: center;
             color: #777;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #6375e7;
+            font-size: 16px;
+            font-weight: 800;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 18px;
+        }
+
+        .section-title i {
+            margin-right: 8px;
+        }
+
+        .registration-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-bottom: 25px;
+        }
+
+        .type-card {
+            border: 2px solid #ddd;
+            border-radius: 18px;
+            padding: 22px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .type-card:hover {
+            border-color: #6878e7;
+            transform: translateY(-2px);
+        }
+
+        .type-card.active {
+            border-color: #6375ec;
+            background: #f3f4ff;
+            box-shadow: 0 8px 20px rgba(99,117,236,.12);
+        }
+
+        .type-card i {
+            color: #6575e8;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .type-card h4 {
+            font-size: 16px;
+            margin: 0 0 6px;
+            font-weight: 800;
+        }
+
+        .type-card p {
+            margin: 0;
+            color: #777;
+            font-size: 13px;
+        }
+
+        .form-label {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 50px;
+            border-radius: 12px;
+            border: 1px solid #d8d8e5;
+            padding: 12px 14px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #6575e8;
+            box-shadow: 0 0 0 3px rgba(101,117,232,.12);
+        }
+
+        textarea.form-control {
+            min-height: 110px;
         }
 
         .alert {
             border-radius: 15px;
         }
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            color: #6378e8;
-            font-weight: 800;
-            font-size: 16px;
-            margin: 25px 0 15px;
-        }
-
-        .section-line {
-            height: 1px;
-            background: #ddd;
-            flex: 1;
-        }
-
-        /* ROLE */
-
-        .role-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .role-option {
-            position: relative;
-        }
-
-        .role-option input {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .role-card {
-            display: block;
-            border: 2px solid #ddd;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.2s;
-            height: 100%;
-        }
-
-        .role-card:hover {
-            border-color: #6678e8;
-            background: #f7f8ff;
-        }
-
-        .role-option input:checked + .role-card {
-            border-color: #6378ed;
-            background: #f1f2ff;
-            box-shadow: 0 7px 20px rgba(99,120,237,0.12);
-        }
-
-        .role-card i {
-            display: block;
-            color: #6378ed;
-            font-size: 27px;
-            margin-bottom: 10px;
-        }
-
-        .role-card strong {
-            display: block;
-            font-size: 16px;
-            color: #222;
-        }
-
-        .role-card span {
-            display: block;
-            color: #777;
-            font-size: 13px;
-            margin-top: 7px;
-        }
-
-        /* FORM */
-
-        .row-fields {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        label {
-            display: block;
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 7px;
-            color: #222;
-        }
-
-        label .required {
-            color: #e63946;
-        }
-
-        input,
-        textarea,
-        select {
-            width: 100%;
-            border: 1px solid #d7d7e5;
-            border-radius: 11px;
-            padding: 13px 14px;
-            outline: none;
-            font-size: 14px;
-            background: white;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            border-color: #6678e8;
-            box-shadow: 0 0 0 3px rgba(102,120,232,0.12);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .password-wrapper {
-            position: relative;
-        }
-
-        .password-wrapper input {
-            padding-right: 45px;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-            cursor: pointer;
-        }
-
-        .help-text {
-            color: #777;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
         /* MESS SECTION */
-
-        #messFields {
+        #messSection {
             display: none;
-            background: #f7f8ff;
-            border: 1px solid #dce1ff;
-            padding: 20px;
-            border-radius: 17px;
-            margin-top: 18px;
+            background: #f7f7ff;
+            border: 2px solid #e0e2ff;
+            border-radius: 18px;
+            padding: 22px;
+            margin-top: 20px;
         }
 
-        #messFields.show {
+        #messSection.show {
             display: block;
         }
 
-        .mess-heading {
-            color: #596fe2;
+        .mess-title {
+            color: #6575e8;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 19px;
             margin-bottom: 15px;
         }
 
-        .date-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        .price-box {
+            background: linear-gradient(135deg, #6878e7, #7565c7);
+            color: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
         }
 
-        .date-required {
-            color: red;
+        .price-box .amount {
+            font-size: 30px;
+            font-weight: 800;
         }
 
-        .mess-note {
-            background: #fff8df;
-            border: 1px solid #f0df9d;
-            color: #765d00;
-            padding: 12px 15px;
-            border-radius: 10px;
-            font-size: 13px;
-            margin-top: 12px;
+        .price-box small {
+            opacity: .9;
         }
-
-        /* TERMS */
 
         .terms {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
+            background: #f7f7ff;
+            border-radius: 12px;
+            padding: 15px;
             margin-top: 20px;
-            font-size: 13px;
+        }
+
+        .terms label {
+            font-size: 14px;
             color: #555;
-        }
-
-        .terms input {
-            width: auto;
-            margin-top: 3px;
-        }
-
-        .terms a {
-            color: #6378ed;
-            font-weight: 700;
         }
 
         .submit-btn {
             width: 100%;
             border: none;
-            background: linear-gradient(135deg, #6378ed, #7565ca);
+            background: linear-gradient(135deg, #6275ea, #725fc3);
             color: white;
             padding: 15px;
             border-radius: 13px;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 800;
-            margin-top: 22px;
-            cursor: pointer;
-            transition: 0.2s;
+            margin-top: 25px;
         }
 
         .submit-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(99,120,237,0.25);
+            opacity: .92;
         }
 
-        .back-login {
-            text-align: center;
-            margin-top: 18px;
+        .hidden {
+            display: none !important;
+        }
+
+        .info-box {
+            background: #fff8df;
+            border: 1px solid #f0df9a;
+            color: #725c1c;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-top: 15px;
             font-size: 14px;
-            color: #777;
         }
 
-        .back-login a {
-            color: #6378ed;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 900px) {
-            .register-card {
+        @media(max-width: 900px) {
+            .main-container {
                 grid-template-columns: 1fr;
+                width: 95%;
             }
 
-            .left-panel {
+            .left-section {
                 display: none;
             }
 
-            .right-panel {
-                padding: 30px 22px;
+            .right-section {
+                padding: 30px 20px;
             }
         }
 
-        @media (max-width: 600px) {
+        @media(max-width: 600px) {
+            .registration-types {
+                grid-template-columns: 1fr;
+            }
+
             .topbar {
                 padding: 0 20px;
             }
@@ -451,18 +345,8 @@
                 font-size: 18px;
             }
 
-            .page-wrapper {
-                padding: 20px 10px;
-            }
-
-            .role-container,
-            .row-fields,
-            .date-row {
-                grid-template-columns: 1fr;
-            }
-
-            .title {
-                font-size: 25px;
+            .main-container {
+                margin: 20px auto;
             }
         }
     </style>
@@ -470,12 +354,14 @@
 
 <body>
 
-<!-- ================= TOP BAR ================= -->
+<!-- ============================= -->
+<!-- TOP BAR -->
+<!-- ============================= -->
 
 <div class="topbar">
 
     <div class="brand">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-house-chimney"></i>
         Rahma Pearl Girls PG
     </div>
 
@@ -487,616 +373,664 @@
 </div>
 
 
-<!-- ================= MAIN ================= -->
+<!-- ============================= -->
+<!-- MAIN -->
+<!-- ============================= -->
 
-<div class="page-wrapper">
+<div class="main-container">
 
-    <div class="register-card">
+    <!-- ============================= -->
+    <!-- LEFT SIDE -->
+    <!-- ============================= -->
 
-        <!-- ================= LEFT ================= -->
+    <div class="left-section">
 
-        <div class="left-panel">
+        <h1>
+            Welcome to Rahma Pearl Girls PG
+        </h1>
 
-            <div class="small-badge">
-                <i class="fa-solid fa-star"></i>
-                Safe, Comfortable and Convenient
+        <p>
+            Apply for PG accommodation or mess facilities
+            using one simple registration form.
+        </p>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
             </div>
 
-            <h1>
-                Welcome to Rahma Pearl Girls PG
-            </h1>
-
-            <p>
-                Apply for PG accommodation or mess facilities
-                using one simple registration form.
-            </p>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-
-                <div>
-                    <h4>Safe Environment</h4>
-                    <p>
-                        Secure and student-friendly accommodation
-                        with responsible management.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    <i class="fa-solid fa-bed"></i>
-                </div>
-
-                <div>
-                    <h4>Comfortable Rooms</h4>
-                    <p>
-                        Clean rooms with practical sharing options
-                        and essential facilities.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-
-                <div>
-                    <h4>Healthy Meals</h4>
-                    <p>
-                        Breakfast, lunch and dinner according
-                        to the selected mess plan.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    <i class="fa-solid fa-wifi"></i>
-                </div>
-
-                <div>
-                    <h4>Essential Facilities</h4>
-                    <p>
-                        Wi-Fi, water, electricity and properly
-                        maintained common areas.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="feature">
-
-                <div class="feature-icon">
-                    <i class="fa-solid fa-calendar-check"></i>
-                </div>
-
-                <div>
-                    <h4>Online Dashboard</h4>
-                    <p>
-                        View attendance, payments, complaints
-                        and meal details online.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="process-box">
-
-                <h4>
-                    <i class="fa-solid fa-circle-info"></i>
-                    Registration Process
-                </h4>
+            <div>
+                <h4>Safe Environment</h4>
 
                 <p>
-                    <i class="fa-solid fa-check"></i>
-                    Complete the registration form
+                    Secure and student-friendly accommodation
+                    with responsible management.
                 </p>
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Submit accurate information
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-check"></i>
-                    Wait for administrator approval
-                </p>
-
             </div>
 
         </div>
 
 
-        <!-- ================= RIGHT ================= -->
+        <div class="feature">
 
-        <div class="right-panel">
+            <div class="feature-icon">
+                <i class="fa-solid fa-bed"></i>
+            </div>
 
-            <h1 class="title">
-                <i class="fa-solid fa-user-plus"></i>
-                Create Account
-            </h1>
+            <div>
+                <h4>Comfortable Rooms</h4>
 
-            <p class="subtitle">
-                Select PG Student or Mess Student and complete your details.
-            </p>
+                <p>
+                    Clean rooms with practical sharing options
+                    and essential facilities.
+                </p>
+            </div>
+
+        </div>
 
 
-            <!-- ERROR -->
+        <div class="feature">
 
-            <% if (typeof error !== "undefined" && error) { %>
+            <div class="feature-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
 
-                <div class="alert alert-danger">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <strong>Registration failed:</strong>
-                    <%= error %>
+            <div>
+                <h4>Healthy Meals</h4>
+
+                <p>
+                    Breakfast, lunch and dinner according to
+                    the selected mess plan.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+
+            <div>
+                <h4>Essential Facilities</h4>
+
+                <p>
+                    Wi-Fi, water, electricity and properly
+                    maintained common areas.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <h4>Online Dashboard</h4>
+
+                <p>
+                    View attendance, payments, complaints
+                    and meal details online.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- RIGHT SIDE -->
+    <!-- ============================= -->
+
+    <div class="right-section">
+
+        <h2 class="title">
+            <i class="fa-solid fa-user-plus"></i>
+            Create Account
+        </h2>
+
+        <p class="subtitle">
+            Select PG Student or Mess Student and complete your details.
+        </p>
+
+
+        <!-- ERROR -->
+        <% if (typeof error !== "undefined" && error) { %>
+
+            <div class="alert alert-danger">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                <strong>Registration failed:</strong>
+
+                <%= error %>
+
+            </div>
+
+        <% } %>
+
+
+        <!-- SUCCESS -->
+        <% if (typeof success !== "undefined" && success) { %>
+
+            <div class="alert alert-success">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <%= success %>
+
+            </div>
+
+        <% } %>
+
+
+        <!-- ============================= -->
+        <!-- FORM -->
+        <!-- ============================= -->
+
+        <form
+            action="/register"
+            method="POST"
+            enctype="multipart/form-data"
+            id="registrationForm"
+        >
+
+
+            <!-- ============================= -->
+            <!-- REGISTRATION TYPE -->
+            <!-- ============================= -->
+
+            <div class="section-title">
+                <i class="fa-solid fa-users"></i>
+                Select Registration Type
+            </div>
+
+
+            <div class="registration-types">
+
+
+                <!-- PG -->
+                <div
+                    class="type-card active"
+                    id="pgCard"
+                    onclick="selectRegistrationType('student')"
+                >
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <h4>
+                        PG Student
+                    </h4>
+
+                    <p>
+                        Room and food facilities
+                    </p>
+
                 </div>
 
-            <% } %>
 
+                <!-- MESS -->
+                <div
+                    class="type-card"
+                    id="messCard"
+                    onclick="selectRegistrationType('mess')"
+                >
 
-            <!-- SUCCESS -->
+                    <i class="fa-solid fa-bowl-food"></i>
 
-            <% if (typeof success !== "undefined" && success) { %>
+                    <h4>
+                        Mess Student
+                    </h4>
 
-                <div class="alert alert-success">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <%= success %>
+                    <p>
+                        Food facility only
+                    </p>
+
                 </div>
 
-            <% } %>
+            </div>
 
 
-            <!-- ================= FORM ================= -->
-
-            <form
-                action="/register"
-                method="POST"
-                enctype="multipart/form-data"
-                id="registerForm"
+            <!-- IMPORTANT -->
+            <input
+                type="hidden"
+                name="role"
+                id="role"
+                value="<%= (formData && formData.role) ? formData.role : 'student' %>"
             >
 
 
-                <!-- ================= ROLE ================= -->
+            <!-- ============================= -->
+            <!-- PERSONAL INFORMATION -->
+            <!-- ============================= -->
 
-                <div class="section-title">
+            <div class="section-title">
 
-                    <i class="fa-solid fa-users"></i>
+                <i class="fa-solid fa-address-card"></i>
 
-                    <span>Select Registration Type</span>
+                Personal Information
 
-                    <div class="section-line"></div>
-
-                </div>
-
-
-                <div class="role-container">
-
-                    <!-- PG -->
-
-                    <div class="role-option">
-
-                        <input
-                            type="radio"
-                            name="role"
-                            id="studentRole"
-                            value="student"
-                            <%= formData && formData.role === "student" ? "checked" : "" %>
-                        >
-
-                        <label
-                            for="studentRole"
-                            class="role-card"
-                        >
-
-                            <i class="fa-solid fa-user-graduate"></i>
-
-                            <strong>PG Student</strong>
-
-                            <span>
-                                Room and food facilities
-                            </span>
-
-                        </label>
-
-                    </div>
+            </div>
 
 
-                    <!-- MESS -->
+            <div class="row g-3">
 
-                    <div class="role-option">
 
-                        <input
-                            type="radio"
-                            name="role"
-                            id="messRole"
-                            value="mess"
-                            <%= formData && formData.role === "mess" ? "checked" : "" %>
-                        >
+                <!-- FIRST NAME -->
 
-                        <label
-                            for="messRole"
-                            class="role-card"
-                        >
+                <div class="col-md-6">
 
-                            <i class="fa-solid fa-bowl-food"></i>
+                    <label class="form-label">
+                        First Name
+                        <span class="required">*</span>
+                    </label>
 
-                            <strong>Mess Student</strong>
-
-                            <span>
-                                Food facility only
-                            </span>
-
-                        </label>
-
-                    </div>
+                    <input
+                        type="text"
+                        name="first_name"
+                        class="form-control"
+                        placeholder="Enter first name"
+                        value="<%= formData && formData.first_name ? formData.first_name : '' %>"
+                        required
+                    >
 
                 </div>
 
 
-                <!-- ================= MESS FIELDS ================= -->
+                <!-- LAST NAME -->
 
-                <div id="messFields">
+                <div class="col-md-6">
 
-                    <div class="mess-heading">
+                    <label class="form-label">
+                        Last Name
+                        <span class="required">*</span>
+                    </label>
 
-                        <i class="fa-solid fa-utensils"></i>
-
-                        Mess Registration Details
-
-                    </div>
-
-
-                    <div class="mess-note">
-
-                        <i class="fa-solid fa-circle-info"></i>
-
-                        Mess Student registration provides food
-                        services without room accommodation.
-
-                    </div>
-
-
-                    <!-- MEAL TYPE -->
-
-                    <div class="form-group mt-3">
-
-                        <label for="meal_type">
-                            Meal Plan
-                            <span class="required">*</span>
-                        </label>
-
-                        <select
-                            name="meal_type"
-                            id="meal_type"
-                        >
-
-                            <option value="Full Day"
-                                <%= formData && formData.meal_type === "Full Day" ? "selected" : "" %>>
-                                Full Day - ₹5500
-                            </option>
-
-                            <option value="Breakfast"
-                                <%= formData && formData.meal_type === "Breakfast" ? "selected" : "" %>>
-                                Breakfast - ₹1800
-                            </option>
-
-                            <option value="Lunch"
-                                <%= formData && formData.meal_type === "Lunch" ? "selected" : "" %>>
-                                Lunch - ₹2200
-                            </option>
-
-                            <option value="Dinner"
-                                <%= formData && formData.meal_type === "Dinner" ? "selected" : "" %>>
-                                Dinner - ₹2200
-                            </option>
-
-                            <option value="Lunch and Dinner"
-                                <%= formData && formData.meal_type === "Lunch and Dinner" ? "selected" : "" %>>
-                                Lunch and Dinner - ₹4200
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- DATES -->
-
-                    <div class="date-row">
-
-                        <div class="form-group">
-
-                            <label for="from_date">
-
-                                Mess Starting Date
-
-                                <span class="date-required">*</span>
-
-                            </label>
-
-                            <input
-                                type="date"
-                                name="from_date"
-                                id="from_date"
-                                value="<%= formData && formData.from_date ? formData.from_date : '' %>"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="to_date">
-
-                                Mess Ending Date
-
-                                <span class="date-required">*</span>
-
-                            </label>
-
-                            <input
-                                type="date"
-                                name="to_date"
-                                id="to_date"
-                                value="<%= formData && formData.to_date ? formData.to_date : '' %>"
-                            >
-
-                        </div>
-
-                    </div>
+                    <input
+                        type="text"
+                        name="last_name"
+                        class="form-control"
+                        placeholder="Enter last name"
+                        value="<%= formData && formData.last_name ? formData.last_name : '' %>"
+                        required
+                    >
 
                 </div>
 
 
-                <!-- ================= PERSONAL INFORMATION ================= -->
+                <!-- EMAIL -->
 
-                <div class="section-title">
+                <div class="col-md-6">
 
-                    <i class="fa-solid fa-address-card"></i>
+                    <label class="form-label">
+                        Email Address
+                        <span class="required">*</span>
+                    </label>
 
-                    <span>Personal Information</span>
-
-                    <div class="section-line"></div>
-
-                </div>
-
-
-                <div class="row-fields">
-
-                    <!-- FIRST NAME -->
-
-                    <div class="form-group">
-
-                        <label for="first_name">
-
-                            First Name
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            type="text"
-                            name="first_name"
-                            id="first_name"
-                            placeholder="Enter first name"
-                            value="<%= formData && formData.first_name ? formData.first_name : '' %>"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- LAST NAME -->
-
-                    <div class="form-group">
-
-                        <label for="last_name">
-
-                            Last Name
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            type="text"
-                            name="last_name"
-                            id="last_name"
-                            placeholder="Enter last name"
-                            value="<%= formData && formData.last_name ? formData.last_name : '' %>"
-                            required
-                        >
-
-                    </div>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="example@gmail.com"
+                        value="<%= formData && formData.email ? formData.email : '' %>"
+                        required
+                    >
 
                 </div>
 
 
-                <div class="row-fields">
+                <!-- PHONE -->
 
-                    <!-- EMAIL -->
+                <div class="col-md-6">
 
-                    <div class="form-group">
+                    <label class="form-label">
+                        Phone Number
+                        <span class="required">*</span>
+                    </label>
 
-                        <label for="email">
-
-                            Email Address
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="example@gmail.com"
-                            value="<%= formData && formData.email ? formData.email : '' %>"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- PHONE -->
-
-                    <div class="form-group">
-
-                        <label for="phone">
-
-                            Phone Number
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            type="tel"
-                            name="phone"
-                            id="phone"
-                            placeholder="10-digit phone number"
-                            maxlength="10"
-                            value="<%= formData && formData.phone ? formData.phone : '' %>"
-                            required
-                        >
-
-                    </div>
+                    <input
+                        type="tel"
+                        name="phone"
+                        class="form-control"
+                        placeholder="10-digit phone number"
+                        maxlength="10"
+                        value="<%= formData && formData.phone ? formData.phone : '' %>"
+                        required
+                    >
 
                 </div>
 
 
                 <!-- ADDRESS -->
 
-                <div class="form-group">
+                <div class="col-12">
 
-                    <label for="address">
-
+                    <label class="form-label">
                         Full Address
-
                         <span class="required">*</span>
-
                     </label>
 
                     <textarea
                         name="address"
-                        id="address"
+                        class="form-control"
                         placeholder="Enter house number, area, city, state and PIN code"
                         required
                     ><%= formData && formData.address ? formData.address : '' %></textarea>
 
                 </div>
 
+            </div>
 
-                <!-- ================= ACCOUNT SECURITY ================= -->
+
+            <!-- ================================================= -->
+            <!-- MESS SECTION -->
+            <!-- ================================================= -->
+
+            <div id="messSection">
+
+                <div class="mess-title">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    Mess Registration Details
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Mess Student registration provides food services
+                    without room accommodation.
+
+                </div>
+
+
+                <div class="row g-3 mt-1">
+
+
+                    <!-- START DATE -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+
+                            Mess Starting Date
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input
+                            type="date"
+                            name="from_date"
+                            id="from_date"
+                            class="form-control"
+                            value="<%= formData && formData.from_date ? formData.from_date : '' %>"
+                        >
+
+                    </div>
+
+
+                    <!-- END DATE -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+
+                            Mess Ending Date
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input
+                            type="date"
+                            name="to_date"
+                            id="to_date"
+                            class="form-control"
+                            value="<%= formData && formData.to_date ? formData.to_date : '' %>"
+                        >
+
+                    </div>
+
+
+                    <!-- MEAL TYPE -->
+
+                    <div class="col-md-12">
+
+                        <label class="form-label">
+
+                            Meal Type
+
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <select
+                            name="meal_type"
+                            id="meal_type"
+                            class="form-select"
+                        >
+
+                            <option value="Full Day">
+                                Full Day
+                            </option>
+
+                            <option value="Breakfast">
+                                Breakfast
+                            </option>
+
+                            <option value="Lunch">
+                                Lunch
+                            </option>
+
+                            <option value="Dinner">
+                                Dinner
+                            </option>
+
+                            <option value="Lunch and Dinner">
+                                Lunch and Dinner
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- MESS PRICE -->
+                <!-- ============================= -->
+
+                <div class="price-box">
+
+                    <small>
+                        Monthly Mess Fee
+                    </small>
+
+                    <div class="amount">
+                        ₹3,000
+                    </div>
+
+                    <small>
+                        Food facility only
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- ACCOUNT SECURITY -->
+            <!-- ============================= -->
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Account Security
+
+            </div>
+
+
+            <div class="row g-3">
+
+
+                <!-- PASSWORD -->
+
+                <div class="col-md-6">
+
+                    <label class="form-label">
+
+                        Password
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            class="form-control"
+                            placeholder="Minimum 6 characters"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary"
+                            onclick="togglePassword('password', this)"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                    <small class="text-muted">
+                        Use letters, numbers and symbols.
+                    </small>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="col-md-6">
+
+                    <label class="form-label">
+
+                        Confirm Password
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <input
+                            type="password"
+                            name="confirm_password"
+                            id="confirm_password"
+                            class="form-control"
+                            placeholder="Confirm your password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary"
+                            onclick="togglePassword('confirm_password', this)"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- PAYMENT PROOF - PG ONLY -->
+            <!-- ============================= -->
+
+            <div id="paymentSection">
 
                 <div class="section-title">
 
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-receipt"></i>
 
-                    <span>Account Security</span>
-
-                    <div class="section-line"></div>
+                    Payment Proof
 
                 </div>
 
+                <div class="info-box">
 
-                <div class="row-fields">
+                    <i class="fa-solid fa-circle-info"></i>
 
-                    <!-- PASSWORD -->
-
-                    <div class="form-group">
-
-                        <label for="password">
-
-                            Password
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <div class="password-wrapper">
-
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="Minimum 6 characters"
-                                minlength="6"
-                                required
-                            >
-
-                            <i
-                                class="fa-solid fa-eye password-toggle"
-                                onclick="togglePassword('password', this)"
-                            ></i>
-
-                        </div>
-
-                        <div class="help-text">
-                            Use letters, numbers and symbols.
-                        </div>
-
-                    </div>
-
-
-                    <!-- CONFIRM PASSWORD -->
-
-                    <div class="form-group">
-
-                        <label for="confirm_password">
-
-                            Confirm Password
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <div class="password-wrapper">
-
-                            <input
-                                type="password"
-                                name="confirm_password"
-                                id="confirm_password"
-                                placeholder="Confirm your password"
-                                minlength="6"
-                                required
-                            >
-
-                            <i
-                                class="fa-solid fa-eye password-toggle"
-                                onclick="togglePassword('confirm_password', this)"
-                            ></i>
-
-                        </div>
-
-                    </div>
+                    PG students can upload their payment screenshot.
+                    Admin will verify the payment before approval.
 
                 </div>
 
+                <div class="mt-3">
 
-                <!-- ================= TERMS ================= -->
+                    <label class="form-label">
 
-                <div class="terms">
+                        Payment Screenshot
+
+                    </label>
 
                     <input
+                        type="file"
+                        name="payment_proof"
+                        class="form-control"
+                        accept="image/*,.pdf"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- TERMS -->
+            <!-- ============================= -->
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+                Terms and Conditions
+
+            </div>
+
+
+            <div class="terms">
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input"
                         type="checkbox"
                         name="accept_terms"
                         value="yes"
@@ -1104,102 +1038,126 @@
                         required
                     >
 
-                    <label for="accept_terms">
+                    <label
+                        class="form-check-label"
+                        for="accept_terms"
+                    >
 
-                        I agree to the
-                        <a href="#" onclick="return false;">
-                            Terms and Conditions
-                        </a>
-                        and confirm that the information provided
-                        is correct.
+                        I confirm that the information provided
+                        is correct and I agree to the PG/Mess
+                        terms and conditions.
 
                     </label>
 
                 </div>
 
-
-                <!-- ================= SUBMIT ================= -->
-
-                <button
-                    type="submit"
-                    class="submit-btn"
-                    id="submitBtn"
-                >
-
-                    <i class="fa-solid fa-user-plus"></i>
-
-                    Create Account
-
-                </button>
+            </div>
 
 
-                <div class="back-login">
+            <!-- ============================= -->
+            <!-- SUBMIT -->
+            <!-- ============================= -->
 
-                    Already have an account?
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submitBtn"
+            >
 
-                    <a href="/login">
-                        Login here
-                    </a>
+                <i class="fa-solid fa-user-plus"></i>
 
-                </div>
+                Create Account
+
+            </button>
 
 
-            </form>
-
-        </div>
+        </form>
 
     </div>
 
 </div>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
 
 <script>
 
-    // ----------------------------------------
-    // SHOW / HIDE MESS FIELDS
-    // ----------------------------------------
+    function selectRegistrationType(type) {
 
-    const studentRole =
-        document.getElementById("studentRole");
+        const roleInput =
+            document.getElementById("role");
 
-    const messRole =
-        document.getElementById("messRole");
+        const pgCard =
+            document.getElementById("pgCard");
 
-    const messFields =
-        document.getElementById("messFields");
+        const messCard =
+            document.getElementById("messCard");
 
-    const fromDate =
-        document.getElementById("from_date");
+        const messSection =
+            document.getElementById("messSection");
 
-    const toDate =
-        document.getElementById("to_date");
+        const paymentSection =
+            document.getElementById("paymentSection");
+
+        const fromDate =
+            document.getElementById("from_date");
+
+        const toDate =
+            document.getElementById("to_date");
 
 
-    function updateRegistrationType() {
+        roleInput.value = type;
 
-        if (messRole.checked) {
 
-            // SHOW MESS SECTION
+        if (type === "mess") {
 
-            messFields.classList.add("show");
+            /* ---------------------------- */
+            /* MESS SELECTED */
+            /* ---------------------------- */
 
-            // MAKE DATES REQUIRED
+            messCard.classList.add("active");
+
+            pgCard.classList.remove("active");
+
+            messSection.classList.add("show");
+
+            paymentSection.classList.add("hidden");
+
+
+            /*
+             * IMPORTANT:
+             * Make dates REQUIRED only for mess.
+             */
 
             fromDate.required = true;
+
             toDate.required = true;
 
         }
+
         else {
 
-            // HIDE MESS SECTION
+            /* ---------------------------- */
+            /* PG SELECTED */
+            /* ---------------------------- */
 
-            messFields.classList.remove("show");
+            pgCard.classList.add("active");
 
-            // DATES NOT REQUIRED FOR PG
+            messCard.classList.remove("active");
+
+            messSection.classList.remove("show");
+
+            paymentSection.classList.remove("hidden");
+
+
+            /*
+             * Dates are not required for PG.
+             */
 
             fromDate.required = false;
+
             toDate.required = false;
 
         }
@@ -1207,83 +1165,14 @@
     }
 
 
-    studentRole.addEventListener(
-        "change",
-        updateRegistrationType
-    );
-
-
-    messRole.addEventListener(
-        "change",
-        updateRegistrationType
-    );
-
-
-    // ----------------------------------------
-    // DATE VALIDATION
-    // ----------------------------------------
-
-    fromDate.addEventListener(
-        "change",
-        function () {
-
-            if (fromDate.value) {
-
-                toDate.min = fromDate.value;
-
-            }
-
-            if (
-                toDate.value &&
-                fromDate.value &&
-                toDate.value < fromDate.value
-            ) {
-
-                toDate.value = "";
-
-                alert(
-                    "Mess ending date cannot be earlier than starting date."
-                );
-
-            }
-
-        }
-    );
-
-
-    toDate.addEventListener(
-        "change",
-        function () {
-
-            if (
-                fromDate.value &&
-                toDate.value &&
-                toDate.value < fromDate.value
-            ) {
-
-                toDate.value = "";
-
-                alert(
-                    "Mess ending date cannot be earlier than starting date."
-                );
-
-            }
-
-        }
-    );
-
-
-    // ----------------------------------------
-    // PASSWORD SHOW / HIDE
-    // ----------------------------------------
-
-    function togglePassword(
-        inputId,
-        icon
-    ) {
+    function togglePassword(id, button) {
 
         const input =
-            document.getElementById(inputId);
+            document.getElementById(id);
+
+        const icon =
+            button.querySelector("i");
+
 
         if (input.type === "password") {
 
@@ -1294,6 +1183,7 @@
             icon.classList.add("fa-eye-slash");
 
         }
+
         else {
 
             input.type = "password";
@@ -1307,48 +1197,55 @@
     }
 
 
-    // ----------------------------------------
-    // PHONE NUMBER
-    // ----------------------------------------
+    /* ============================= */
+    /* PASSWORD CHECK */
+    /* ============================= */
 
     document
-        .getElementById("phone")
-        .addEventListener(
-            "input",
-            function () {
+        .getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
 
-                this.value =
-                    this.value
-                        .replace(/\D/g, "")
-                        .slice(0, 10);
+            const password =
+                document.getElementById("password").value;
+
+            const confirmPassword =
+                document.getElementById("confirm_password").value;
+
+            const role =
+                document.getElementById("role").value;
+
+            const fromDate =
+                document.getElementById("from_date").value;
+
+            const toDate =
+                document.getElementById("to_date").value;
+
+
+            /* Password */
+
+            if (password !== confirmPassword) {
+
+                event.preventDefault();
+
+                alert(
+                    "Password and confirm password do not match."
+                );
+
+                return;
 
             }
-        );
 
 
-    // ----------------------------------------
-    // FORM SUBMIT VALIDATION
-    // ----------------------------------------
+            /* Mess dates */
 
-    document
-        .getElementById("registerForm")
-        .addEventListener(
-            "submit",
-            function (event) {
+            if (role === "mess") {
 
-                // Check role
-
-                const selectedRole =
-                    document.querySelector(
-                        'input[name="role"]:checked'
-                    );
-
-                if (!selectedRole) {
+                if (!fromDate || !toDate) {
 
                     event.preventDefault();
 
                     alert(
-                        "Please select PG Student or Mess Student."
+                        "Please select Mess Starting Date and Mess Ending Date."
                     );
 
                     return;
@@ -1356,107 +1253,52 @@
                 }
 
 
-                // Check mess dates
-
-                if (
-                    selectedRole.value === "mess"
-                ) {
-
-                    if (!fromDate.value) {
-
-                        event.preventDefault();
-
-                        alert(
-                            "Please select the mess starting date."
-                        );
-
-                        fromDate.focus();
-
-                        return;
-
-                    }
-
-
-                    if (!toDate.value) {
-
-                        event.preventDefault();
-
-                        alert(
-                            "Please select the mess ending date."
-                        );
-
-                        toDate.focus();
-
-                        return;
-
-                    }
-
-
-                    if (
-                        toDate.value <
-                        fromDate.value
-                    ) {
-
-                        event.preventDefault();
-
-                        alert(
-                            "Mess ending date cannot be earlier than starting date."
-                        );
-
-                        return;
-
-                    }
-
-                }
-
-
-                // Check password
-
-                const password =
-                    document.getElementById("password").value;
-
-                const confirmPassword =
-                    document.getElementById("confirm_password").value;
-
-
-                if (
-                    password !==
-                    confirmPassword
-                ) {
+                if (toDate < fromDate) {
 
                     event.preventDefault();
 
                     alert(
-                        "Password and confirm password do not match."
+                        "Mess ending date cannot be earlier than starting date."
                     );
 
                     return;
 
                 }
 
+            }
 
-                // Button
+        });
 
-                const submitBtn =
-                    document.getElementById("submitBtn");
 
-                submitBtn.disabled = true;
+    /* ============================= */
+    /* RESTORE SELECTED TYPE */
+    /* ============================= */
 
-                submitBtn.innerHTML =
-                    '<i class="fa-solid fa-spinner fa-spin"></i> Creating Account...';
+    document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+
+            const role =
+                document.getElementById("role").value;
+
+
+            if (role === "mess") {
+
+                selectRegistrationType("mess");
 
             }
-        );
 
+            else {
 
-    // ----------------------------------------
-    // IMPORTANT:
-    // RESTORE MESS SECTION AFTER VALIDATION ERROR
-    // ----------------------------------------
+                selectRegistrationType("student");
 
-    updateRegistrationType();
+            }
+
+        }
+    );
 
 </script>
+
 
 </body>
 </html>
