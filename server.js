@@ -381,35 +381,33 @@ app.get("/register", (req, res) => {
 // ----------------------------
 // REGISTER STUDENT
 // ----------------------------
+// ============================================================
+// REGISTRATION
+// PG STUDENT + MESS STUDENT
+// ============================================================
+
 app.post(
     "/register",
     upload.single("payment_proof"),
     async (req, res) => {
 
         const formData = {
-
             first_name: req.body.first_name || "",
-
             last_name: req.body.last_name || "",
-
             email: req.body.email || "",
-
             phone: req.body.phone || "",
-
             address: req.body.address || "",
-
             role: req.body.role || "",
-
             meal_type: req.body.meal_type || "Full Day",
-
             from_date: req.body.from_date || "",
-
             to_date: req.body.to_date || ""
-
         };
 
-
         try {
+
+            // ------------------------------------------------
+            // GET FORM DATA
+            // ------------------------------------------------
 
             const first_name =
                 String(req.body.first_name || "").trim();
@@ -418,7 +416,9 @@ app.post(
                 String(req.body.last_name || "").trim();
 
             const email =
-                String(req.body.email || "").trim().toLowerCase();
+                String(req.body.email || "")
+                    .trim()
+                    .toLowerCase();
 
             const password =
                 String(req.body.password || "");
@@ -434,7 +434,9 @@ app.post(
                 String(req.body.address || "").trim();
 
             const role =
-                String(req.body.role || "").trim().toLowerCase();
+                String(req.body.role || "")
+                    .trim()
+                    .toLowerCase();
 
             const meal_type =
                 String(req.body.meal_type || "Full Day").trim();
@@ -448,10 +450,9 @@ app.post(
             const accept_terms =
                 String(req.body.accept_terms || "");
 
-
-            // ============================================
+            // ------------------------------------------------
             // BASIC VALIDATION
-            // ============================================
+            // ------------------------------------------------
 
             if (
                 !first_name ||
@@ -463,117 +464,67 @@ app.post(
                 !address ||
                 !role
             ) {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "Please enter all required details.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error: "Please enter all required details.",
+                    success: null,
+                    formData
+                });
             }
-
 
             if (
                 role !== "student" &&
                 role !== "mess"
             ) {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "Please select PG Student or Mess Student.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error:
+                        "Please select PG Student or Mess Student.",
+                    success: null,
+                    formData
+                });
             }
-
 
             if (password.length < 6) {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "Password must contain at least 6 characters.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error:
+                        "Password must contain at least 6 characters.",
+                    success: null,
+                    formData
+                });
             }
-
 
             if (password !== confirm_password) {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "Password and confirm password do not match.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error:
+                        "Password and confirm password do not match.",
+                    success: null,
+                    formData
+                });
             }
-
 
             if (accept_terms !== "yes") {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "You must accept the terms and conditions.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error:
+                        "You must accept the terms and conditions.",
+                    success: null,
+                    formData
+                });
             }
-
 
             if (!/^[0-9]{10}$/.test(phone)) {
-
-                return res.status(400).render(
-                    "register",
-                    {
-                        error:
-                            "Please enter a valid 10-digit phone number.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(400).render("register", {
+                    error:
+                        "Please enter a valid 10-digit phone number.",
+                    success: null,
+                    formData
+                });
             }
-
 
             const fullName =
                 `${first_name} ${last_name}`;
 
-
-            // ============================================
-            // CHECK EMAIL
-            // ============================================
+            // ------------------------------------------------
+            // CHECK EXISTING EMAIL
+            // ------------------------------------------------
 
             const [existingStudent] =
                 await db.query(
@@ -586,7 +537,6 @@ app.post(
                     [email]
                 );
 
-
             const [existingMess] =
                 await db.query(
                     `
@@ -598,144 +548,100 @@ app.post(
                     [email]
                 );
 
-
             if (
                 existingStudent.length > 0 ||
                 existingMess.length > 0
             ) {
-
-                return res.status(409).render(
-                    "register",
-                    {
-                        error:
-                            "This email is already registered. Please login or use another email.",
-
-                        success: null,
-
-                        formData
-                    }
-                );
-
+                return res.status(409).render("register", {
+                    error:
+                        "This email is already registered. Please login or use another email.",
+                    success: null,
+                    formData
+                });
             }
 
-
-            // ============================================
-            // PASSWORD
-            // ============================================
+            // ------------------------------------------------
+            // HASH PASSWORD
+            // ------------------------------------------------
 
             const hashedPassword =
                 await bcrypt.hash(password, 10);
 
-
-            // ============================================
+            // =================================================
             // MESS STUDENT
-            // ============================================
+            // =================================================
 
             if (role === "mess") {
 
-
+                // ---------------------------------------------
                 // DATE REQUIRED
+                // ---------------------------------------------
 
-                if (
-                    !from_date ||
-                    !to_date
-                ) {
-
-                    return res.status(400).render(
-                        "register",
-                        {
-                            error:
-                                "Please select the mess starting date and ending date.",
-
-                            success: null,
-
-                            formData
-                        }
-                    );
-
+                if (!from_date || !to_date) {
+                    return res.status(400).render("register", {
+                        error:
+                            "Please select the mess starting date and ending date.",
+                        success: null,
+                        formData
+                    });
                 }
 
-
+                // ---------------------------------------------
                 // DATE FORMAT
+                // ---------------------------------------------
 
                 if (
                     !/^\d{4}-\d{2}-\d{2}$/.test(from_date) ||
                     !/^\d{4}-\d{2}-\d{2}$/.test(to_date)
                 ) {
-
-                    return res.status(400).render(
-                        "register",
-                        {
-                            error:
-                                "Please select valid mess dates.",
-
-                            success: null,
-
-                            formData
-                        }
-                    );
-
+                    return res.status(400).render("register", {
+                        error:
+                            "Please select valid mess dates.",
+                        success: null,
+                        formData
+                    });
                 }
 
-
+                // ---------------------------------------------
                 // DATE ORDER
+                // ---------------------------------------------
 
                 if (to_date < from_date) {
-
-                    return res.status(400).render(
-                        "register",
-                        {
-                            error:
-                                "Mess ending date cannot be earlier than the starting date.",
-
-                            success: null,
-
-                            formData
-                        }
-                    );
-
+                    return res.status(400).render("register", {
+                        error:
+                            "Mess ending date cannot be earlier than the starting date.",
+                        success: null,
+                        formData
+                    });
                 }
 
-
-                // ========================================
+                // ---------------------------------------------
                 // MEAL PRICE
-                // ========================================
+                // ---------------------------------------------
 
                 let messAmount = 5500;
 
-
                 if (meal_type === "Breakfast") {
-
                     messAmount = 1800;
-
                 }
                 else if (meal_type === "Lunch") {
-
                     messAmount = 2200;
-
                 }
                 else if (meal_type === "Dinner") {
-
                     messAmount = 2200;
-
                 }
                 else if (
                     meal_type === "Lunch and Dinner"
                 ) {
-
                     messAmount = 4200;
-
                 }
                 else {
-
                     messAmount = 5500;
-
                 }
 
-
-                // ========================================
+                // ---------------------------------------------
                 // INSERT MESS STUDENT
-                // ========================================
+                // ---------------------------------------------
 
                 const [result] =
                     await db.query(
@@ -757,49 +663,33 @@ app.post(
                         `,
                         [
                             fullName,
-
                             email,
-
                             hashedPassword,
-
                             phone,
-
                             meal_type,
-
                             messAmount,
-
                             from_date,
-
                             to_date,
-
                             "Active",
-
                             "Pending"
                         ]
                     );
-
 
                 console.log(
                     "MESS STUDENT CREATED:",
                     result.insertId
                 );
 
-
-                // ========================================
+                // ---------------------------------------------
                 // EMAIL
-                // ========================================
+                // ---------------------------------------------
 
                 try {
 
                     await sendRegistrationEmail({
-
                         name: fullName,
-
                         email: email,
-
-                        registrationType:
-                            "Mess Student"
-
+                        registrationType: "Mess Student"
                     });
 
                 }
@@ -812,41 +702,32 @@ app.post(
 
                 }
 
+                // ---------------------------------------------
+                // SUCCESS
+                // ---------------------------------------------
 
                 return res.render(
                     "registration-success",
                     {
-
-                        studentName:
-                            fullName,
-
-                        email:
-                            email,
-
-                        registrationType:
-                            "Mess Student",
-
-                        approvalStatus:
-                            "Pending",
-
+                        studentName: fullName,
+                        email: email,
+                        registrationType: "Mess Student",
+                        approvalStatus: "Pending",
                         successMessage:
                             "Your mess registration has been submitted successfully. Please wait for admin approval."
-
                     }
                 );
-
             }
 
-
-            // ============================================
+            // =================================================
             // PG STUDENT
-            // ============================================
+            // =================================================
 
-            const paymentProof =
-                req.file
-                    ? req.file.filename
-                    : null;
-
+            /*
+             * IMPORTANT:
+             * payment_proof was removed here because your
+             * students table does NOT contain payment_proof.
+             */
 
             await db.query(
                 `
@@ -858,44 +739,36 @@ app.post(
                     password,
                     phone,
                     address,
-                    payment_proof,
                     status
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
                 `,
                 [
-
                     first_name,
-
                     last_name,
-
                     email,
-
                     hashedPassword,
-
                     phone,
-
                     address,
-
-                    paymentProof,
-
                     "Pending"
-
                 ]
             );
 
+            console.log(
+                "PG STUDENT CREATED:",
+                email
+            );
+
+            // ---------------------------------------------
+            // EMAIL
+            // ---------------------------------------------
 
             try {
 
                 await sendRegistrationEmail({
-
                     name: fullName,
-
                     email: email,
-
-                    registrationType:
-                        "PG Student"
-
+                    registrationType: "PG Student"
                 });
 
             }
@@ -908,29 +781,21 @@ app.post(
 
             }
 
+            // ---------------------------------------------
+            // SUCCESS
+            // ---------------------------------------------
 
             return res.render(
                 "registration-success",
                 {
-
-                    studentName:
-                        fullName,
-
-                    email:
-                        email,
-
-                    registrationType:
-                        "PG Student",
-
-                    approvalStatus:
-                        "Pending",
-
+                    studentName: fullName,
+                    email: email,
+                    registrationType: "PG Student",
+                    approvalStatus: "Pending",
                     successMessage:
                         "Your PG registration has been submitted successfully. Please wait for admin approval."
-
                 }
             );
-
 
         }
         catch (error) {
@@ -940,46 +805,38 @@ app.post(
                 error
             );
 
+            // ---------------------------------------------
+            // DUPLICATE EMAIL
+            // ---------------------------------------------
 
-            if (
-                error.code ===
-                "ER_DUP_ENTRY"
-            ) {
+            if (error.code === "ER_DUP_ENTRY") {
 
                 return res.status(409).render(
                     "register",
                     {
-
                         error:
                             "This email is already registered. Please use another email.",
-
                         success: null,
-
                         formData
-
                     }
                 );
-
             }
 
+            // ---------------------------------------------
+            // OTHER ERROR
+            // ---------------------------------------------
 
             return res.status(500).render(
                 "register",
                 {
-
                     error:
                         "Registration failed: " +
                         error.message,
-
                     success: null,
-
                     formData
-
                 }
             );
-
         }
-
     }
 );
 // ----------------------------
