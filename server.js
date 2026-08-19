@@ -107,40 +107,40 @@ app.get("/favicon.ico", (req, res) => {
 // ======================================================
 // DATABASE CONNECTION
 // ======================================================
-let db;
+// ======================================================
+// DATABASE CONNECTION POOL
+// ======================================================
 
-async function connectDatabase() {
+const db = mysql.createPool({
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT || 3306),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+
+    ssl: {
+        rejectUnauthorized: false
+    },
+
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
+
+console.log("✅ MySQL connection pool created");
+
+// Test database connection
+(async () => {
     try {
-        console.log("Connecting to MySQL...");
-        console.log("DB_HOST:", process.env.DB_HOST);
-        console.log("DB_PORT:", process.env.DB_PORT);
-        console.log("DB_USER:", process.env.DB_USER);
-        console.log("DB_NAME:", process.env.DB_NAME);
-
-        db = await mysql.createConnection({
-            host: process.env.DB_HOST,
-            port: Number(process.env.DB_PORT),
-            user: process.env.DB_USER,
-            password: process.env.DB_PASSWORD,
-            database: process.env.DB_NAME,
-
-            ssl: {
-                rejectUnauthorized: false
-            }
-        });
-
+        const connection = await db.getConnection();
         console.log("✅ MySQL Connected Successfully");
-
+        connection.release();
     } catch (err) {
         console.error("❌ Database Connection Failed");
         console.error("Error code:", err.code);
         console.error("Error message:", err.message);
-
-        process.exit(1);
     }
-}
-
-connectDatabase();
+})();
 
 // ======================================================
 // MULTER STORAGE
