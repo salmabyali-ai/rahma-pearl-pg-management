@@ -3,28 +3,21 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Search Information -->
     <meta
         name="description"
         content="Rahma Pearl Girls PG in Sattur, Dharwad. Safe, comfortable and premium girls PG accommodation for students and working women, with rooms, meals, Wi-Fi and essential facilities."
     >
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+    <meta name="robots" content="index, follow">
 
-    <title>
-        Rahma Pearl Girls PG | Girls PG in Sattur, Dharwad
-    </title>
+    <title>Rahma Pearl Girls PG | Girls PG in Sattur, Dharwad</title>
 
+    <!-- =========================
+         LOGO / FAVICON
+    ========================== -->
 
-    <!-- Website Logo / Chrome Tab -->
     <link
         rel="icon"
         type="image/png"
@@ -41,13 +34,11 @@
         href="/images/pg-logo.png"
     >
 
-
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
 
     <!-- Font Awesome -->
     <link
@@ -55,13 +46,14 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-
     <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
+
     <style>
+
         :root {
             --primary-color: #6c5ce7;
             --primary-dark: #5649d8;
@@ -107,8 +99,8 @@
         ========================== */
 
         .navbar {
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 2px 18px rgba(0,0,0,0.08);
             padding: 13px 0;
             transition: 0.3s ease;
         }
@@ -116,27 +108,20 @@
         .navbar-brand {
             display: flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
             color: var(--primary-color) !important;
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
-        .brand-icon {
-            width: 42px;
-            height: 42px;
+        /* ACTUAL LOGO */
+        .navbar-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
             border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            background: linear-gradient(
-                135deg,
-                var(--primary-color),
-                var(--accent-color)
-            );
-            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+            background: white;
         }
 
         .navbar-nav {
@@ -155,7 +140,7 @@
 
         .nav-link:hover {
             color: var(--primary-color) !important;
-            background: rgba(108, 92, 231, 0.08);
+            background: rgba(108,92,231,0.08);
         }
 
         .navbar-toggler {
@@ -178,8 +163,13 @@
             transform: translateY(-2px);
         }
 
+        .navbar-scrolled {
+            padding: 8px 0;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+        }
+
         /* =========================
-           HERO SECTION
+           HERO
         ========================== */
 
         .hero-section {
@@ -188,11 +178,12 @@
             display: flex;
             align-items: center;
             color: white;
+
             background:
                 linear-gradient(
                     110deg,
-                    rgba(21, 24, 40, 0.88),
-                    rgba(75, 58, 145, 0.68)
+                    rgba(21,24,40,0.88),
+                    rgba(75,58,145,0.68)
                 ),
                 url("https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1600&q=85");
 
@@ -207,7 +198,7 @@
             width: 420px;
             height: 420px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
             top: -140px;
             right: -100px;
         }
@@ -218,7 +209,7 @@
             width: 290px;
             height: 290px;
             border-radius: 50%;
-            background: rgba(253, 121, 168, 0.15);
+            background: rgba(253,121,168,0.15);
             left: -100px;
             bottom: -120px;
         }
@@ -234,9 +225,9 @@
             align-items: center;
             gap: 9px;
             padding: 9px 17px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255,255,255,0.35);
             border-radius: 30px;
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255,255,255,0.12);
             backdrop-filter: blur(8px);
             margin-bottom: 24px;
             font-size: 14px;
@@ -244,7 +235,7 @@
         }
 
         .hero-title {
-            font-size: clamp(44px, 6vw, 76px);
+            font-size: clamp(44px,6vw,76px);
             line-height: 1.1;
             font-weight: 800;
             margin-bottom: 22px;
@@ -258,7 +249,7 @@
             max-width: 680px;
             font-size: 18px;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.86);
+            color: rgba(255,255,255,0.86);
             margin-bottom: 34px;
         }
 
@@ -283,13 +274,12 @@
             border-radius: 35px;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: 0 12px 26px rgba(108, 92, 231, 0.35);
+            box-shadow: 0 12px 26px rgba(108,92,231,0.35);
         }
 
         .primary-button:hover {
             color: white;
             transform: translateY(-4px);
-            box-shadow: 0 18px 35px rgba(108, 92, 231, 0.42);
         }
 
         .outline-button {
@@ -298,7 +288,7 @@
             justify-content: center;
             gap: 10px;
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.75);
+            border: 2px solid rgba(255,255,255,0.75);
             padding: 12px 27px;
             border-radius: 35px;
             font-weight: 700;
@@ -308,7 +298,6 @@
         .outline-button:hover {
             color: var(--primary-color);
             background: white;
-            border-color: white;
             transform: translateY(-4px);
         }
 
@@ -332,7 +321,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.15);
             font-size: 20px;
         }
 
@@ -344,12 +333,12 @@
 
         .hero-stat p {
             margin: 2px 0 0;
-            color: rgba(255, 255, 255, 0.72);
+            color: rgba(255,255,255,0.72);
             font-size: 13px;
         }
 
         /* =========================
-           COMMON SECTION STYLES
+           COMMON
         ========================== */
 
         .section-padding {
@@ -359,7 +348,7 @@
         .section-label {
             display: inline-block;
             color: var(--primary-color);
-            background: rgba(108, 92, 231, 0.1);
+            background: rgba(108,92,231,0.1);
             padding: 8px 15px;
             border-radius: 30px;
             font-size: 13px;
@@ -370,7 +359,7 @@
         }
 
         .section-title {
-            font-size: clamp(32px, 4vw, 47px);
+            font-size: clamp(32px,4vw,47px);
             font-weight: 800;
             line-height: 1.25;
             margin-bottom: 16px;
@@ -383,11 +372,11 @@
         }
 
         /* =========================
-           ABOUT SECTION
+           ABOUT
         ========================== */
 
         .about-section {
-            background: var(--white-color);
+            background: white;
         }
 
         .about-image-wrapper {
@@ -400,7 +389,7 @@
             height: 520px;
             object-fit: cover;
             border-radius: 26px;
-            box-shadow: 0 22px 55px rgba(33, 37, 65, 0.16);
+            box-shadow: 0 22px 55px rgba(33,37,65,0.16);
         }
 
         .about-image-wrapper::before {
@@ -426,7 +415,7 @@
             background: white;
             border-radius: 18px;
             padding: 22px;
-            box-shadow: 0 14px 40px rgba(28, 32, 57, 0.18);
+            box-shadow: 0 14px 40px rgba(28,32,57,0.18);
             min-width: 190px;
         }
 
@@ -454,7 +443,7 @@
 
         .about-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2,1fr);
             gap: 15px;
             margin: 30px 0;
         }
@@ -474,21 +463,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(108, 92, 231, 0.12);
+            background: rgba(108,92,231,0.12);
             color: var(--primary-color);
             font-size: 13px;
         }
 
         /* =========================
-           FEATURES SECTION
+           FEATURES
         ========================== */
 
         .features-section {
-            background: linear-gradient(
-                180deg,
-                #f9f9ff,
-                #f2f1ff
-            );
+            background: linear-gradient(180deg,#f9f9ff,#f2f1ff);
         }
 
         .feature-card {
@@ -496,15 +481,14 @@
             background: white;
             padding: 34px 28px;
             border-radius: 20px;
-            border: 1px solid rgba(108, 92, 231, 0.08);
+            border: 1px solid rgba(108,92,231,0.08);
             transition: 0.35s;
-            box-shadow: 0 8px 25px rgba(36, 40, 70, 0.06);
+            box-shadow: 0 8px 25px rgba(36,40,70,0.06);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 44px rgba(43, 47, 82, 0.14);
-            border-color: rgba(108, 92, 231, 0.22);
+            box-shadow: 0 20px 44px rgba(43,47,82,0.14);
         }
 
         .feature-icon-box {
@@ -522,15 +506,6 @@
                 var(--primary-color),
                 var(--secondary-color)
             );
-            box-shadow: 0 11px 24px rgba(108, 92, 231, 0.25);
-        }
-
-        .feature-card:nth-child(even) .feature-icon-box {
-            background: linear-gradient(
-                135deg,
-                #fd79a8,
-                #e84393
-            );
         }
 
         .feature-card h4 {
@@ -547,1328 +522,24 @@
         }
 
         /* =========================
-           RESPONSIVE
+           FACILITIES
         ========================== */
-
-        @media (max-width: 991px) {
-            .navbar-nav {
-                align-items: flex-start;
-                padding-top: 15px;
-            }
-
-            .login-button {
-                margin-top: 8px;
-                display: inline-block;
-            }
-
-            .hero-section {
-                min-height: 85vh;
-                text-align: center;
-            }
-
-            .hero-content {
-                margin: auto;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .about-content {
-                padding-left: 0;
-                padding-top: 50px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .section-padding {
-                padding: 70px 0;
-            }
-
-            .hero-title {
-                font-size: 44px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .hero-stat {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .about-main-image {
-                height: 420px;
-            }
-
-            .about-experience-card {
-                right: 5px;
-                bottom: 40px;
-            }
-
-            .about-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .hero-title {
-                font-size: 38px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .primary-button,
-            .outline-button {
-                width: 100%;
-            }
-
-            .about-main-image {
-                height: 350px;
-            }
-
-            .about-experience-card {
-                position: relative;
-                right: auto;
-                bottom: auto;
-                margin: -40px 20px 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- =========================
-         NAVIGATION BAR
-    ========================== -->
-
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-
-            <a class="navbar-brand" href="/">
-                <span class="brand-icon">
-                    <i class="fas fa-gem"></i>
-                </span>
-
-                RAHMA PEARL
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div
-                class="collapse navbar-collapse"
-                id="navbarNav"
-            >
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            About
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">
-                            Features
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#facilities">
-                            Facilities
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#location">
-                            Location
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">
-                            Contact
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/terms">
-                            Terms
-                        </a>
-                    </li>
-
-                    <li class="nav-item ms-lg-3">
-                        <a class="login-button" href="/login">
-                            <i class="fas fa-right-to-bracket me-2"></i>
-                            Login
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
-
-    <section class="hero-section">
-        <div class="container">
-
-            <div class="hero-content">
-
-                <div class="hero-badge">
-                    <i class="fas fa-shield-heart"></i>
-                    Safe, Comfortable and Premium Living
-                </div>
-
-                <h1 class="hero-title">
-                    Your Perfect
-                    <span>Home Away</span>
-                    From Home
-                </h1>
-
-                <p class="hero-description">
-                    Experience secure, comfortable and modern living at
-                    Rahma Pearl Girls PG. We provide a welcoming environment
-                    for students and working women in Sattur, Dharwad.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="/register"
-                        class="primary-button"
-                    >
-                        <i class="fas fa-user-plus"></i>
-                        Apply for Admission
-                    </a>
-
-                    <a
-                        href="#location"
-                        class="outline-button"
-                    >
-                        <i class="fas fa-location-dot"></i>
-                        View Location
-                    </a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div class="hero-stat">
-                        <div class="hero-stat-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-
-                        <div>
-                            <h5>24/7</h5>
-                            <p>CCTV Security</p>
-                        </div>
-                    </div>
-
-                    <div class="hero-stat">
-                        <div class="hero-stat-icon">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-
-                        <div>
-                            <h5>High-Speed</h5>
-                            <p>Wi-Fi Facility</p>
-                        </div>
-                    </div>
-
-                    <div class="hero-stat">
-                        <div class="hero-stat-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-
-                        <div>
-                            <h5>Healthy</h5>
-                            <p>Daily Meals</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =========================
-         ABOUT SECTION
-    ========================== -->
-
-    <section
-        class="about-section section-padding"
-        id="about"
-    >
-        <div class="container">
-
-            <div class="row align-items-center">
-
-                <div class="col-lg-6">
-
-                    <div class="about-image-wrapper">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=85"
-                            alt="Rahma Pearl Girls PG comfortable accommodation"
-                            class="about-main-image"
-                        >
-
-                        <div class="about-experience-card">
-                            <i class="fas fa-house-circle-check"></i>
-
-                            <h4>Premium</h4>
-
-                            <p>
-                                Safe and comfortable accommodation
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6">
-
-                    <div class="about-content">
-
-                        <span class="section-label">
-                            About Us
-                        </span>
-
-                        <h2 class="section-title">
-                            A Safe and Comfortable Place to Live
-                        </h2>
-
-                        <p class="section-description">
-                            Rahma Pearl Girls PG is designed to provide
-                            students and working women with a peaceful,
-                            secure and friendly environment. Our rooms,
-                            food services and common areas are maintained
-                            with cleanliness and comfort as our highest
-                            priorities.
-                        </p>
-
-                        <p class="section-description">
-                            Located in Rajaji Nagar 2nd Cross, Sattur,
-                            Dharwad, our PG offers convenient access to
-                            nearby colleges, offices, shops, hospitals
-                            and transportation facilities.
-                        </p>
-
-                        <div class="about-list">
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Clean and furnished rooms
-                            </div>
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Safe environment
-                            </div>
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Hygienic daily food
-                            </div>
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Friendly community
-                            </div>
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Convenient location
-                            </div>
-
-                            <div class="about-list-item">
-                                <i class="fas fa-check"></i>
-                                Helpful management
-                            </div>
-
-                        </div>
-
-                        <a
-                            href="/about"
-                            class="primary-button"
-                        >
-                            Learn More About Us
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================
-         FEATURES SECTION
-    ========================== -->
-
-    <section
-        class="features-section section-padding"
-        id="features"
-    >
-        <div class="container">
-
-            <div class="text-center mb-5">
-
-                <span class="section-label">
-                    Why Choose Us
-                </span>
-
-                <h2 class="section-title">
-                    Everything You Need for Comfortable Living
-                </h2>
-
-                <p
-                    class="section-description mx-auto"
-                    style="max-width: 720px;"
-                >
-                    We provide essential facilities and dedicated services
-                    to make your stay safe, convenient and enjoyable.
-                </p>
-
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-shield-halved"></i>
-                        </div>
-
-                        <h4>24/7 Security</h4>
-
-                        <p>
-                            CCTV surveillance and controlled access help
-                            maintain a secure living environment throughout
-                            the day and night.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-
-                        <h4>High-Speed Wi-Fi</h4>
-
-                        <p>
-                            Reliable internet access is available for online
-                            classes, office work, communication and
-                            entertainment.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-
-                        <h4>Hygienic Food</h4>
-
-                        <p>
-                            Fresh and nutritious meals are prepared daily
-                            in a clean kitchen with attention to quality
-                            and hygiene.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-bed"></i>
-                        </div>
-
-                        <h4>Comfortable Rooms</h4>
-
-                        <p>
-                            Well-maintained rooms with essential furniture
-                            provide a peaceful space for studying, working
-                            and relaxing.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-broom"></i>
-                        </div>
-
-                        <h4>Regular Cleaning</h4>
-
-                        <p>
-                            Common areas and living spaces are cleaned
-                            regularly to maintain a pleasant and hygienic
-                            atmosphere.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="feature-card">
-
-                        <div class="feature-icon-box">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-
-                        <h4>Convenient Location</h4>
-
-                        <p>
-                            Located at Rajaji Nagar 2nd Cross, Sattur,
-                            Dharwad, with easy access to nearby educational
-                            institutions and transport.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PART 2 CONTINUES FROM HERE -->
-         <!-- =========================
-         FACILITIES SECTION
-    ========================== -->
-
-    <section
-        class="section-padding"
-        id="facilities"
-        style="background:#ffffff;"
-    >
-        <div class="container">
-
-            <div class="text-center mb-5">
-
-                <span class="section-label">
-                    Our Facilities
-                </span>
-
-                <h2 class="section-title">
-                    Facilities Designed for a Better Stay
-                </h2>
-
-                <p
-                    class="section-description mx-auto"
-                    style="max-width:720px;"
-                >
-                    Rahma Pearl Girls PG provides useful daily facilities
-                    to support a comfortable, safe and stress-free lifestyle.
-                </p>
-
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            01
-                        </div>
-
-                        <i class="fas fa-bed facility-icon"></i>
-
-                        <h5>Furnished Rooms</h5>
-
-                        <p>
-                            Comfortable rooms with beds, storage space and
-                            essential furniture for everyday living.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            02
-                        </div>
-
-                        <i class="fas fa-droplet facility-icon"></i>
-
-                        <h5>Water Facility</h5>
-
-                        <p>
-                            Reliable water supply for drinking, bathing,
-                            cleaning and other daily requirements.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            03
-                        </div>
-
-                        <i class="fas fa-bolt facility-icon"></i>
-
-                        <h5>Power Support</h5>
-
-                        <p>
-                            Proper electrical arrangements for lighting,
-                            charging devices and daily usage.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            04
-                        </div>
-
-                        <i class="fas fa-shirt facility-icon"></i>
-
-                        <h5>Laundry Area</h5>
-
-                        <p>
-                            Convenient space for washing and drying clothes
-                            while maintaining cleanliness and organisation.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            05
-                        </div>
-
-                        <i class="fas fa-book-open-reader facility-icon"></i>
-
-                        <h5>Study Friendly</h5>
-
-                        <p>
-                            Peaceful surroundings that help students focus
-                            on classes, assignments and exam preparation.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            06
-                        </div>
-
-                        <i class="fas fa-bus facility-icon"></i>
-
-                        <h5>Transport Access</h5>
-
-                        <p>
-                            Easy access to nearby bus stops, autos and local
-                            transport from the Sattur area.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            07
-                        </div>
-
-                        <i class="fas fa-store facility-icon"></i>
-
-                        <h5>Nearby Shops</h5>
-
-                        <p>
-                            Daily essentials, pharmacies, food outlets and
-                            grocery shops are available nearby.
-                        </p>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="facility-box">
-
-                        <div class="facility-number">
-                            08
-                        </div>
-
-                        <i class="fas fa-user-shield facility-icon"></i>
-
-                        <h5>Supportive Management</h5>
-
-                        <p>
-                            Friendly management support is available for
-                            accommodation concerns and daily assistance.
-                        </p>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================
-         CALL TO ACTION
-    ========================== -->
-
-    <section class="admission-section">
-
-        <div class="container">
-
-            <div class="admission-card">
-
-                <div class="row align-items-center">
-
-                    <div class="col-lg-8">
-
-                        <span class="admission-label">
-                            Admissions Open
-                        </span>
-
-                        <h2>
-                            Looking for a Safe and Comfortable Girls PG?
-                        </h2>
-
-                        <p>
-                            Apply for admission at Rahma Pearl Girls PG and
-                            enjoy a peaceful stay with essential facilities
-                            in Sattur, Dharwad.
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-
-                        <a
-                            href="/register"
-                            class="admission-button"
-                        >
-                            <i class="fas fa-file-signature"></i>
-                            Apply Now
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================
-         LOCATION SECTION
-    ========================== -->
-
-    <section
-        class="location-section section-padding"
-        id="location"
-    >
-        <div class="container">
-
-            <div class="text-center mb-5">
-
-                <span class="section-label">
-                    Find Us
-                </span>
-
-                <h2 class="section-title">
-                    Visit Rahma Pearl Girls PG
-                </h2>
-
-                <p
-                    class="section-description mx-auto"
-                    style="max-width:700px;"
-                >
-                    Click the map or the direction button to open the
-                    Rahma Pearl Girls PG location directly in Google Maps.
-                </p>
-
-            </div>
-
-            <div class="location-card">
-
-                <div class="row g-0">
-
-                    <div class="col-lg-7">
-
-                        <div class="map-container">
-
-                            <iframe
-                                src="https://www.google.com/maps?q=15.405405,75.038448&z=17&output=embed"
-                                width="100%"
-                                height="100%"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Rahma Pearl Girls PG location map"
-                            >
-                            </iframe>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-5">
-
-                        <div class="location-details">
-
-                            <div class="location-icon">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-
-                            <span class="location-small-text">
-                                Our Address
-                            </span>
-
-                            <h3>
-                                Rahma Pearl Girls PG
-                            </h3>
-
-                            <div class="address-card">
-
-                                <i class="fas fa-map-pin"></i>
-
-                                <div>
-                                    <strong>
-                                        Rajaji Nagar, 2nd Cross
-                                    </strong>
-
-                                    <p>
-                                        Sattur, Dharwad<br>
-                                        Karnataka, India
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class="location-feature">
-
-                                <i class="fas fa-circle-check"></i>
-
-                                <span>
-                                    Easy access to local transport
-                                </span>
-
-                            </div>
-
-                            <div class="location-feature">
-
-                                <i class="fas fa-circle-check"></i>
-
-                                <span>
-                                    Nearby shops and essential services
-                                </span>
-
-                            </div>
-
-                            <div class="location-feature">
-
-                                <i class="fas fa-circle-check"></i>
-
-                                <span>
-                                    Convenient for students and working women
-                                </span>
-
-                            </div>
-
-                            <div class="location-buttons">
-
-                                <a
-                                    href="https://www.google.com/maps/search/?api=1&query=15.405405,75.038448"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="map-button"
-                                >
-                                    <i class="fas fa-map-location-dot"></i>
-                                    Open in Google Maps
-                                </a>
-
-                                <a
-                                    href="https://www.google.com/maps/dir/?api=1&destination=15.405405,75.038448"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="direction-button"
-                                >
-                                    <i class="fas fa-diamond-turn-right"></i>
-                                    Get Directions
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================
-         CONTACT SECTION
-    ========================== -->
-
-    <section class="contact-section section-padding">
-
-        <div class="container">
-
-            <div class="row align-items-center g-5">
-
-                <div class="col-lg-6">
-
-                    <span class="section-label">
-                        Contact Us
-                    </span>
-
-                    <h2 class="section-title">
-                        Have Questions About Admission?
-                    </h2>
-
-                    <p class="section-description">
-                        Contact Rahma Pearl Girls PG for room availability,
-                        admission details, fees and other accommodation
-                        information.
-                    </p>
-
-                    <div class="contact-list">
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-
-                            <div>
-                                <h6>Address</h6>
-
-                                <p>
-                                    Rajaji Nagar 2nd Cross,
-                                    Sattur, Dharwad
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-
-                            <div>
-                                <h6>Visiting Hours</h6>
-
-                                <p>
-                                    Contact management before visiting
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-
-                            <div>
-                                <h6>Support</h6>
-
-                                <p>
-                                    Use our contact page for enquiries
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6">
-
-                    <div class="contact-action-card">
-
-                        <div class="contact-action-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-
-                        <h3>
-                            We Are Here to Help
-                        </h3>
-
-                        <p>
-                            Send your enquiry through our contact page and
-                            our management team will assist you.
-                        </p>
-
-                        <a
-                            href="/contact"
-                            class="primary-button"
-                        >
-                            <i class="fas fa-paper-plane"></i>
-                            Contact Management
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="row g-4">
-
-                <div class="col-lg-5 col-md-6">
-
-                    <a
-                        href="/"
-                        class="footer-brand"
-                    >
-                        <span class="brand-icon">
-                            <i class="fas fa-gem"></i>
-                        </span>
-
-                        RAHMA PEARL
-                    </a>
-
-                    <p class="footer-description">
-                        Rahma Pearl Girls PG provides safe, comfortable
-                        and convenient accommodation for students and
-                        working women in Sattur, Dharwad.
-                    </p>
-
-                    <div class="footer-location">
-
-                        <i class="fas fa-location-dot"></i>
-
-                        <span>
-                            Rajaji Nagar 2nd Cross,
-                            Sattur, Dharwad
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-
-                    <h5 class="footer-heading">
-                        Quick Links
-                    </h5>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="/">
-                                <i class="fas fa-angle-right"></i>
-                                Home
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/about">
-                                <i class="fas fa-angle-right"></i>
-                                About Us
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/features">
-                                <i class="fas fa-angle-right"></i>
-                                Features
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/contact">
-                                <i class="fas fa-angle-right"></i>
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-
-                    <h5 class="footer-heading">
-                        Important Links
-                    </h5>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="/register">
-                                <i class="fas fa-angle-right"></i>
-                                Apply for Admission
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/login">
-                                <i class="fas fa-angle-right"></i>
-                                Login Portal
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/terms">
-                                <i class="fas fa-angle-right"></i>
-                                Terms &amp; Conditions
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=15.405405,75.038448"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i class="fas fa-angle-right"></i>
-                                Google Maps
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-            <hr class="footer-divider">
-
-            <div class="footer-bottom">
-
-                <p>
-                    &copy; 2026 Rahma Pearl PG Management System.
-                    All rights reserved.
-                </p>
-
-                <p>
-                    Safe Living
-                    <i class="fas fa-heart"></i>
-                    Comfortable Stay
-                </p>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <!-- WhatsApp Floating Button -->
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919611755149?text=Hello%20Rahma%20Pearl%20PG,%20I%20want%20to%20know%20about%20room%20availability."
-   class="whatsapp-float"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat on WhatsApp">
-
-    <span class="whatsapp-tooltip">Chat with us</span>
-
-    <i class="fab fa-whatsapp"></i>
-
-</a>
-
-    <!-- =========================
-         BACK TO TOP BUTTON
-    ========================== -->
-
-    <button
-        type="button"
-        id="backToTop"
-        class="back-to-top"
-        aria-label="Back to top"
-    >
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Bootstrap JavaScript -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    ></script>
-
-    <script>
-        const backToTopButton = document.getElementById("backToTop");
-
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 400) {
-                backToTopButton.classList.add("show");
-            } else {
-                backToTopButton.classList.remove("show");
-            }
-        });
-
-        backToTopButton.addEventListener("click", function () {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-        const navbar = document.querySelector(".navbar");
-
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 40) {
-                navbar.classList.add("navbar-scrolled");
-            } else {
-                navbar.classList.remove("navbar-scrolled");
-            }
-        });
-
-        const navigationLinks = document.querySelectorAll(
-            ".navbar-collapse .nav-link"
-        );
-
-        const navbarCollapseElement =
-            document.getElementById("navbarNav");
-
-        navigationLinks.forEach(function (link) {
-            link.addEventListener("click", function () {
-                if (
-                    window.innerWidth < 992 &&
-                    navbarCollapseElement.classList.contains("show")
-                ) {
-                    const navbarCollapse =
-                        bootstrap.Collapse.getOrCreateInstance(
-                            navbarCollapseElement
-                        );
-
-                    navbarCollapse.hide();
-                }
-            });
-        });
-    </script>
-
-    <style>
-        /* =========================
-           PART 2 STYLES
-        ========================== */
-
-        .navbar-scrolled {
-            padding: 8px 0;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
-        }
-
-        /* Facilities */
 
         .facility-box {
             position: relative;
             height: 100%;
             padding: 32px 25px;
             border-radius: 20px;
-            background: #ffffff;
+            background: white;
             border: 1px solid #ececff;
             overflow: hidden;
             transition: 0.35s;
-            box-shadow: 0 8px 25px rgba(36, 40, 70, 0.06);
+            box-shadow: 0 8px 25px rgba(36,40,70,0.06);
         }
 
         .facility-box:hover {
             transform: translateY(-8px);
-            border-color: rgba(108, 92, 231, 0.25);
-            box-shadow: 0 19px 40px rgba(43, 47, 82, 0.13);
+            box-shadow: 0 19px 40px rgba(43,47,82,0.13);
         }
 
         .facility-number {
@@ -1877,7 +548,7 @@
             right: 18px;
             font-size: 48px;
             font-weight: 800;
-            color: rgba(108, 92, 231, 0.07);
+            color: rgba(108,92,231,0.07);
         }
 
         .facility-icon {
@@ -1904,11 +575,13 @@
             margin-bottom: 0;
         }
 
-        /* Admission CTA */
+        /* =========================
+           ADMISSION
+        ========================== */
 
         .admission-section {
             padding: 30px 0 90px;
-            background: #ffffff;
+            background: white;
         }
 
         .admission-card {
@@ -1916,36 +589,13 @@
             overflow: hidden;
             padding: 55px;
             border-radius: 26px;
-            color: #ffffff;
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(74, 60, 183, 0.97),
-                    rgba(224, 73, 140, 0.92)
-                );
-            box-shadow: 0 24px 55px rgba(108, 92, 231, 0.28);
-        }
-
-        .admission-card::before {
-            content: "";
-            position: absolute;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.09);
-            top: -110px;
-            right: -60px;
-        }
-
-        .admission-card::after {
-            content: "";
-            position: absolute;
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            left: -70px;
-            bottom: -90px;
+            color: white;
+            background: linear-gradient(
+                120deg,
+                rgba(74,60,183,0.97),
+                rgba(224,73,140,0.92)
+            );
+            box-shadow: 0 24px 55px rgba(108,92,231,0.28);
         }
 
         .admission-card .row {
@@ -1957,8 +607,8 @@
             display: inline-block;
             padding: 7px 14px;
             border-radius: 30px;
-            background: rgba(255, 255, 255, 0.16);
-            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: rgba(255,255,255,0.16);
+            border: 1px solid rgba(255,255,255,0.24);
             margin-bottom: 15px;
             font-size: 13px;
             font-weight: 700;
@@ -1967,14 +617,14 @@
         }
 
         .admission-card h2 {
-            font-size: clamp(30px, 4vw, 43px);
+            font-size: clamp(30px,4vw,43px);
             font-weight: 800;
             margin-bottom: 14px;
         }
 
         .admission-card p {
             max-width: 700px;
-            color: rgba(255, 255, 255, 0.86);
+            color: rgba(255,255,255,0.86);
             line-height: 1.8;
             margin-bottom: 0;
         }
@@ -1984,7 +634,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: #ffffff;
+            background: white;
             color: var(--primary-color);
             padding: 15px 28px;
             border-radius: 35px;
@@ -1995,26 +645,25 @@
         .admission-button:hover {
             color: var(--primary-dark);
             transform: translateY(-4px);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
         }
 
-        /* Location */
+        /* =========================
+           LOCATION
+        ========================== */
 
         .location-section {
-            background: linear-gradient(180deg, #f8f8ff, #f1f0ff);
+            background: linear-gradient(180deg,#f8f8ff,#f1f0ff);
         }
 
         .location-card {
             overflow: hidden;
             border-radius: 25px;
-            background: #ffffff;
-            box-shadow: 0 20px 55px rgba(42, 47, 83, 0.16);
+            background: white;
+            box-shadow: 0 20px 55px rgba(42,47,83,0.16);
         }
 
         .map-container {
             height: 540px;
-            min-height: 100%;
-            background: #e9e9f2;
         }
 
         .map-container iframe {
@@ -2036,7 +685,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
+            color: white;
             font-size: 31px;
             border-radius: 20px;
             margin-bottom: 20px;
@@ -2045,7 +694,6 @@
                 var(--primary-color),
                 var(--accent-color)
             );
-            box-shadow: 0 12px 25px rgba(108, 92, 231, 0.3);
         }
 
         .location-small-text {
@@ -2083,7 +731,6 @@
         .address-card strong {
             display: block;
             margin-bottom: 5px;
-            color: #292d3d;
         }
 
         .address-card p {
@@ -2127,12 +774,12 @@
         }
 
         .map-button {
-            color: #ffffff;
+            color: white;
             background: var(--primary-color);
         }
 
         .map-button:hover {
-            color: #ffffff;
+            color: white;
             background: var(--primary-dark);
             transform: translateY(-3px);
         }
@@ -2140,19 +787,20 @@
         .direction-button {
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
-            background: #ffffff;
+            background: white;
         }
 
         .direction-button:hover {
-            color: #ffffff;
+            color: white;
             background: var(--primary-color);
-            transform: translateY(-3px);
         }
 
-        /* Contact */
+        /* =========================
+           CONTACT
+        ========================== */
 
         .contact-section {
-            background: #ffffff;
+            background: white;
         }
 
         .contact-list {
@@ -2175,7 +823,7 @@
             justify-content: center;
             color: var(--primary-color);
             border-radius: 14px;
-            background: rgba(108, 92, 231, 0.11);
+            background: rgba(108,92,231,0.11);
         }
 
         .contact-item h6 {
@@ -2193,9 +841,9 @@
             text-align: center;
             padding: 50px 38px;
             border-radius: 24px;
-            background: linear-gradient(145deg, #f4f2ff, #fff4f9);
+            background: linear-gradient(145deg,#f4f2ff,#fff4f9);
             border: 1px solid #ebe8ff;
-            box-shadow: 0 16px 42px rgba(44, 48, 84, 0.09);
+            box-shadow: 0 16px 42px rgba(44,48,84,0.09);
         }
 
         .contact-action-icon {
@@ -2206,14 +854,13 @@
             align-items: center;
             justify-content: center;
             border-radius: 24px;
-            color: #ffffff;
+            color: white;
             font-size: 34px;
             background: linear-gradient(
                 135deg,
                 var(--primary-color),
                 var(--accent-color)
             );
-            box-shadow: 0 14px 29px rgba(108, 92, 231, 0.28);
         }
 
         .contact-action-card h3 {
@@ -2228,10 +875,12 @@
             margin-bottom: 25px;
         }
 
-        /* Footer */
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
-            color: #ffffff;
+            color: white;
             padding: 70px 0 22px;
             background: #202332;
         }
@@ -2240,14 +889,21 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            color: #ffffff;
+            color: white;
             font-size: 22px;
             font-weight: 800;
             margin-bottom: 20px;
         }
 
         .footer-brand:hover {
-            color: #ffffff;
+            color: white;
+        }
+
+        .footer-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 12px;
         }
 
         .footer-description {
@@ -2295,7 +951,7 @@
         }
 
         .footer-links a:hover {
-            color: #ffffff;
+            color: white;
             transform: translateX(5px);
         }
 
@@ -2305,7 +961,7 @@
         }
 
         .footer-divider {
-            border-color: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255,255,255,0.12);
             margin: 45px 0 22px;
         }
 
@@ -2327,7 +983,71 @@
             margin: 0 5px;
         }
 
-        /* Back to top */
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 90px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg,#25D366,#128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+            z-index: 9999;
+            transition: 0.35s;
+            animation: whatsappPulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            color: white;
+            transform: translateY(-5px) scale(1.08);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 78px;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes whatsappPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37,211,102,0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(37,211,102,0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37,211,102,0);
+            }
+        }
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
 
         .back-to-top {
             position: fixed;
@@ -2337,9 +1057,9 @@
             height: 47px;
             border: none;
             border-radius: 50%;
-            color: #ffffff;
+            color: white;
             background: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.32);
+            box-shadow: 0 10px 25px rgba(108,92,231,0.32);
             opacity: 0;
             visibility: hidden;
             transform: translateY(15px);
@@ -2358,9 +1078,46 @@
             transform: translateY(-3px);
         }
 
-        /* Responsive */
+        /* =========================
+           RESPONSIVE
+        ========================== */
 
-        @media (max-width: 991px) {
+        @media (max-width:991px) {
+
+            .navbar-nav {
+                align-items: flex-start;
+                padding-top: 15px;
+            }
+
+            .login-button {
+                margin-top: 8px;
+                display: inline-block;
+            }
+
+            .hero-section {
+                min-height: 85vh;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .about-content {
+                padding-left: 0;
+                padding-top: 50px;
+            }
+
             .map-container,
             .map-container iframe {
                 min-height: 430px;
@@ -2376,7 +1133,37 @@
             }
         }
 
-        @media (max-width: 767px) {
+        @media (max-width:767px) {
+
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .hero-title {
+                font-size: 44px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .hero-stat {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-main-image {
+                height: 420px;
+            }
+
+            .about-list {
+                grid-template-columns: 1fr;
+            }
+
             .location-details {
                 padding: 38px 25px;
             }
@@ -2397,7 +1184,42 @@
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width:500px) {
+
+            .navbar-logo,
+            .footer-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .navbar-brand {
+                font-size: 18px;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .primary-button,
+            .outline-button {
+                width: 100%;
+            }
+
+            .about-main-image {
+                height: 350px;
+            }
+
+            .about-experience-card {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin: -40px 20px 0;
+            }
+
             .location-buttons {
                 flex-direction: column;
             }
@@ -2410,99 +1232,1117 @@
             .contact-action-card {
                 padding: 40px 24px;
             }
+
+            .whatsapp-float {
+                width: 58px;
+                height: 58px;
+                right: 15px;
+                bottom: 85px;
+                font-size: 30px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
         }
 
-
-        /* ===============================
-   Modern WhatsApp Floating Button
-================================= */
-
-.whatsapp-float{
-    position:fixed;
-    right:20px;
-    bottom:90px;
-    width:65px;
-    height:65px;
-    background:linear-gradient(135deg,#25D366,#128C7E);
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:34px;
-    box-shadow:0 12px 30px rgba(37,211,102,.45);
-    z-index:9999;
-    transition:.35s ease;
-    animation:whatsappPulse 2s infinite;
-}
-
-.whatsapp-float:hover{
-    color:#fff;
-    transform:translateY(-5px) scale(1.08);
-    box-shadow:0 18px 40px rgba(37,211,102,.55);
-}
-
-.whatsapp-tooltip{
-    position:absolute;
-    right:78px;
-    background:#25D366;
-    color:#fff;
-    padding:10px 15px;
-    border-radius:30px;
-    white-space:nowrap;
-    font-size:14px;
-    font-weight:600;
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
-}
-
-.whatsapp-tooltip::after{
-    content:"";
-    position:absolute;
-    right:-6px;
-    top:50%;
-    transform:translateY(-50%);
-    border-left:6px solid #25D366;
-    border-top:6px solid transparent;
-    border-bottom:6px solid transparent;
-}
-
-.whatsapp-float:hover .whatsapp-tooltip{
-    opacity:1;
-    visibility:visible;
-}
-
-@keyframes whatsappPulse{
-    0%{
-        box-shadow:0 0 0 0 rgba(37,211,102,.6);
-    }
-    70%{
-        box-shadow:0 0 0 20px rgba(37,211,102,0);
-    }
-    100%{
-        box-shadow:0 0 0 0 rgba(37,211,102,0);
-    }
-}
-
-/* Mobile */
-@media(max-width:768px){
-
-    .whatsapp-float{
-        width:58px;
-        height:58px;
-        right:15px;
-        bottom:85px;
-        font-size:30px;
-    }
-
-    .whatsapp-tooltip{
-        display:none;
-    }
-}
     </style>
+</head>
 
+<body>
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="/">
+
+            <!-- ACTUAL RAHMA PEARL LOGO -->
+            <img
+                src="/images/pg-logo.png"
+                alt="Rahma Pearl Girls PG Logo"
+                class="navbar-logo"
+            >
+
+            <span>RAHMA PEARL</span>
+
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+        >
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#facilities">Facilities</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#location">Location</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/terms">Terms</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a class="login-button" href="/login">
+                        <i class="fas fa-right-to-bracket me-2"></i>
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <i class="fas fa-shield-heart"></i>
+                Safe, Comfortable and Premium Living
+            </div>
+
+            <h1 class="hero-title">
+                Your Perfect
+                <span>Home Away</span>
+                From Home
+            </h1>
+
+            <p class="hero-description">
+                Experience secure, comfortable and modern living at
+                Rahma Pearl Girls PG. We provide a welcoming environment
+                for students and working women in Sattur, Dharwad.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/register" class="primary-button">
+                    <i class="fas fa-user-plus"></i>
+                    Apply for Admission
+                </a>
+
+                <a href="#location" class="outline-button">
+                    <i class="fas fa-location-dot"></i>
+                    View Location
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+
+                    <div class="hero-stat-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+
+                    <div>
+                        <h5>24/7</h5>
+                        <p>CCTV Security</p>
+                    </div>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <div class="hero-stat-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+
+                    <div>
+                        <h5>High-Speed</h5>
+                        <p>Wi-Fi Facility</p>
+                    </div>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <div class="hero-stat-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+
+                    <div>
+                        <h5>Healthy</h5>
+                        <p>Daily Meals</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section class="about-section section-padding" id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="about-image-wrapper">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=85"
+                        alt="Rahma Pearl Girls PG comfortable accommodation"
+                        class="about-main-image"
+                    >
+
+                    <div class="about-experience-card">
+
+                        <i class="fas fa-house-circle-check"></i>
+
+                        <h4>Premium</h4>
+
+                        <p>
+                            Safe and comfortable accommodation
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        About Us
+                    </span>
+
+                    <h2 class="section-title">
+                        A Safe and Comfortable Place to Live
+                    </h2>
+
+                    <p class="section-description">
+                        Rahma Pearl Girls PG is designed to provide
+                        students and working women with a peaceful,
+                        secure and friendly environment. Our rooms,
+                        food services and common areas are maintained
+                        with cleanliness and comfort as our highest
+                        priorities.
+                    </p>
+
+                    <p class="section-description">
+                        Located in Rajaji Nagar 2nd Cross, Sattur,
+                        Dharwad, our PG offers convenient access to
+                        nearby colleges, offices, shops, hospitals
+                        and transportation facilities.
+                    </p>
+
+                    <div class="about-list">
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Clean and furnished rooms
+                        </div>
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Safe environment
+                        </div>
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Hygienic daily food
+                        </div>
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Friendly community
+                        </div>
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Convenient location
+                        </div>
+
+                        <div class="about-list-item">
+                            <i class="fas fa-check"></i>
+                            Helpful management
+                        </div>
+
+                    </div>
+
+                    <a href="/about" class="primary-button">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================== -->
+
+<section class="features-section section-padding" id="features">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Why Choose Us
+            </span>
+
+            <h2 class="section-title">
+                Everything You Need for Comfortable Living
+            </h2>
+
+            <p class="section-description mx-auto" style="max-width:720px;">
+                We provide essential facilities and dedicated services
+                to make your stay safe, convenient and enjoyable.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+
+                    <h4>24/7 Security</h4>
+
+                    <p>
+                        CCTV surveillance and controlled access help
+                        maintain a secure living environment throughout
+                        the day and night.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+
+                    <h4>High-Speed Wi-Fi</h4>
+
+                    <p>
+                        Reliable internet access is available for online
+                        classes, office work, communication and
+                        entertainment.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+
+                    <h4>Hygienic Food</h4>
+
+                    <p>
+                        Fresh and nutritious meals are prepared daily
+                        in a clean kitchen with attention to quality
+                        and hygiene.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-bed"></i>
+                    </div>
+
+                    <h4>Comfortable Rooms</h4>
+
+                    <p>
+                        Well-maintained rooms with essential furniture
+                        provide a peaceful space for studying, working
+                        and relaxing.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-broom"></i>
+                    </div>
+
+                    <h4>Regular Cleaning</h4>
+
+                    <p>
+                        Common areas and living spaces are cleaned
+                        regularly to maintain a pleasant and hygienic
+                        atmosphere.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+
+                    <div class="feature-icon-box">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+
+                    <h4>Convenient Location</h4>
+
+                    <p>
+                        Located at Rajaji Nagar 2nd Cross, Sattur,
+                        Dharwad, with easy access to nearby educational
+                        institutions and transport.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FACILITIES
+========================== -->
+
+<section class="section-padding" id="facilities">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Our Facilities
+            </span>
+
+            <h2 class="section-title">
+                Facilities Designed for a Better Stay
+            </h2>
+
+            <p class="section-description mx-auto" style="max-width:720px;">
+                Rahma Pearl Girls PG provides useful daily facilities
+                to support a comfortable, safe and stress-free lifestyle.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <%
+            const facilities = [
+                ["01","fa-bed","Furnished Rooms","Comfortable rooms with beds, storage space and essential furniture for everyday living."],
+                ["02","fa-droplet","Water Facility","Reliable water supply for drinking, bathing, cleaning and other daily requirements."],
+                ["03","fa-bolt","Power Support","Proper electrical arrangements for lighting, charging devices and daily usage."],
+                ["04","fa-shirt","Laundry Area","Convenient space for washing and drying clothes while maintaining cleanliness and organisation."],
+                ["05","fa-book-open-reader","Study Friendly","Peaceful surroundings that help students focus on classes, assignments and exam preparation."],
+                ["06","fa-bus","Transport Access","Easy access to nearby bus stops, autos and local transport from the Sattur area."],
+                ["07","fa-store","Nearby Shops","Daily essentials, pharmacies, food outlets and grocery shops are available nearby."],
+                ["08","fa-user-shield","Supportive Management","Friendly management support is available for accommodation concerns and daily assistance."]
+            ];
+            %>
+
+            <% facilities.forEach(function(facility) { %>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="facility-box">
+
+                        <div class="facility-number">
+                            <%= facility[0] %>
+                        </div>
+
+                        <i class="fas <%= facility[1] %> facility-icon"></i>
+
+                        <h5>
+                            <%= facility[2] %>
+                        </h5>
+
+                        <p>
+                            <%= facility[3] %>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            <% }); %>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMISSION
+========================== -->
+
+<section class="admission-section">
+
+    <div class="container">
+
+        <div class="admission-card">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <span class="admission-label">
+                        Admissions Open
+                    </span>
+
+                    <h2>
+                        Looking for a Safe and Comfortable Girls PG?
+                    </h2>
+
+                    <p>
+                        Apply for admission at Rahma Pearl Girls PG and
+                        enjoy a peaceful stay with essential facilities
+                        in Sattur, Dharwad.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                    <a href="/register" class="admission-button">
+                        <i class="fas fa-file-signature"></i>
+                        Apply Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATION
+========================== -->
+
+<section class="location-section section-padding" id="location">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Find Us
+            </span>
+
+            <h2 class="section-title">
+                Visit Rahma Pearl Girls PG
+            </h2>
+
+            <p class="section-description mx-auto" style="max-width:700px;">
+                Click the map or direction button to open the
+                Rahma Pearl Girls PG location directly in Google Maps.
+            </p>
+
+        </div>
+
+        <div class="location-card">
+
+            <div class="row g-0">
+
+                <div class="col-lg-7">
+
+                    <div class="map-container">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=15.405405,75.038448&z=17&output=embed"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen
+                            loading="lazy"
+                            title="Rahma Pearl Girls PG location map">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="location-details">
+
+                        <div class="location-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+
+                        <span class="location-small-text">
+                            Our Address
+                        </span>
+
+                        <h3>
+                            Rahma Pearl Girls PG
+                        </h3>
+
+                        <div class="address-card">
+
+                            <i class="fas fa-map-pin"></i>
+
+                            <div>
+
+                                <strong>
+                                    Rajaji Nagar, 2nd Cross
+                                </strong>
+
+                                <p>
+                                    Sattur, Dharwad<br>
+                                    Karnataka, India
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="location-feature">
+                            <i class="fas fa-circle-check"></i>
+                            Easy access to local transport
+                        </div>
+
+                        <div class="location-feature">
+                            <i class="fas fa-circle-check"></i>
+                            Nearby shops and essential services
+                        </div>
+
+                        <div class="location-feature">
+                            <i class="fas fa-circle-check"></i>
+                            Convenient for students and working women
+                        </div>
+
+                        <div class="location-buttons">
+
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=15.405405,75.038448"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="map-button"
+                            >
+                                <i class="fas fa-map-location-dot"></i>
+                                Open in Google Maps
+                            </a>
+
+                            <a
+                                href="https://www.google.com/maps/dir/?api=1&destination=15.405405,75.038448"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="direction-button"
+                            >
+                                <i class="fas fa-diamond-turn-right"></i>
+                                Get Directions
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section class="contact-section section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <span class="section-label">
+                    Contact Us
+                </span>
+
+                <h2 class="section-title">
+                    Have Questions About Admission?
+                </h2>
+
+                <p class="section-description">
+                    Contact Rahma Pearl Girls PG for room availability,
+                    admission details, fees and other accommodation
+                    information.
+                </p>
+
+                <div class="contact-list">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Address</h6>
+
+                            <p>
+                                Rajaji Nagar 2nd Cross,
+                                Sattur, Dharwad
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Visiting Hours</h6>
+
+                            <p>
+                                Contact management before visiting
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Support</h6>
+
+                            <p>
+                                Use our contact page for enquiries
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="contact-action-card">
+
+                    <div class="contact-action-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+
+                    <h3>
+                        We Are Here to Help
+                    </h3>
+
+                    <p>
+                        Send your enquiry through our contact page and
+                        our management team will assist you.
+                    </p>
+
+                    <a href="/contact" class="primary-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact Management
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5 col-md-6">
+
+                <a href="/" class="footer-brand">
+
+                    <!-- ACTUAL LOGO -->
+                    <img
+                        src="/images/pg-logo.png"
+                        alt="Rahma Pearl Girls PG Logo"
+                        class="footer-logo"
+                    >
+
+                    <span>RAHMA PEARL</span>
+
+                </a>
+
+                <p class="footer-description">
+                    Rahma Pearl Girls PG provides safe, comfortable
+                    and convenient accommodation for students and
+                    working women in Sattur, Dharwad.
+                </p>
+
+                <div class="footer-location">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    <span>
+                        Rajaji Nagar 2nd Cross,
+                        Sattur, Dharwad
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-heading">
+                    Quick Links
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="/">
+                            <i class="fas fa-angle-right"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/about">
+                            <i class="fas fa-angle-right"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#features">
+                            <i class="fas fa-angle-right"></i>
+                            Features
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/contact">
+                            <i class="fas fa-angle-right"></i>
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <h5 class="footer-heading">
+                    Important Links
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="/register">
+                            <i class="fas fa-angle-right"></i>
+                            Apply for Admission
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/login">
+                            <i class="fas fa-angle-right"></i>
+                            Login Portal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/terms">
+                            <i class="fas fa-angle-right"></i>
+                            Terms &amp; Conditions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=15.405405,75.038448"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fas fa-angle-right"></i>
+                            Google Maps
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Rahma Pearl PG Management System.
+                All rights reserved.
+            </p>
+
+            <p>
+                Safe Living
+                <i class="fas fa-heart"></i>
+                Comfortable Stay
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================== -->
+
+<a
+    href="https://wa.me/919611755149?text=Hello%20Rahma%20Pearl%20PG,%20I%20want%20to%20know%20about%20room%20availability."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+>
+
+    <span class="whatsapp-tooltip">
+        Chat with us
+    </span>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================
+     BACK TO TOP
+========================== -->
+
+<button
+    type="button"
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top"
+>
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+    /* =========================
+       BACK TO TOP
+    ========================== */
+
+    const backToTopButton =
+        document.getElementById("backToTop");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 400) {
+
+            backToTopButton.classList.add("show");
+
+        } else {
+
+            backToTopButton.classList.remove("show");
+
+        }
+
+    });
+
+    backToTopButton.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================
+       NAVBAR SCROLL
+    ========================== */
+
+    const navbar =
+        document.querySelector(".navbar");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 40) {
+
+            navbar.classList.add("navbar-scrolled");
+
+        } else {
+
+            navbar.classList.remove("navbar-scrolled");
+
+        }
+
+    });
+
+
+    /* =========================
+       MOBILE NAVBAR CLOSE
+    ========================== */
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".navbar-collapse .nav-link"
+        );
+
+    const navbarCollapseElement =
+        document.getElementById("navbarNav");
+
+    navigationLinks.forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            if (
+                window.innerWidth < 992 &&
+                navbarCollapseElement.classList.contains("show")
+            ) {
+
+                const navbarCollapse =
+                    bootstrap.Collapse.getOrCreateInstance(
+                        navbarCollapseElement
+                    );
+
+                navbarCollapse.hide();
+
+            }
+
+        });
+
+    });
+
+</script>
 
 </body>
 </html>
