@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
     <meta
         name="description"
         content="Rahma Pearl Girls PG in Sattur, Dharwad. Safe, comfortable and premium girls PG accommodation for students and working women, with rooms, meals, Wi-Fi and essential facilities."
     >
 
-    <meta name="robots" content="index, follow">
+    <meta
+        name="keywords"
+        content="Girls PG in Sattur, Girls PG Dharwad, PG accommodation Dharwad, Rahma Pearl Girls PG, ladies PG Sattur"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta name="theme-color" content="#6c5ce7">
 
     <title>Rahma Pearl Girls PG | Girls PG in Sattur, Dharwad</title>
 
-    <!-- =========================
-         LOGO / FAVICON
-    ========================== -->
+
+    <!-- =====================================================
+         RAHMA PEARL BROWSER TAB LOGO / FAVICON
+    ====================================================== -->
 
     <link
         rel="icon"
         type="image/png"
+        sizes="32x32"
+        href="/images/pg-logo.png"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
         href="/images/pg-logo.png"
     >
 
     <link
         rel="shortcut icon"
+        type="image/png"
         href="/images/pg-logo.png"
     >
 
@@ -34,11 +56,13 @@
         href="/images/pg-logo.png"
     >
 
+
     <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+
 
     <!-- Font Awesome -->
     <link
@@ -46,1214 +70,1596 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+
     <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <style>
-
-        :root {
-            --primary-color: #6c5ce7;
-            --primary-dark: #5649d8;
-            --secondary-color: #a29bfe;
-            --accent-color: #fd79a8;
-            --dark-color: #202332;
-            --light-color: #f8f9ff;
-            --text-color: #5f6675;
-            --white-color: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            color: var(--dark-color);
-            overflow-x: hidden;
-            background: var(--white-color);
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        section {
-            scroll-margin-top: 85px;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================== */
-
-        .navbar {
-            background: rgba(255,255,255,0.97);
-            box-shadow: 0 2px 18px rgba(0,0,0,0.08);
-            padding: 13px 0;
-            transition: 0.3s ease;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-color) !important;
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-
-        /* ACTUAL LOGO */
-        .navbar-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 12px;
-            background: white;
-        }
-
-        .navbar-nav {
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav-link {
-            color: #34384a !important;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 10px 13px !important;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-            background: rgba(108,92,231,0.08);
-        }
-
-        .navbar-toggler {
-            border: none;
-            box-shadow: none !important;
-        }
-
-        .login-button {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 9px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .login-button:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .navbar-scrolled {
-            padding: 8px 0;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero-section {
-            position: relative;
-            min-height: 91vh;
-            display: flex;
-            align-items: center;
-            color: white;
-
-            background:
-                linear-gradient(
-                    110deg,
-                    rgba(21,24,40,0.88),
-                    rgba(75,58,145,0.68)
-                ),
-                url("https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1600&q=85");
-
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-            top: -140px;
-            right: -100px;
-        }
-
-        .hero-section::after {
-            content: "";
-            position: absolute;
-            width: 290px;
-            height: 290px;
-            border-radius: 50%;
-            background: rgba(253,121,168,0.15);
-            left: -100px;
-            bottom: -120px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 780px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 9px 17px;
-            border: 1px solid rgba(255,255,255,0.35);
-            border-radius: 30px;
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(8px);
-            margin-bottom: 24px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero-title {
-            font-size: clamp(44px,6vw,76px);
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 22px;
-        }
-
-        .hero-title span {
-            color: #d8d4ff;
-        }
-
-        .hero-description {
-            max-width: 680px;
-            font-size: 18px;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.86);
-            margin-bottom: 34px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .primary-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(
-                135deg,
-                var(--primary-color),
-                var(--accent-color)
-            );
-            color: white;
-            padding: 14px 29px;
-            border-radius: 35px;
-            font-weight: 700;
-            transition: 0.3s;
-            box-shadow: 0 12px 26px rgba(108,92,231,0.35);
-        }
-
-        .primary-button:hover {
-            color: white;
-            transform: translateY(-4px);
-        }
-
-        .outline-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: white;
-            border: 2px solid rgba(255,255,255,0.75);
-            padding: 12px 27px;
-            border-radius: 35px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .outline-button:hover {
-            color: var(--primary-color);
-            background: white;
-            transform: translateY(-4px);
-        }
-
-        .hero-stats {
-            margin-top: 52px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .hero-stat {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-        }
-
-        .hero-stat-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.15);
-            font-size: 20px;
-        }
-
-        .hero-stat h5 {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .hero-stat p {
-            margin: 2px 0 0;
-            color: rgba(255,255,255,0.72);
-            font-size: 13px;
-        }
-
-        /* =========================
-           COMMON
-        ========================== */
-
-        .section-padding {
-            padding: 90px 0;
-        }
-
-        .section-label {
-            display: inline-block;
-            color: var(--primary-color);
-            background: rgba(108,92,231,0.1);
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .section-title {
-            font-size: clamp(32px,4vw,47px);
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 16px;
-        }
-
-        .section-description {
-            color: var(--text-color);
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-section {
-            background: white;
-        }
-
-        .about-image-wrapper {
-            position: relative;
-            padding: 20px 20px 20px 0;
-        }
-
-        .about-main-image {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            border-radius: 26px;
-            box-shadow: 0 22px 55px rgba(33,37,65,0.16);
-        }
-
-        .about-image-wrapper::before {
-            content: "";
-            position: absolute;
-            width: 82%;
-            height: 88%;
-            left: -18px;
-            bottom: 0;
-            border-radius: 25px;
-            background: linear-gradient(
-                135deg,
-                var(--secondary-color),
-                var(--accent-color)
-            );
-            z-index: -1;
-        }
-
-        .about-experience-card {
-            position: absolute;
-            right: -5px;
-            bottom: 55px;
-            background: white;
-            border-radius: 18px;
-            padding: 22px;
-            box-shadow: 0 14px 40px rgba(28,32,57,0.18);
-            min-width: 190px;
-        }
-
-        .about-experience-card i {
-            color: var(--primary-color);
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .about-experience-card h4 {
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 2px;
-        }
-
-        .about-experience-card p {
-            margin: 0;
-            color: var(--text-color);
-            font-size: 13px;
-        }
-
-        .about-content {
-            padding-left: 25px;
-        }
-
-        .about-list {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .about-list-item {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            font-weight: 600;
-            color: #35394b;
-        }
-
-        .about-list-item i {
-            width: 31px;
-            height: 31px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(108,92,231,0.12);
-            color: var(--primary-color);
-            font-size: 13px;
-        }
-
-        /* =========================
-           FEATURES
-        ========================== */
-
-        .features-section {
-            background: linear-gradient(180deg,#f9f9ff,#f2f1ff);
-        }
-
-        .feature-card {
-            height: 100%;
-            background: white;
-            padding: 34px 28px;
-            border-radius: 20px;
-            border: 1px solid rgba(108,92,231,0.08);
-            transition: 0.35s;
-            box-shadow: 0 8px 25px rgba(36,40,70,0.06);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 44px rgba(43,47,82,0.14);
-        }
-
-        .feature-icon-box {
-            width: 68px;
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 19px;
-            margin-bottom: 23px;
-            font-size: 29px;
-            color: white;
-            background: linear-gradient(
-                135deg,
-                var(--primary-color),
-                var(--secondary-color)
-            );
-        }
-
-        .feature-card h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-color);
-            line-height: 1.75;
-            margin-bottom: 0;
-            font-size: 14px;
-        }
-
-        /* =========================
-           FACILITIES
-        ========================== */
-
-        .facility-box {
-            position: relative;
-            height: 100%;
-            padding: 32px 25px;
-            border-radius: 20px;
-            background: white;
-            border: 1px solid #ececff;
-            overflow: hidden;
-            transition: 0.35s;
-            box-shadow: 0 8px 25px rgba(36,40,70,0.06);
-        }
-
-        .facility-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 19px 40px rgba(43,47,82,0.13);
-        }
-
-        .facility-number {
-            position: absolute;
-            top: 10px;
-            right: 18px;
-            font-size: 48px;
-            font-weight: 800;
-            color: rgba(108,92,231,0.07);
-        }
-
-        .facility-icon {
-            position: relative;
-            z-index: 2;
-            font-size: 34px;
-            color: var(--primary-color);
-            margin-bottom: 22px;
-        }
-
-        .facility-box h5 {
-            position: relative;
-            z-index: 2;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .facility-box p {
-            position: relative;
-            z-index: 2;
-            color: var(--text-color);
-            line-height: 1.7;
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-
-        /* =========================
-           ADMISSION
-        ========================== */
-
-        .admission-section {
-            padding: 30px 0 90px;
-            background: white;
-        }
-
-        .admission-card {
-            position: relative;
-            overflow: hidden;
-            padding: 55px;
-            border-radius: 26px;
-            color: white;
-            background: linear-gradient(
-                120deg,
-                rgba(74,60,183,0.97),
-                rgba(224,73,140,0.92)
-            );
-            box-shadow: 0 24px 55px rgba(108,92,231,0.28);
-        }
-
-        .admission-card .row {
-            position: relative;
-            z-index: 2;
-        }
-
-        .admission-label {
-            display: inline-block;
-            padding: 7px 14px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.16);
-            border: 1px solid rgba(255,255,255,0.24);
-            margin-bottom: 15px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .admission-card h2 {
-            font-size: clamp(30px,4vw,43px);
-            font-weight: 800;
-            margin-bottom: 14px;
-        }
-
-        .admission-card p {
-            max-width: 700px;
-            color: rgba(255,255,255,0.86);
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-
-        .admission-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: white;
-            color: var(--primary-color);
-            padding: 15px 28px;
-            border-radius: 35px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .admission-button:hover {
-            color: var(--primary-dark);
-            transform: translateY(-4px);
-        }
-
-        /* =========================
-           LOCATION
-        ========================== */
-
-        .location-section {
-            background: linear-gradient(180deg,#f8f8ff,#f1f0ff);
-        }
-
-        .location-card {
-            overflow: hidden;
-            border-radius: 25px;
-            background: white;
-            box-shadow: 0 20px 55px rgba(42,47,83,0.16);
-        }
-
-        .map-container {
-            height: 540px;
-        }
-
-        .map-container iframe {
-            display: block;
-            min-height: 540px;
-        }
-
-        .location-details {
-            min-height: 540px;
-            padding: 48px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .location-icon {
-            width: 72px;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 31px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            background: linear-gradient(
-                135deg,
-                var(--primary-color),
-                var(--accent-color)
-            );
-        }
-
-        .location-small-text {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin-bottom: 7px;
-        }
-
-        .location-details h3 {
-            font-size: 29px;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .address-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 20px;
-            border-radius: 16px;
-            background: #f7f7fd;
-            border: 1px solid #e8e7fa;
-            margin-bottom: 24px;
-        }
-
-        .address-card > i {
-            color: #e84393;
-            font-size: 24px;
-            margin-top: 2px;
-        }
-
-        .address-card strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .address-card p {
-            color: var(--text-color);
-            margin-bottom: 0;
-            line-height: 1.65;
-        }
-
-        .location-feature {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            color: #42475a;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .location-feature i {
-            color: var(--primary-color);
-        }
-
-        .location-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .map-button,
-        .direction-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            padding: 13px 18px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .map-button {
-            color: white;
-            background: var(--primary-color);
-        }
-
-        .map-button:hover {
-            color: white;
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        .direction-button {
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            background: white;
-        }
-
-        .direction-button:hover {
-            color: white;
-            background: var(--primary-color);
-        }
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact-section {
-            background: white;
-        }
-
-        .contact-list {
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            margin-bottom: 22px;
-        }
-
-        .contact-icon {
-            flex: 0 0 50px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            border-radius: 14px;
-            background: rgba(108,92,231,0.11);
-        }
-
-        .contact-item h6 {
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .contact-item p {
-            color: var(--text-color);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .contact-action-card {
-            text-align: center;
-            padding: 50px 38px;
-            border-radius: 24px;
-            background: linear-gradient(145deg,#f4f2ff,#fff4f9);
-            border: 1px solid #ebe8ff;
-            box-shadow: 0 16px 42px rgba(44,48,84,0.09);
-        }
-
-        .contact-action-icon {
-            width: 82px;
-            height: 82px;
-            margin: 0 auto 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 24px;
-            color: white;
-            font-size: 34px;
-            background: linear-gradient(
-                135deg,
-                var(--primary-color),
-                var(--accent-color)
-            );
-        }
-
-        .contact-action-card h3 {
-            font-size: 27px;
-            font-weight: 800;
-            margin-bottom: 13px;
-        }
-
-        .contact-action-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            color: white;
-            padding: 70px 0 22px;
-            background: #202332;
-        }
-
-        .footer-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .footer-brand:hover {
-            color: white;
-        }
-
-        .footer-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-
-        .footer-description {
-            max-width: 470px;
-            color: #adb2c4;
-            line-height: 1.8;
-        }
-
-        .footer-location {
-            display: flex;
-            gap: 11px;
-            align-items: flex-start;
-            color: #c4c7d3;
-            margin-top: 20px;
-        }
-
-        .footer-location i {
-            color: var(--secondary-color);
-            margin-top: 4px;
-        }
-
-        .footer-heading {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 22px;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 13px;
-        }
-
-        .footer-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #adb2c4;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .footer-links i {
-            color: var(--secondary-color);
-            font-size: 11px;
-        }
-
-        .footer-divider {
-            border-color: rgba(255,255,255,0.12);
-            margin: 45px 0 22px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            color: #8f94a8;
-            font-size: 13px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-        }
-
-        .footer-bottom i {
-            color: var(--accent-color);
-            margin: 0 5px;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================== */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 90px;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg,#25D366,#128C7E);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 34px;
-            box-shadow: 0 12px 30px rgba(37,211,102,0.45);
-            z-index: 9999;
-            transition: 0.35s;
-            animation: whatsappPulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            color: white;
-            transform: translateY(-5px) scale(1.08);
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 78px;
-            background: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 30px;
-            white-space: nowrap;
-            font-size: 14px;
-            font-weight: 600;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @keyframes whatsappPulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37,211,102,0.6);
-            }
-
-            70% {
-                box-shadow: 0 0 0 20px rgba(37,211,102,0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37,211,102,0);
-            }
-        }
-
-        /* =========================
-           BACK TO TOP
-        ========================== */
-
-        .back-to-top {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            width: 47px;
-            height: 47px;
-            border: none;
-            border-radius: 50%;
-            color: white;
-            background: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(108,92,231,0.32);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(15px);
-            transition: 0.3s;
-            z-index: 1000;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width:991px) {
-
-            .navbar-nav {
-                align-items: flex-start;
-                padding-top: 15px;
-            }
-
-            .login-button {
-                margin-top: 8px;
-                display: inline-block;
-            }
-
-            .hero-section {
-                min-height: 85vh;
-                text-align: center;
-            }
-
-            .hero-content {
-                margin: auto;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons,
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .about-content {
-                padding-left: 0;
-                padding-top: 50px;
-            }
-
-            .map-container,
-            .map-container iframe {
-                min-height: 430px;
-                height: 430px;
-            }
-
-            .location-details {
-                min-height: auto;
-            }
-
-            .admission-card {
-                padding: 42px 35px;
-            }
-        }
-
-        @media (max-width:767px) {
-
-            .section-padding {
-                padding: 70px 0;
-            }
-
-            .hero-title {
-                font-size: 44px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .hero-stat {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .about-main-image {
-                height: 420px;
-            }
-
-            .about-list {
-                grid-template-columns: 1fr;
-            }
-
-            .location-details {
-                padding: 38px 25px;
-            }
-
-            .map-container,
-            .map-container iframe {
-                min-height: 350px;
-                height: 350px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .admission-card {
-                padding: 38px 25px;
-            }
-        }
-
-        @media (max-width:500px) {
-
-            .navbar-logo,
-            .footer-logo {
-                width: 42px;
-                height: 42px;
-            }
-
-            .navbar-brand {
-                font-size: 18px;
-            }
-
-            .hero-title {
-                font-size: 38px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .primary-button,
-            .outline-button {
-                width: 100%;
-            }
-
-            .about-main-image {
-                height: 350px;
-            }
-
-            .about-experience-card {
-                position: relative;
-                right: auto;
-                bottom: auto;
-                margin: -40px 20px 0;
-            }
-
-            .location-buttons {
-                flex-direction: column;
-            }
-
-            .map-button,
-            .direction-button {
-                width: 100%;
-            }
-
-            .contact-action-card {
-                padding: 40px 24px;
-            }
-
-            .whatsapp-float {
-                width: 58px;
-                height: 58px;
-                right: 15px;
-                bottom: 85px;
-                font-size: 30px;
-            }
-
-            .whatsapp-tooltip {
-                display: none;
-            }
-        }
-
-    </style>
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --primary-color: #6c5ce7;
+    --primary-dark: #5649d8;
+    --secondary-color: #a29bfe;
+    --accent-color: #fd79a8;
+    --dark-color: #202332;
+    --light-color: #f8f9ff;
+    --text-color: #5f6675;
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+    padding: 13px 0;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.navbar-scrolled {
+    padding: 8px 0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--primary-color) !important;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.navbar-nav {
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-link {
+    color: #34384a !important;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 13px !important;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background: rgba(108, 92, 231, 0.08);
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none !important;
+}
+
+.login-button {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 9px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    position: relative;
+    min-height: 91vh;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(21, 24, 40, 0.88),
+            rgba(75, 58, 145, 0.68)
+        ),
+        url("https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    top: -140px;
+    right: -100px;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    background: rgba(253, 121, 168, 0.15);
+    left: -100px;
+    bottom: -120px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero-title span {
+    color: #d8d4ff;
+}
+
+.hero-description {
+    max-width: 680px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.86);
+    margin-bottom: 34px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+
+    color: white;
+    padding: 14px 29px;
+    border-radius: 35px;
+    font-weight: 700;
+    transition: 0.3s;
+
+    box-shadow: 0 12px 26px rgba(108, 92, 231, 0.35);
+}
+
+.primary-button:hover {
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(108, 92, 231, 0.42);
+}
+
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    padding: 12px 27px;
+    border-radius: 35px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.outline-button:hover {
+    color: var(--primary-color);
+    background: white;
+    border-color: white;
+    transform: translateY(-4px);
+}
+
+.hero-stats {
+    margin-top: 52px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-stat {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.hero-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.15);
+    font-size: 20px;
+}
+
+.hero-stat h5 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.hero-stat p {
+    margin: 2px 0 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--primary-color);
+    background: rgba(108, 92, 231, 0.1);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 47px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    background: #ffffff;
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding: 20px 20px 20px 0;
+}
+
+.about-main-image {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 26px;
+    box-shadow: 0 22px 55px rgba(33, 37, 65, 0.16);
+}
+
+.about-image-wrapper::before {
+    content: "";
+    position: absolute;
+
+    width: 82%;
+    height: 88%;
+    left: -18px;
+    bottom: 0;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--accent-color)
+    );
+
+    z-index: -1;
+}
+
+.about-experience-card {
+    position: absolute;
+    right: -5px;
+    bottom: 55px;
+
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+
+    box-shadow: 0 14px 40px rgba(28, 32, 57, 0.18);
+
+    min-width: 190px;
+}
+
+.about-experience-card i {
+    color: var(--primary-color);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about-experience-card h4 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.about-experience-card p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.about-content {
+    padding-left: 25px;
+}
+
+.about-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.about-list-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-weight: 600;
+    color: #35394b;
+}
+
+.about-list-item i {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(108, 92, 231, 0.12);
+    color: var(--primary-color);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+    background: linear-gradient(
+        180deg,
+        #f9f9ff,
+        #f2f1ff
+    );
+}
+
+.feature-card {
+    height: 100%;
+    background: white;
+
+    padding: 34px 28px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(108, 92, 231, 0.08);
+
+    transition: 0.35s;
+
+    box-shadow: 0 8px 25px rgba(36, 40, 70, 0.06);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 44px rgba(43, 47, 82, 0.14);
+
+    border-color: rgba(108, 92, 231, 0.22);
+}
+
+.feature-icon-box {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 19px;
+    margin-bottom: 23px;
+
+    font-size: 29px;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    box-shadow:
+        0 11px 24px rgba(108, 92, 231, 0.25);
+}
+
+.feature-card:nth-child(even) .feature-icon-box {
+    background: linear-gradient(
+        135deg,
+        #fd79a8,
+        #e84393
+    );
+}
+
+.feature-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FACILITIES
+========================================================= */
+
+.facilities-section {
+    background: #ffffff;
+}
+
+.facility-box {
+    position: relative;
+    height: 100%;
+
+    padding: 32px 25px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #ececff;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    box-shadow: 0 8px 25px rgba(36, 40, 70, 0.06);
+}
+
+.facility-box:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(108, 92, 231, 0.25);
+
+    box-shadow:
+        0 19px 40px rgba(43, 47, 82, 0.13);
+}
+
+.facility-number {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+
+    font-size: 48px;
+    font-weight: 800;
+
+    color: rgba(108, 92, 231, 0.07);
+}
+
+.facility-icon {
+    position: relative;
+    z-index: 2;
+
+    font-size: 34px;
+    color: var(--primary-color);
+
+    margin-bottom: 22px;
+}
+
+.facility-box h5 {
+    position: relative;
+    z-index: 2;
+
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.facility-box p {
+    position: relative;
+    z-index: 2;
+
+    color: var(--text-color);
+
+    line-height: 1.7;
+    font-size: 14px;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   ADMISSION
+========================================================= */
+
+.admission-section {
+    padding: 30px 0 90px;
+    background: #ffffff;
+}
+
+.admission-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 55px;
+
+    border-radius: 26px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(74, 60, 183, 0.97),
+            rgba(224, 73, 140, 0.92)
+        );
+
+    box-shadow:
+        0 24px 55px rgba(108, 92, 231, 0.28);
+}
+
+.admission-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    top: -110px;
+    right: -60px;
+}
+
+.admission-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    left: -70px;
+    bottom: -90px;
+}
+
+.admission-card .row {
+    position: relative;
+    z-index: 2;
+}
+
+.admission-label {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admission-card h2 {
+    font-size: clamp(30px, 4vw, 43px);
+
+    font-weight: 800;
+
+    margin-bottom: 14px;
+}
+
+.admission-card p {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    line-height: 1.8;
+
+    margin-bottom: 0;
+}
+
+.admission-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: #ffffff;
+
+    color: var(--primary-color);
+
+    padding: 15px 28px;
+
+    border-radius: 35px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.admission-button:hover {
+    color: var(--primary-dark);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-section {
+    background:
+        linear-gradient(
+            180deg,
+            #f8f8ff,
+            #f1f0ff
+        );
+}
+
+.location-card {
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 55px rgba(42, 47, 83, 0.16);
+}
+
+.map-container {
+    height: 540px;
+    min-height: 100%;
+
+    background: #e9e9f2;
+}
+
+.map-container iframe {
+    display: block;
+    min-height: 540px;
+}
+
+.location-details {
+    min-height: 540px;
+
+    padding: 48px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 31px;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--accent-color)
+        );
+
+    box-shadow:
+        0 12px 25px rgba(108, 92, 231, 0.3);
+}
+
+.location-small-text {
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 7px;
+}
+
+.location-details h3 {
+    font-size: 29px;
+
+    font-weight: 800;
+
+    margin-bottom: 24px;
+}
+
+.address-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: #f7f7fd;
+
+    border: 1px solid #e8e7fa;
+
+    margin-bottom: 24px;
+}
+
+.address-card > i {
+    color: #e84393;
+
+    font-size: 24px;
+
+    margin-top: 2px;
+}
+
+.address-card strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #292d3d;
+}
+
+.address-card p {
+    color: var(--text-color);
+
+    margin-bottom: 0;
+
+    line-height: 1.65;
+}
+
+.location-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: #42475a;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.location-feature i {
+    color: var(--primary-color);
+}
+
+.location-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.map-button,
+.direction-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 18px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.map-button {
+    color: #ffffff;
+
+    background: var(--primary-color);
+}
+
+.map-button:hover {
+    color: #ffffff;
+
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+}
+
+.direction-button {
+    color: var(--primary-color);
+
+    border: 2px solid var(--primary-color);
+
+    background: #ffffff;
+}
+
+.direction-button:hover {
+    color: #ffffff;
+
+    background: var(--primary-color);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    background: #ffffff;
+}
+
+.contact-list {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+
+    gap: 16px;
+
+    align-items: flex-start;
+
+    margin-bottom: 22px;
+}
+
+.contact-icon {
+    flex: 0 0 50px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary-color);
+
+    border-radius: 14px;
+
+    background: rgba(108, 92, 231, 0.11);
+}
+
+.contact-item h6 {
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: var(--text-color);
+
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+.contact-action-card {
+    text-align: center;
+
+    padding: 50px 38px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4f2ff,
+            #fff4f9
+        );
+
+    border: 1px solid #ebe8ff;
+
+    box-shadow:
+        0 16px 42px rgba(44, 48, 84, 0.09);
+}
+
+.contact-action-icon {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--accent-color)
+        );
+
+    box-shadow:
+        0 14px 29px rgba(108, 92, 231, 0.28);
+}
+
+.contact-action-card h3 {
+    font-size: 27px;
+
+    font-weight: 800;
+
+    margin-bottom: 13px;
+}
+
+.contact-action-card p {
+    color: var(--text-color);
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    color: #ffffff;
+
+    padding: 70px 0 22px;
+
+    background: #202332;
+}
+
+.footer-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.footer-brand:hover {
+    color: #ffffff;
+}
+
+.footer-description {
+    max-width: 470px;
+
+    color: #adb2c4;
+
+    line-height: 1.8;
+}
+
+.footer-location {
+    display: flex;
+
+    gap: 11px;
+
+    align-items: flex-start;
+
+    color: #c4c7d3;
+
+    margin-top: 20px;
+}
+
+.footer-location i {
+    color: var(--secondary-color);
+
+    margin-top: 4px;
+}
+
+.footer-heading {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.footer-links {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 13px;
+}
+
+.footer-links a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #adb2c4;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+
+    transform: translateX(5px);
+}
+
+.footer-links i {
+    color: var(--secondary-color);
+
+    font-size: 11px;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.12);
+
+    margin: 45px 0 22px;
+}
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #8f94a8;
+
+    font-size: 13px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom i {
+    color: var(--accent-color);
+
+    margin: 0 5px;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+========================================================= */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 20px;
+    bottom: 90px;
+
+    width: 65px;
+    height: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25D366,
+            #128C7E
+        );
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 12px 30px rgba(37, 211, 102, 0.45);
+
+    z-index: 9999;
+
+    transition: 0.35s ease;
+
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    color: #ffffff;
+
+    transform:
+        translateY(-5px)
+        scale(1.08);
+
+    box-shadow:
+        0 18px 40px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+
+    right: 78px;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+.whatsapp-tooltip::after {
+    content: "";
+
+    position: absolute;
+
+    right: -6px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-left: 6px solid #25D366;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 20px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 47px;
+    height: 47px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background: var(--primary-color);
+
+    box-shadow:
+        0 10px 25px rgba(108, 92, 231, 0.32);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition: 0.3s;
+
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        align-items: flex-start;
+
+        padding-top: 15px;
+    }
+
+    .login-button {
+        margin-top: 8px;
+
+        display: inline-block;
+    }
+
+    .hero-section {
+        min-height: 85vh;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .about-content {
+        padding-left: 0;
+
+        padding-top: 50px;
+    }
+
+    .map-container,
+    .map-container iframe {
+        min-height: 430px;
+
+        height: 430px;
+    }
+
+    .location-details {
+        min-height: auto;
+    }
+
+    .admission-card {
+        padding: 42px 35px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .hero-title {
+        font-size: 44px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stat {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .about-main-image {
+        height: 420px;
+    }
+
+    .about-experience-card {
+        right: 5px;
+
+        bottom: 40px;
+    }
+
+    .about-list {
+        grid-template-columns: 1fr;
+    }
+
+    .location-details {
+        padding: 38px 25px;
+    }
+
+    .map-container,
+    .map-container iframe {
+        min-height: 350px;
+
+        height: 350px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .admission-card {
+        padding: 38px 25px;
+    }
+
+    .whatsapp-float {
+        width: 58px;
+        height: 58px;
+
+        right: 15px;
+        bottom: 85px;
+
+        font-size: 30px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .outline-button {
+        width: 100%;
+    }
+
+    .about-main-image {
+        height: 350px;
+    }
+
+    .about-experience-card {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        margin: -40px 20px 0;
+    }
+
+    .location-buttons {
+        flex-direction: column;
+    }
+
+    .map-button,
+    .direction-button {
+        width: 100%;
+    }
+
+    .contact-action-card {
+        padding: 40px 24px;
+    }
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
      NAVBAR
-========================== -->
+====================================================== -->
 
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
@@ -1261,16 +1667,19 @@
 
         <a class="navbar-brand" href="/">
 
-            <!-- ACTUAL RAHMA PEARL LOGO -->
+            <!-- YOUR ACTUAL LOGO -->
             <img
                 src="/images/pg-logo.png"
                 alt="Rahma Pearl Girls PG Logo"
-                class="navbar-logo"
+                class="brand-logo"
             >
 
-            <span>RAHMA PEARL</span>
+            <span>
+                RAHMA PEARL
+            </span>
 
         </a>
+
 
         <button
             class="navbar-toggler"
@@ -1284,6 +1693,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div
             class="collapse navbar-collapse"
             id="navbarNav"
@@ -1292,38 +1702,57 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/">
+                        Home
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#features">
+                        Features
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#facilities">Facilities</a>
+                    <a class="nav-link" href="#facilities">
+                        Facilities
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#location">Location</a>
+                    <a class="nav-link" href="#location">
+                        Location
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="/contact">
+                        Contact
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/terms">Terms</a>
+                    <a class="nav-link" href="/terms">
+                        Terms
+                    </a>
                 </li>
 
                 <li class="nav-item ms-lg-3">
-                    <a class="login-button" href="/login">
+
+                    <a
+                        class="login-button"
+                        href="/login"
+                    >
                         <i class="fas fa-right-to-bracket me-2"></i>
                         Login
                     </a>
+
                 </li>
 
             </ul>
@@ -1335,9 +1764,10 @@
 </nav>
 
 
-<!-- =========================
+
+<!-- =====================================================
      HERO
-========================== -->
+====================================================== -->
 
 <section class="hero-section">
 
@@ -1346,35 +1776,61 @@
         <div class="hero-content">
 
             <div class="hero-badge">
+
                 <i class="fas fa-shield-heart"></i>
+
                 Safe, Comfortable and Premium Living
+
             </div>
 
+
             <h1 class="hero-title">
+
                 Your Perfect
+
                 <span>Home Away</span>
+
                 From Home
+
             </h1>
 
+
             <p class="hero-description">
+
                 Experience secure, comfortable and modern living at
                 Rahma Pearl Girls PG. We provide a welcoming environment
                 for students and working women in Sattur, Dharwad.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="/register" class="primary-button">
+                <a
+                    href="/register"
+                    class="primary-button"
+                >
+
                     <i class="fas fa-user-plus"></i>
+
                     Apply for Admission
+
                 </a>
 
-                <a href="#location" class="outline-button">
+
+                <a
+                    href="#location"
+                    class="outline-button"
+                >
+
                     <i class="fas fa-location-dot"></i>
+
                     View Location
+
                 </a>
 
             </div>
+
 
             <div class="hero-stats">
 
@@ -1385,11 +1841,15 @@
                     </div>
 
                     <div>
+
                         <h5>24/7</h5>
+
                         <p>CCTV Security</p>
+
                     </div>
 
                 </div>
+
 
                 <div class="hero-stat">
 
@@ -1398,11 +1858,15 @@
                     </div>
 
                     <div>
+
                         <h5>High-Speed</h5>
+
                         <p>Wi-Fi Facility</p>
+
                     </div>
 
                 </div>
+
 
                 <div class="hero-stat">
 
@@ -1411,8 +1875,11 @@
                     </div>
 
                     <div>
+
                         <h5>Healthy</h5>
+
                         <p>Daily Meals</p>
+
                     </div>
 
                 </div>
@@ -1426,11 +1893,15 @@
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================== -->
 
-<section class="about-section section-padding" id="about">
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section
+    class="about-section section-padding"
+    id="about"
+>
 
     <div class="container">
 
@@ -1442,9 +1913,10 @@
 
                     <img
                         src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=85"
-                        alt="Rahma Pearl Girls PG comfortable accommodation"
+                        alt="Rahma Pearl Girls PG accommodation"
                         class="about-main-image"
                     >
+
 
                     <div class="about-experience-card">
 
@@ -1462,6 +1934,7 @@
 
             </div>
 
+
             <div class="col-lg-6">
 
                 <div class="about-content">
@@ -1470,25 +1943,33 @@
                         About Us
                     </span>
 
+
                     <h2 class="section-title">
                         A Safe and Comfortable Place to Live
                     </h2>
 
+
                     <p class="section-description">
+
                         Rahma Pearl Girls PG is designed to provide
                         students and working women with a peaceful,
                         secure and friendly environment. Our rooms,
                         food services and common areas are maintained
                         with cleanliness and comfort as our highest
                         priorities.
+
                     </p>
 
+
                     <p class="section-description">
+
                         Located in Rajaji Nagar 2nd Cross, Sattur,
                         Dharwad, our PG offers convenient access to
                         nearby colleges, offices, shops, hospitals
                         and transportation facilities.
+
                     </p>
+
 
                     <div class="about-list">
 
@@ -1524,9 +2005,16 @@
 
                     </div>
 
-                    <a href="/about" class="primary-button">
+
+                    <a
+                        href="/about"
+                        class="primary-button"
+                    >
+
                         Learn More About Us
+
                         <i class="fas fa-arrow-right"></i>
+
                     </a>
 
                 </div>
@@ -1540,11 +2028,15 @@
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================== -->
 
-<section class="features-section section-padding" id="features">
+<!-- =====================================================
+     FEATURES
+====================================================== -->
+
+<section
+    class="features-section section-padding"
+    id="features"
+>
 
     <div class="container">
 
@@ -1558,16 +2050,24 @@
                 Everything You Need for Comfortable Living
             </h2>
 
-            <p class="section-description mx-auto" style="max-width:720px;">
+            <p
+                class="section-description mx-auto"
+                style="max-width:720px;"
+            >
+
                 We provide essential facilities and dedicated services
                 to make your stay safe, convenient and enjoyable.
+
             </p>
 
         </div>
 
+
         <div class="row g-4">
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1577,15 +2077,20 @@
                     <h4>24/7 Security</h4>
 
                     <p>
+
                         CCTV surveillance and controlled access help
                         maintain a secure living environment throughout
                         the day and night.
+
                     </p>
 
                 </div>
+
             </div>
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1595,15 +2100,20 @@
                     <h4>High-Speed Wi-Fi</h4>
 
                     <p>
+
                         Reliable internet access is available for online
                         classes, office work, communication and
                         entertainment.
+
                     </p>
 
                 </div>
+
             </div>
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1613,15 +2123,20 @@
                     <h4>Hygienic Food</h4>
 
                     <p>
+
                         Fresh and nutritious meals are prepared daily
                         in a clean kitchen with attention to quality
                         and hygiene.
+
                     </p>
 
                 </div>
+
             </div>
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1631,15 +2146,20 @@
                     <h4>Comfortable Rooms</h4>
 
                     <p>
+
                         Well-maintained rooms with essential furniture
                         provide a peaceful space for studying, working
                         and relaxing.
+
                     </p>
 
                 </div>
+
             </div>
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1649,15 +2169,20 @@
                     <h4>Regular Cleaning</h4>
 
                     <p>
+
                         Common areas and living spaces are cleaned
                         regularly to maintain a pleasant and hygienic
                         atmosphere.
+
                     </p>
 
                 </div>
+
             </div>
 
+
             <div class="col-lg-4 col-md-6">
+
                 <div class="feature-card">
 
                     <div class="feature-icon-box">
@@ -1667,12 +2192,15 @@
                     <h4>Convenient Location</h4>
 
                     <p>
+
                         Located at Rajaji Nagar 2nd Cross, Sattur,
                         Dharwad, with easy access to nearby educational
                         institutions and transport.
+
                     </p>
 
                 </div>
+
             </div>
 
         </div>
@@ -1682,11 +2210,15 @@
 </section>
 
 
-<!-- =========================
-     FACILITIES
-========================== -->
 
-<section class="section-padding" id="facilities">
+<!-- =====================================================
+     FACILITIES
+====================================================== -->
+
+<section
+    class="facilities-section section-padding"
+    id="facilities"
+>
 
     <div class="container">
 
@@ -1700,53 +2232,180 @@
                 Facilities Designed for a Better Stay
             </h2>
 
-            <p class="section-description mx-auto" style="max-width:720px;">
+            <p
+                class="section-description mx-auto"
+                style="max-width:720px;"
+            >
+
                 Rahma Pearl Girls PG provides useful daily facilities
                 to support a comfortable, safe and stress-free lifestyle.
+
             </p>
 
         </div>
 
+
         <div class="row g-4">
 
-            <%
-            const facilities = [
-                ["01","fa-bed","Furnished Rooms","Comfortable rooms with beds, storage space and essential furniture for everyday living."],
-                ["02","fa-droplet","Water Facility","Reliable water supply for drinking, bathing, cleaning and other daily requirements."],
-                ["03","fa-bolt","Power Support","Proper electrical arrangements for lighting, charging devices and daily usage."],
-                ["04","fa-shirt","Laundry Area","Convenient space for washing and drying clothes while maintaining cleanliness and organisation."],
-                ["05","fa-book-open-reader","Study Friendly","Peaceful surroundings that help students focus on classes, assignments and exam preparation."],
-                ["06","fa-bus","Transport Access","Easy access to nearby bus stops, autos and local transport from the Sattur area."],
-                ["07","fa-store","Nearby Shops","Daily essentials, pharmacies, food outlets and grocery shops are available nearby."],
-                ["08","fa-user-shield","Supportive Management","Friendly management support is available for accommodation concerns and daily assistance."]
-            ];
-            %>
 
-            <% facilities.forEach(function(facility) { %>
+            <div class="col-lg-3 col-md-6">
 
-                <div class="col-lg-3 col-md-6">
+                <div class="facility-box">
 
-                    <div class="facility-box">
+                    <div class="facility-number">01</div>
 
-                        <div class="facility-number">
-                            <%= facility[0] %>
-                        </div>
+                    <i class="fas fa-bed facility-icon"></i>
 
-                        <i class="fas <%= facility[1] %> facility-icon"></i>
+                    <h5>Furnished Rooms</h5>
 
-                        <h5>
-                            <%= facility[2] %>
-                        </h5>
-
-                        <p>
-                            <%= facility[3] %>
-                        </p>
-
-                    </div>
+                    <p>
+                        Comfortable rooms with beds, storage space and
+                        essential furniture for everyday living.
+                    </p>
 
                 </div>
 
-            <% }); %>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">02</div>
+
+                    <i class="fas fa-droplet facility-icon"></i>
+
+                    <h5>Water Facility</h5>
+
+                    <p>
+                        Reliable water supply for drinking, bathing,
+                        cleaning and other daily requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">03</div>
+
+                    <i class="fas fa-bolt facility-icon"></i>
+
+                    <h5>Power Support</h5>
+
+                    <p>
+                        Proper electrical arrangements for lighting,
+                        charging devices and daily usage.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">04</div>
+
+                    <i class="fas fa-shirt facility-icon"></i>
+
+                    <h5>Laundry Area</h5>
+
+                    <p>
+                        Convenient space for washing and drying clothes
+                        while maintaining cleanliness and organisation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">05</div>
+
+                    <i class="fas fa-book-open-reader facility-icon"></i>
+
+                    <h5>Study Friendly</h5>
+
+                    <p>
+                        Peaceful surroundings that help students focus
+                        on classes, assignments and exam preparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">06</div>
+
+                    <i class="fas fa-bus facility-icon"></i>
+
+                    <h5>Transport Access</h5>
+
+                    <p>
+                        Easy access to nearby bus stops, autos and local
+                        transport from the Sattur area.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">07</div>
+
+                    <i class="fas fa-store facility-icon"></i>
+
+                    <h5>Nearby Shops</h5>
+
+                    <p>
+                        Daily essentials, pharmacies, food outlets and
+                        grocery shops are available nearby.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="facility-box">
+
+                    <div class="facility-number">08</div>
+
+                    <i class="fas fa-user-shield facility-icon"></i>
+
+                    <h5>Supportive Management</h5>
+
+                    <p>
+                        Friendly management support is available for
+                        accommodation concerns and daily assistance.
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -1755,9 +2414,10 @@
 </section>
 
 
-<!-- =========================
-     ADMISSION
-========================== -->
+
+<!-- =====================================================
+     ADMISSION CTA
+====================================================== -->
 
 <section class="admission-section">
 
@@ -1785,11 +2445,18 @@
 
                 </div>
 
+
                 <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
 
-                    <a href="/register" class="admission-button">
+                    <a
+                        href="/register"
+                        class="admission-button"
+                    >
+
                         <i class="fas fa-file-signature"></i>
+
                         Apply Now
+
                     </a>
 
                 </div>
@@ -1803,11 +2470,15 @@
 </section>
 
 
-<!-- =========================
-     LOCATION
-========================== -->
 
-<section class="location-section section-padding" id="location">
+<!-- =====================================================
+     LOCATION
+====================================================== -->
+
+<section
+    class="location-section section-padding"
+    id="location"
+>
 
     <div class="container">
 
@@ -1821,16 +2492,23 @@
                 Visit Rahma Pearl Girls PG
             </h2>
 
-            <p class="section-description mx-auto" style="max-width:700px;">
-                Click the map or direction button to open the
+            <p
+                class="section-description mx-auto"
+                style="max-width:700px;"
+            >
+
+                Click the map or the direction button to open the
                 Rahma Pearl Girls PG location directly in Google Maps.
+
             </p>
 
         </div>
 
+
         <div class="location-card">
 
             <div class="row g-0">
+
 
                 <div class="col-lg-7">
 
@@ -1841,14 +2519,16 @@
                             width="100%"
                             height="100%"
                             style="border:0;"
-                            allowfullscreen
+                            allowfullscreen=""
                             loading="lazy"
-                            title="Rahma Pearl Girls PG location map">
-                        </iframe>
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Rahma Pearl Girls PG location map"
+                        ></iframe>
 
                     </div>
 
                 </div>
+
 
                 <div class="col-lg-5">
 
@@ -1858,13 +2538,16 @@
                             <i class="fas fa-location-dot"></i>
                         </div>
 
+
                         <span class="location-small-text">
                             Our Address
                         </span>
 
+
                         <h3>
                             Rahma Pearl Girls PG
                         </h3>
+
 
                         <div class="address-card">
 
@@ -1885,20 +2568,39 @@
 
                         </div>
 
-                        <div class="location-feature">
-                            <i class="fas fa-circle-check"></i>
-                            Easy access to local transport
-                        </div>
 
                         <div class="location-feature">
+
                             <i class="fas fa-circle-check"></i>
-                            Nearby shops and essential services
+
+                            <span>
+                                Easy access to local transport
+                            </span>
+
                         </div>
 
+
                         <div class="location-feature">
+
                             <i class="fas fa-circle-check"></i>
-                            Convenient for students and working women
+
+                            <span>
+                                Nearby shops and essential services
+                            </span>
+
                         </div>
+
+
+                        <div class="location-feature">
+
+                            <i class="fas fa-circle-check"></i>
+
+                            <span>
+                                Convenient for students and working women
+                            </span>
+
+                        </div>
+
 
                         <div class="location-buttons">
 
@@ -1908,9 +2610,13 @@
                                 rel="noopener noreferrer"
                                 class="map-button"
                             >
+
                                 <i class="fas fa-map-location-dot"></i>
+
                                 Open in Google Maps
+
                             </a>
+
 
                             <a
                                 href="https://www.google.com/maps/dir/?api=1&destination=15.405405,75.038448"
@@ -1918,8 +2624,11 @@
                                 rel="noopener noreferrer"
                                 class="direction-button"
                             >
+
                                 <i class="fas fa-diamond-turn-right"></i>
+
                                 Get Directions
+
                             </a>
 
                         </div>
@@ -1937,15 +2646,17 @@
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      CONTACT
-========================== -->
+====================================================== -->
 
 <section class="contact-section section-padding">
 
     <div class="container">
 
         <div class="row align-items-center g-5">
+
 
             <div class="col-lg-6">
 
@@ -1958,12 +2669,16 @@
                 </h2>
 
                 <p class="section-description">
+
                     Contact Rahma Pearl Girls PG for room availability,
                     admission details, fees and other accommodation
                     information.
+
                 </p>
 
+
                 <div class="contact-list">
+
 
                     <div class="contact-item">
 
@@ -1973,7 +2688,9 @@
 
                         <div>
 
-                            <h6>Address</h6>
+                            <h6>
+                                Address
+                            </h6>
 
                             <p>
                                 Rajaji Nagar 2nd Cross,
@@ -1984,6 +2701,7 @@
 
                     </div>
 
+
                     <div class="contact-item">
 
                         <div class="contact-icon">
@@ -1992,7 +2710,9 @@
 
                         <div>
 
-                            <h6>Visiting Hours</h6>
+                            <h6>
+                                Visiting Hours
+                            </h6>
 
                             <p>
                                 Contact management before visiting
@@ -2002,6 +2722,7 @@
 
                     </div>
 
+
                     <div class="contact-item">
 
                         <div class="contact-icon">
@@ -2010,7 +2731,9 @@
 
                         <div>
 
-                            <h6>Support</h6>
+                            <h6>
+                                Support
+                            </h6>
 
                             <p>
                                 Use our contact page for enquiries
@@ -2023,6 +2746,7 @@
                 </div>
 
             </div>
+
 
             <div class="col-lg-6">
 
@@ -2037,13 +2761,22 @@
                     </h3>
 
                     <p>
+
                         Send your enquiry through our contact page and
                         our management team will assist you.
+
                     </p>
 
-                    <a href="/contact" class="primary-button">
+
+                    <a
+                        href="/contact"
+                        class="primary-button"
+                    >
+
                         <i class="fas fa-paper-plane"></i>
+
                         Contact Management
+
                     </a>
 
                 </div>
@@ -2057,9 +2790,10 @@
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      FOOTER
-========================== -->
+====================================================== -->
 
 <footer>
 
@@ -2067,45 +2801,56 @@
 
         <div class="row g-4">
 
+
             <div class="col-lg-5 col-md-6">
 
-                <a href="/" class="footer-brand">
+                <a
+                    href="/"
+                    class="footer-brand"
+                >
 
-                    <!-- ACTUAL LOGO -->
                     <img
                         src="/images/pg-logo.png"
-                        alt="Rahma Pearl Girls PG Logo"
-                        class="footer-logo"
+                        alt="Rahma Pearl Logo"
+                        class="brand-logo"
                     >
 
-                    <span>RAHMA PEARL</span>
+                    RAHMA PEARL
 
                 </a>
 
+
                 <p class="footer-description">
+
                     Rahma Pearl Girls PG provides safe, comfortable
                     and convenient accommodation for students and
                     working women in Sattur, Dharwad.
+
                 </p>
+
 
                 <div class="footer-location">
 
                     <i class="fas fa-location-dot"></i>
 
                     <span>
+
                         Rajaji Nagar 2nd Cross,
                         Sattur, Dharwad
+
                     </span>
 
                 </div>
 
             </div>
 
+
             <div class="col-lg-3 col-md-6">
 
                 <h5 class="footer-heading">
                     Quick Links
                 </h5>
+
 
                 <ul class="footer-links">
 
@@ -2141,44 +2886,69 @@
 
             </div>
 
+
             <div class="col-lg-4 col-md-6">
 
                 <h5 class="footer-heading">
                     Important Links
                 </h5>
 
+
                 <ul class="footer-links">
 
                     <li>
+
                         <a href="/register">
+
                             <i class="fas fa-angle-right"></i>
+
                             Apply for Admission
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="/login">
+
                             <i class="fas fa-angle-right"></i>
+
                             Login Portal
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="/terms">
+
                             <i class="fas fa-angle-right"></i>
+
                             Terms &amp; Conditions
+
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="https://www.google.com/maps/search/?api=1&query=15.405405,75.038448"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+
                             <i class="fas fa-angle-right"></i>
+
                             Google Maps
+
                         </a>
+
                     </li>
 
                 </ul>
@@ -2187,19 +2957,28 @@
 
         </div>
 
+
         <hr class="footer-divider">
+
 
         <div class="footer-bottom">
 
             <p>
+
                 &copy; 2026 Rahma Pearl PG Management System.
                 All rights reserved.
+
             </p>
 
+
             <p>
+
                 Safe Living
+
                 <i class="fas fa-heart"></i>
+
                 Comfortable Stay
+
             </p>
 
         </div>
@@ -2209,9 +2988,10 @@
 </footer>
 
 
-<!-- =========================
-     WHATSAPP
-========================== -->
+
+<!-- =====================================================
+     WHATSAPP FLOATING BUTTON
+====================================================== -->
 
 <a
     href="https://wa.me/919611755149?text=Hello%20Rahma%20Pearl%20PG,%20I%20want%20to%20know%20about%20room%20availability."
@@ -2230,9 +3010,10 @@
 </a>
 
 
-<!-- =========================
+
+<!-- =====================================================
      BACK TO TOP
-========================== -->
+====================================================== -->
 
 <button
     type="button"
@@ -2246,103 +3027,110 @@
 </button>
 
 
+
 <!-- Bootstrap JS -->
 
 <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-</script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+></script>
 
 
 <script>
 
-    /* =========================
-       BACK TO TOP
-    ========================== */
+/* =========================================================
+   BACK TO TOP
+========================================================= */
 
-    const backToTopButton =
-        document.getElementById("backToTop");
+const backToTopButton =
+    document.getElementById("backToTop");
 
-    window.addEventListener("scroll", function () {
 
-        if (window.scrollY > 400) {
+window.addEventListener("scroll", function () {
 
-            backToTopButton.classList.add("show");
+    if (window.scrollY > 400) {
 
-        } else {
+        backToTopButton.classList.add("show");
 
-            backToTopButton.classList.remove("show");
+    } else {
+
+        backToTopButton.classList.remove("show");
+
+    }
+
+});
+
+
+backToTopButton.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar =
+    document.querySelector(".navbar");
+
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 40) {
+
+        navbar.classList.add("navbar-scrolled");
+
+    } else {
+
+        navbar.classList.remove("navbar-scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE NAVBAR CLOSE
+========================================================= */
+
+const navigationLinks =
+    document.querySelectorAll(
+        ".navbar-collapse .nav-link"
+    );
+
+
+const navbarCollapseElement =
+    document.getElementById("navbarNav");
+
+
+navigationLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (
+            window.innerWidth < 992 &&
+            navbarCollapseElement.classList.contains("show")
+        ) {
+
+            const navbarCollapse =
+                bootstrap.Collapse.getOrCreateInstance(
+                    navbarCollapseElement
+                );
+
+            navbarCollapse.hide();
 
         }
 
     });
 
-    backToTopButton.addEventListener("click", function () {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-
-    /* =========================
-       NAVBAR SCROLL
-    ========================== */
-
-    const navbar =
-        document.querySelector(".navbar");
-
-    window.addEventListener("scroll", function () {
-
-        if (window.scrollY > 40) {
-
-            navbar.classList.add("navbar-scrolled");
-
-        } else {
-
-            navbar.classList.remove("navbar-scrolled");
-
-        }
-
-    });
-
-
-    /* =========================
-       MOBILE NAVBAR CLOSE
-    ========================== */
-
-    const navigationLinks =
-        document.querySelectorAll(
-            ".navbar-collapse .nav-link"
-        );
-
-    const navbarCollapseElement =
-        document.getElementById("navbarNav");
-
-    navigationLinks.forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            if (
-                window.innerWidth < 992 &&
-                navbarCollapseElement.classList.contains("show")
-            ) {
-
-                const navbarCollapse =
-                    bootstrap.Collapse.getOrCreateInstance(
-                        navbarCollapseElement
-                    );
-
-                navbarCollapse.hide();
-
-            }
-
-        });
-
-    });
+});
 
 </script>
+
 
 </body>
 </html>
